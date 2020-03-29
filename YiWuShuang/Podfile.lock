@@ -20,17 +20,27 @@ PODS:
   - AFNetworking/UIKit (2.7.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - Masonry
+  - YYKit
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - Masonry
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: fc648813c6eb66c7bb843f5bfc4a648706f32439
+PODFILE CHECKSUM: 0ba7b8aa67d5aa9a2e3c62d4b9766a88bb440659
 
 COCOAPODS: 1.9.1

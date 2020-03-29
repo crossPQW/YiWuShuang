@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "MessageViewController.h"
 #import "RegisterViewController.h"
+#import "YYKit.h"
+
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
@@ -37,6 +39,8 @@
     [self.checkBtn setBackgroundImage:[UIImage imageNamed:@"login_uncheck"] forState:UIControlStateNormal];
     [self.checkBtn setBackgroundImage:[UIImage imageNamed:@"login_check"] forState:UIControlStateSelected];
     [self.checkBtn setSelected:NO];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
