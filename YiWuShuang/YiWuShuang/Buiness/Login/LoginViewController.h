@@ -1,5 +1,5 @@
 //
-//  SceneDelegate.h
+//  LoginViewController.h
 //  YiWuShuang
 //
 //  Created by 黄 on 2020/3/26.
@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
-@property (strong, nonatomic) UIWindow * window;
+@interface LoginViewController : UIViewController
+
 
 @end
 
+NS_ASSUME_NONNULL_END

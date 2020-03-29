@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'YiWuShuang' do
   pod 'AFNetworking', '~> 2.6'
+  pod 'Masonry'
 end
