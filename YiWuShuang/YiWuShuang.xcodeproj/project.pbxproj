@@ -22,6 +22,8 @@
 		63CEB152242D14CD00FB2146 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB151242D14CD00FB2146 /* RegisterViewController.m */; };
 		63CEB155242D1B2800FB2146 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB154242D1B2800FB2146 /* PasswordViewController.m */; };
 		63CEB158242D1E8000FB2146 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB157242D1E8000FB2146 /* MessageViewController.m */; };
+		63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB15B2438D37500FB2146 /* ApiManager.m */; };
+		63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB15F2438DD5F00FB2146 /* BaseModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,10 @@
 		63CEB154242D1B2800FB2146 /* PasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
 		63CEB156242D1E8000FB2146 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		63CEB157242D1E8000FB2146 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		63CEB15A2438D37500FB2146 /* ApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
+		63CEB15B2438D37500FB2146 /* ApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiManager.m; sourceTree = "<group>"; };
+		63CEB15E2438DD5F00FB2146 /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		63CEB15F2438DD5F00FB2146 /* BaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		9A36C3F608AC21002832D28D /* Pods-YiWuShuang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiWuShuang.release.xcconfig"; path = "Target Support Files/Pods-YiWuShuang/Pods-YiWuShuang.release.xcconfig"; sourceTree = "<group>"; };
 		C9771E284689BA46DE20A8FB /* Pods-YiWuShuang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiWuShuang.debug.xcconfig"; path = "Target Support Files/Pods-YiWuShuang/Pods-YiWuShuang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +140,8 @@
 		63BE22B7242BCB0E0066A316 /* YiWuShuang */ = {
 			isa = PBXGroup;
 			children = (
+				63CEB15D2438DD4F00FB2146 /* Common */,
+				63CEB1592438D36200FB2146 /* Manager */,
 				63BE22F0242CF6630066A316 /* Category */,
 				63BE22ED242CF6180066A316 /* Buiness */,
 				63BE22F2242CF9360066A316 /* Resource */,
@@ -215,6 +223,24 @@
 				63BE22C6242BCB100066A316 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		63CEB1592438D36200FB2146 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				63CEB15A2438D37500FB2146 /* ApiManager.h */,
+				63CEB15B2438D37500FB2146 /* ApiManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		63CEB15D2438DD4F00FB2146 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				63CEB15E2438DD5F00FB2146 /* BaseModel.h */,
+				63CEB15F2438DD5F00FB2146 /* BaseModel.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E86D75D37826F835A166F868 /* Pods */ = {
@@ -403,11 +429,13 @@
 			files = (
 				63BE22F5242CF95F0066A316 /* User.m in Sources */,
 				63CEB152242D14CD00FB2146 /* RegisterViewController.m in Sources */,
+				63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */,
 				63BE22C0242BCB0E0066A316 /* RootViewController.m in Sources */,
 				63CEB155242D1B2800FB2146 /* PasswordViewController.m in Sources */,
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
 				63CEB158242D1E8000FB2146 /* MessageViewController.m in Sources */,
+				63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */,
 				63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

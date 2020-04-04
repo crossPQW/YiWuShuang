@@ -10,8 +10,8 @@
 #import "MessageViewController.h"
 #import "RegisterViewController.h"
 #import "YYKit.h"
-
 @interface LoginViewController ()
+
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 @property (weak, nonatomic) IBOutlet UITextField *accountTextField;

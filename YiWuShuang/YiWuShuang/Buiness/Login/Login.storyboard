@@ -340,10 +340,25 @@
                                     <action selector="checkBtnClick:" destination="ivf-dh-uSz" eventType="touchUpInside" id="VO6-pV-pPP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPm-CO-aeg">
+                                <rect key="frame" x="308" y="296" width="88" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="OdM-YY-uWd"/>
+                                    <constraint firstAttribute="height" constant="22" id="URJ-n0-JwR"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="获取验证码">
+                                    <color key="titleColor" red="0.01176470588" green="0.75686274509999996" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getCode:" destination="ivf-dh-uSz" eventType="touchUpInside" id="Ti9-TW-5af"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="XE0-eU-spl" firstAttribute="leading" secondItem="IE0-iX-74L" secondAttribute="leading" constant="18" id="5zq-Uo-Fws"/>
+                            <constraint firstItem="IE0-iX-74L" firstAttribute="trailing" secondItem="GPm-CO-aeg" secondAttribute="trailing" constant="18" id="7eh-bg-EaG"/>
                             <constraint firstItem="dD9-1O-e83" firstAttribute="top" secondItem="LcE-hm-tNL" secondAttribute="bottom" id="8LO-Qz-kvh"/>
                             <constraint firstItem="lHd-fO-ZJO" firstAttribute="top" secondItem="IE0-iX-74L" secondAttribute="top" constant="25" id="8NF-7t-AX7"/>
                             <constraint firstItem="pZu-AD-bTs" firstAttribute="top" secondItem="XE0-eU-spl" secondAttribute="bottom" constant="28" id="CZH-Oe-BtS"/>
@@ -367,6 +382,7 @@
                             <constraint firstItem="IE0-iX-74L" firstAttribute="trailing" secondItem="XE0-eU-spl" secondAttribute="trailing" constant="18" id="oPE-jo-eBK"/>
                             <constraint firstItem="jK5-rL-tIr" firstAttribute="top" secondItem="ThT-aU-FjR" secondAttribute="bottom" id="pNG-Cq-rRp"/>
                             <constraint firstItem="IE0-iX-74L" firstAttribute="trailing" secondItem="pZu-AD-bTs" secondAttribute="trailing" constant="34" id="r0X-my-vBa"/>
+                            <constraint firstItem="jK5-rL-tIr" firstAttribute="top" secondItem="GPm-CO-aeg" secondAttribute="bottom" constant="14" id="sU4-n2-TXh"/>
                             <constraint firstItem="rKI-kV-qRK" firstAttribute="centerX" secondItem="IE0-iX-74L" secondAttribute="centerX" constant="7" id="sav-rp-LUi"/>
                             <constraint firstAttribute="trailing" secondItem="jK5-rL-tIr" secondAttribute="trailing" constant="18" id="uyY-Gc-CTk"/>
                             <constraint firstItem="HfD-pK-cIw" firstAttribute="leading" secondItem="IE0-iX-74L" secondAttribute="leading" constant="20" id="xUf-I5-eMz"/>
@@ -379,6 +395,7 @@
                         <outlet property="checkBtn" destination="Ric-qD-5ky" id="k3h-6f-yX9"/>
                         <outlet property="closeBtn" destination="lHd-fO-ZJO" id="GgE-uo-6uC"/>
                         <outlet property="codeTextfield" destination="ThT-aU-FjR" id="CSd-8e-jaJ"/>
+                        <outlet property="getCodeBtn" destination="GPm-CO-aeg" id="bM4-NG-UKK"/>
                         <outlet property="nextBtn" destination="XE0-eU-spl" id="Mhe-0j-9vC"/>
                         <outlet property="numberTextfield" destination="LcE-hm-tNL" id="Rea-Kj-Hrg"/>
                     </connections>
@@ -684,6 +701,21 @@
                                     <constraint firstAttribute="height" constant="1" id="jhw-6A-sAF"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UG7-it-yNb">
+                                <rect key="frame" x="314" y="296" width="82" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="GmD-yC-SvQ"/>
+                                    <constraint firstAttribute="height" constant="22" id="nQU-JA-Bfh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="获取验证码">
+                                    <color key="titleColor" red="0.01176470588" green="0.75686274509999996" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getCode:" destination="KQA-Wb-gHO" eventType="touchUpInside" id="j7D-nv-BFa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -695,6 +727,8 @@
                             <constraint firstItem="kAj-ES-BkS" firstAttribute="top" secondItem="zga-gE-9bs" secondAttribute="bottom" id="8c7-bJ-O9a"/>
                             <constraint firstItem="dir-oX-myo" firstAttribute="centerY" secondItem="gC9-jI-qRd" secondAttribute="centerY" id="8qA-Xi-IFy"/>
                             <constraint firstItem="xcX-5O-tCw" firstAttribute="trailing" secondItem="inM-ex-Jrl" secondAttribute="trailing" constant="34" id="8qy-tC-Fqg"/>
+                            <constraint firstItem="kAj-ES-BkS" firstAttribute="top" secondItem="UG7-it-yNb" secondAttribute="bottom" constant="14" id="9Ia-CZ-GTX"/>
+                            <constraint firstItem="xcX-5O-tCw" firstAttribute="trailing" secondItem="UG7-it-yNb" secondAttribute="trailing" constant="18" id="9OR-63-m3a"/>
                             <constraint firstItem="xMj-VO-ACx" firstAttribute="leading" secondItem="AUy-CT-jOR" secondAttribute="trailing" constant="10" id="CTR-uG-fB0"/>
                             <constraint firstItem="ja6-GY-m7t" firstAttribute="top" secondItem="AsU-oD-eQ5" secondAttribute="bottom" id="CjC-8q-YrJ"/>
                             <constraint firstItem="xcX-5O-tCw" firstAttribute="trailing" secondItem="ja6-GY-m7t" secondAttribute="trailing" constant="18" id="FnK-jN-LSj"/>
@@ -733,6 +767,7 @@
                         <outlet property="accountTf" destination="AsU-oD-eQ5" id="kVS-rK-4mT"/>
                         <outlet property="checkBtn" destination="dir-oX-myo" id="G55-Qy-f2t"/>
                         <outlet property="closeBtn" destination="6eZ-jD-z5M" id="xnd-dC-CdZ"/>
+                        <outlet property="getCodeBtn" destination="UG7-it-yNb" id="1eA-pO-VbW"/>
                         <outlet property="privacyLabel" destination="gC9-jI-qRd" id="yJM-CZ-XPd"/>
                         <outlet property="pwdTf" destination="zga-gE-9bs" id="GUf-JK-Vmp"/>
                         <outlet property="registerBtn" destination="zaT-Qg-SIa" id="Hvn-BP-3qV"/>

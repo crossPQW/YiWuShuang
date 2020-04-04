@@ -22,13 +22,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
+#if TARGET_OS_IOS || TARGET_OS_TV
 
 #import <UIKit/UIKit.h>
 
 @interface UIImage (AFNetworking)
 
-+ (UIImage*) safeImageWithData:(NSData*)data;
++ (UIImage *)safeImageWithData:(NSData *)data;
 
 @end
 

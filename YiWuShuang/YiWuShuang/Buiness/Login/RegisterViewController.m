@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *numberTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextfield;
 @property (weak, nonatomic) IBOutlet UIButton *checkBtn;
+@property (weak, nonatomic) IBOutlet UIButton *getCodeBtn;
 @end
 
 @implementation RegisterViewController
@@ -45,6 +46,8 @@
     LoginViewController *loginVc = [loginSb instantiateViewControllerWithIdentifier:@"loginVc"];
     loginVc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self.navigationController pushViewController:loginVc animated:YES];
+}
+- (IBAction)getCode:(id)sender {
 }
 
 @end

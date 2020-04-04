@@ -2,7 +2,10 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'YiWuShuang' do
-  pod 'AFNetworking', '~> 2.6'
+  pod 'AFNetworking', '~> 4.0'
   pod 'Masonry'
   pod 'YYKit'
+  pod 'MBProgressHUD', '~> 1.2.0'
+
+
 end
