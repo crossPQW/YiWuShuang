@@ -6,6 +6,6 @@ target 'YiWuShuang' do
   pod 'Masonry'
   pod 'YYKit'
   pod 'MBProgressHUD', '~> 1.2.0'
-
+  pod 'YYModel'
 
 end

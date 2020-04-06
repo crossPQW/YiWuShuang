@@ -9,12 +9,9 @@
 #import "User.h"
 
 @implementation User
-
-- (User *)currentUser {
-    return [[User alloc] init];
-}
-
-- (BOOL)isLogin {
-    return NO;
++ (nullable NSDictionary<NSString *, id> *)modelCustomPropertyMapper {
+    return @{
+        @"userId":@"user_id",
+    };
 }
 @end

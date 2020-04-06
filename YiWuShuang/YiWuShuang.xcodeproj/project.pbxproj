@@ -19,11 +19,11 @@
 		63BE22F5242CF95F0066A316 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22F4242CF95F0066A316 /* User.m */; };
 		63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22F7242CFB2D0066A316 /* LoginViewController.m */; };
 		63CEB14F242D03C000FB2146 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CEB14E242D03C000FB2146 /* Login.storyboard */; };
-		63CEB152242D14CD00FB2146 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB151242D14CD00FB2146 /* RegisterViewController.m */; };
-		63CEB155242D1B2800FB2146 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB154242D1B2800FB2146 /* PasswordViewController.m */; };
-		63CEB158242D1E8000FB2146 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB157242D1E8000FB2146 /* MessageViewController.m */; };
 		63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB15B2438D37500FB2146 /* ApiManager.m */; };
 		63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB15F2438DD5F00FB2146 /* BaseModel.m */; };
+		63CEB163243B7FB900FB2146 /* ChooseOrizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB162243B7FB900FB2146 /* ChooseOrizViewController.m */; };
+		63CEB166243B88FE00FB2146 /* MBProgressHUD+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB165243B88FE00FB2146 /* MBProgressHUD+helper.m */; };
+		63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB168243B8B9B00FB2146 /* UserSession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,16 +67,16 @@
 		63BE22F6242CFB2D0066A316 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		63BE22F7242CFB2D0066A316 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		63CEB14E242D03C000FB2146 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		63CEB150242D14CD00FB2146 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		63CEB151242D14CD00FB2146 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		63CEB153242D1B2800FB2146 /* PasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
-		63CEB154242D1B2800FB2146 /* PasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
-		63CEB156242D1E8000FB2146 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		63CEB157242D1E8000FB2146 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		63CEB15A2438D37500FB2146 /* ApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
 		63CEB15B2438D37500FB2146 /* ApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiManager.m; sourceTree = "<group>"; };
 		63CEB15E2438DD5F00FB2146 /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		63CEB15F2438DD5F00FB2146 /* BaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		63CEB161243B7FB900FB2146 /* ChooseOrizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseOrizViewController.h; sourceTree = "<group>"; };
+		63CEB162243B7FB900FB2146 /* ChooseOrizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseOrizViewController.m; sourceTree = "<group>"; };
+		63CEB164243B88FE00FB2146 /* MBProgressHUD+helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+helper.h"; sourceTree = "<group>"; };
+		63CEB165243B88FE00FB2146 /* MBProgressHUD+helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+helper.m"; sourceTree = "<group>"; };
+		63CEB167243B8B9B00FB2146 /* UserSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserSession.h; sourceTree = "<group>"; };
+		63CEB168243B8B9B00FB2146 /* UserSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
 		9A36C3F608AC21002832D28D /* Pods-YiWuShuang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiWuShuang.release.xcconfig"; path = "Target Support Files/Pods-YiWuShuang/Pods-YiWuShuang.release.xcconfig"; sourceTree = "<group>"; };
 		C9771E284689BA46DE20A8FB /* Pods-YiWuShuang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiWuShuang.debug.xcconfig"; path = "Target Support Files/Pods-YiWuShuang/Pods-YiWuShuang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,16 +184,10 @@
 		63BE22EE242CF6430066A316 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				63BE22F3242CF95F0066A316 /* User.h */,
-				63BE22F4242CF95F0066A316 /* User.m */,
 				63BE22F6242CFB2D0066A316 /* LoginViewController.h */,
 				63BE22F7242CFB2D0066A316 /* LoginViewController.m */,
-				63CEB150242D14CD00FB2146 /* RegisterViewController.h */,
-				63CEB151242D14CD00FB2146 /* RegisterViewController.m */,
-				63CEB153242D1B2800FB2146 /* PasswordViewController.h */,
-				63CEB154242D1B2800FB2146 /* PasswordViewController.m */,
-				63CEB156242D1E8000FB2146 /* MessageViewController.h */,
-				63CEB157242D1E8000FB2146 /* MessageViewController.m */,
+				63CEB161243B7FB900FB2146 /* ChooseOrizViewController.h */,
+				63CEB162243B7FB900FB2146 /* ChooseOrizViewController.m */,
 				63CEB14E242D03C000FB2146 /* Login.storyboard */,
 			);
 			path = Login;
@@ -202,6 +196,7 @@
 		63BE22EF242CF64E0066A316 /* UserSystem */ = {
 			isa = PBXGroup;
 			children = (
+				63CEB16A243B8BA400FB2146 /* Model */,
 			);
 			path = UserSystem;
 			sourceTree = "<group>";
@@ -209,6 +204,8 @@
 		63BE22F0242CF6630066A316 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				63CEB164243B88FE00FB2146 /* MBProgressHUD+helper.h */,
+				63CEB165243B88FE00FB2146 /* MBProgressHUD+helper.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -241,6 +238,17 @@
 				63CEB15F2438DD5F00FB2146 /* BaseModel.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		63CEB16A243B8BA400FB2146 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63BE22F3242CF95F0066A316 /* User.h */,
+				63BE22F4242CF95F0066A316 /* User.m */,
+				63CEB167243B8B9B00FB2146 /* UserSession.h */,
+				63CEB168243B8B9B00FB2146 /* UserSession.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E86D75D37826F835A166F868 /* Pods */ = {
@@ -428,15 +436,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				63BE22F5242CF95F0066A316 /* User.m in Sources */,
-				63CEB152242D14CD00FB2146 /* RegisterViewController.m in Sources */,
+				63CEB163243B7FB900FB2146 /* ChooseOrizViewController.m in Sources */,
 				63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */,
 				63BE22C0242BCB0E0066A316 /* RootViewController.m in Sources */,
-				63CEB155242D1B2800FB2146 /* PasswordViewController.m in Sources */,
+				63CEB166243B88FE00FB2146 /* MBProgressHUD+helper.m in Sources */,
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
-				63CEB158242D1E8000FB2146 /* MessageViewController.m in Sources */,
 				63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */,
 				63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */,
+				63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

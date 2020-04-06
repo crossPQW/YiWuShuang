@@ -1,8 +1,8 @@
 //
-//  PasswordViewController.h
+//  ChooseOrizViewController.h
 //  YiWuShuang
 //
-//  Created by 黄 on 2020/3/27.
+//  Created by 黄 on 2020/4/6.
 //  Copyright © 2020 huang. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PasswordViewController : UIViewController
+@interface ChooseOrizViewController : UIViewController
 
 @end
 

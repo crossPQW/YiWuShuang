@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiManager : NSObject
 + (instancetype)manager;
 
-- (void)sendMessageSuccess:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure;
+- (void)sendMessageWithPhoneNumber:(NSString *)phoneNumber success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure;
+
+- (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure;
 @end
 
 NS_ASSUME_NONNULL_END
