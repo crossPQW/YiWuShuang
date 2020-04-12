@@ -24,6 +24,26 @@
 		63CEB163243B7FB900FB2146 /* ChooseOrizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB162243B7FB900FB2146 /* ChooseOrizViewController.m */; };
 		63CEB166243B88FE00FB2146 /* MBProgressHUD+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB165243B88FE00FB2146 /* MBProgressHUD+helper.m */; };
 		63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB168243B8B9B00FB2146 /* UserSession.m */; };
+		63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB16D24432D8600FB2146 /* NSDictionary+Addition.m */; };
+		63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB16E24432D8600FB2146 /* NSArray+Addition.m */; };
+		63CEB1A824432D9000FB2146 /* UITableViewCell+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB17624432D8800FB2146 /* UITableViewCell+Addition.m */; };
+		63CEB1AA24432D9000FB2146 /* wwanconnect.c in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB17A24432D8900FB2146 /* wwanconnect.c */; };
+		63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB17B24432D8900FB2146 /* NSObject+YKRuntime.m */; };
+		63CEB1AC24432D9000FB2146 /* NSDateFormatter+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB18124432D8A00FB2146 /* NSDateFormatter+Addition.m */; };
+		63CEB1AE24432D9000FB2146 /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB18424432D8B00FB2146 /* UIViewController+Addition.m */; };
+		63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB18724432D8B00FB2146 /* UIColor+Addition.m */; };
+		63CEB1B224432D9000FB2146 /* NSNumber+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB18D24432D8D00FB2146 /* NSNumber+Addition.m */; };
+		63CEB1B724432D9000FB2146 /* NSDate+CalculateDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB19524432D8E00FB2146 /* NSDate+CalculateDay.m */; };
+		63CEB1B824432D9000FB2146 /* UIAlertView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB19724432D8E00FB2146 /* UIAlertView+Addition.m */; };
+		63CEB1BA24432D9000FB2146 /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB19A24432D8F00FB2146 /* CALayer+Addition.m */; };
+		63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB19B24432D8F00FB2146 /* UIScreen+Addition.m */; };
+		63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB19D24432D8F00FB2146 /* UITabBarItem+Addition.m */; };
+		63CEB1BF24432D9000FB2146 /* NSObject+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB1A324432D9000FB2146 /* NSObject+Addition.m */; };
+		63CEB1C224432D9C00FB2146 /* UIView+DYKIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB1C124432D9C00FB2146 /* UIView+DYKIOS.m */; };
+		63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB1C42443343300FB2146 /* CreateOrizViewController.m */; };
+		63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB1C72443344500FB2146 /* JoinOrizViewController.m */; };
+		63CEB1CC24433F4B00FB2146 /* CommonCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB1CB24433F4B00FB2146 /* CommonCellModel.m */; };
+		63CEB1D024434DBF00FB2146 /* CommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CEB1CF24434DBF00FB2146 /* CommonCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +97,47 @@
 		63CEB165243B88FE00FB2146 /* MBProgressHUD+helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+helper.m"; sourceTree = "<group>"; };
 		63CEB167243B8B9B00FB2146 /* UserSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserSession.h; sourceTree = "<group>"; };
 		63CEB168243B8B9B00FB2146 /* UserSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
+		63CEB16D24432D8600FB2146 /* NSDictionary+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Addition.m"; sourceTree = "<group>"; };
+		63CEB16E24432D8600FB2146 /* NSArray+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Addition.m"; sourceTree = "<group>"; };
+		63CEB16F24432D8600FB2146 /* NSObject+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Addition.h"; sourceTree = "<group>"; };
+		63CEB17124432D8700FB2146 /* NSDateFormatter+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Addition.h"; sourceTree = "<group>"; };
+		63CEB17524432D8800FB2146 /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		63CEB17624432D8800FB2146 /* UITableViewCell+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Addition.m"; sourceTree = "<group>"; };
+		63CEB17924432D8900FB2146 /* NSArray+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Addition.h"; sourceTree = "<group>"; };
+		63CEB17A24432D8900FB2146 /* wwanconnect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wwanconnect.c; sourceTree = "<group>"; };
+		63CEB17B24432D8900FB2146 /* NSObject+YKRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YKRuntime.m"; sourceTree = "<group>"; };
+		63CEB17C24432D8900FB2146 /* UITableViewCell+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Addition.h"; sourceTree = "<group>"; };
+		63CEB17F24432D8A00FB2146 /* UIAlertView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Addition.h"; sourceTree = "<group>"; };
+		63CEB18024432D8A00FB2146 /* wwanconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wwanconnect.h; sourceTree = "<group>"; };
+		63CEB18124432D8A00FB2146 /* NSDateFormatter+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Addition.m"; sourceTree = "<group>"; };
+		63CEB18324432D8B00FB2146 /* UIViewController+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Addition.h"; sourceTree = "<group>"; };
+		63CEB18424432D8B00FB2146 /* UIViewController+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Addition.m"; sourceTree = "<group>"; };
+		63CEB18524432D8B00FB2146 /* NSDate+CalculateDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CalculateDay.h"; sourceTree = "<group>"; };
+		63CEB18724432D8B00FB2146 /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		63CEB18B24432D8C00FB2146 /* UITabBarItem+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+Addition.h"; sourceTree = "<group>"; };
+		63CEB18D24432D8D00FB2146 /* NSNumber+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Addition.m"; sourceTree = "<group>"; };
+		63CEB18E24432D8D00FB2146 /* NSNumber+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Addition.h"; sourceTree = "<group>"; };
+		63CEB19524432D8E00FB2146 /* NSDate+CalculateDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CalculateDay.m"; sourceTree = "<group>"; };
+		63CEB19624432D8E00FB2146 /* UIScreen+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Addition.h"; sourceTree = "<group>"; };
+		63CEB19724432D8E00FB2146 /* UIAlertView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Addition.m"; sourceTree = "<group>"; };
+		63CEB19A24432D8F00FB2146 /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
+		63CEB19B24432D8F00FB2146 /* UIScreen+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+Addition.m"; sourceTree = "<group>"; };
+		63CEB19C24432D8F00FB2146 /* CALayer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addition.h"; sourceTree = "<group>"; };
+		63CEB19D24432D8F00FB2146 /* UITabBarItem+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+Addition.m"; sourceTree = "<group>"; };
+		63CEB19F24432D9000FB2146 /* NSDictionary+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Addition.h"; sourceTree = "<group>"; };
+		63CEB1A024432D9000FB2146 /* NSObject+YKRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YKRuntime.h"; sourceTree = "<group>"; };
+		63CEB1A224432D9000FB2146 /* YKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKAddition.h; sourceTree = "<group>"; };
+		63CEB1A324432D9000FB2146 /* NSObject+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Addition.m"; sourceTree = "<group>"; };
+		63CEB1C024432D9C00FB2146 /* UIView+DYKIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DYKIOS.h"; sourceTree = "<group>"; };
+		63CEB1C124432D9C00FB2146 /* UIView+DYKIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DYKIOS.m"; sourceTree = "<group>"; };
+		63CEB1C32443343300FB2146 /* CreateOrizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateOrizViewController.h; sourceTree = "<group>"; };
+		63CEB1C42443343300FB2146 /* CreateOrizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateOrizViewController.m; sourceTree = "<group>"; };
+		63CEB1C62443344500FB2146 /* JoinOrizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoinOrizViewController.h; sourceTree = "<group>"; };
+		63CEB1C72443344500FB2146 /* JoinOrizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoinOrizViewController.m; sourceTree = "<group>"; };
+		63CEB1CA24433F4B00FB2146 /* CommonCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCellModel.h; sourceTree = "<group>"; };
+		63CEB1CB24433F4B00FB2146 /* CommonCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonCellModel.m; sourceTree = "<group>"; };
+		63CEB1CE24434DBF00FB2146 /* CommonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCell.h; sourceTree = "<group>"; };
+		63CEB1CF24434DBF00FB2146 /* CommonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonCell.m; sourceTree = "<group>"; };
 		9A36C3F608AC21002832D28D /* Pods-YiWuShuang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiWuShuang.release.xcconfig"; path = "Target Support Files/Pods-YiWuShuang/Pods-YiWuShuang.release.xcconfig"; sourceTree = "<group>"; };
 		C9771E284689BA46DE20A8FB /* Pods-YiWuShuang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiWuShuang.debug.xcconfig"; path = "Target Support Files/Pods-YiWuShuang/Pods-YiWuShuang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,10 +245,16 @@
 		63BE22EE242CF6430066A316 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				63CEB1CD24434D7D00FB2146 /* Model */,
+				63CEB1C924433F3100FB2146 /* Models */,
 				63BE22F6242CFB2D0066A316 /* LoginViewController.h */,
 				63BE22F7242CFB2D0066A316 /* LoginViewController.m */,
 				63CEB161243B7FB900FB2146 /* ChooseOrizViewController.h */,
 				63CEB162243B7FB900FB2146 /* ChooseOrizViewController.m */,
+				63CEB1C32443343300FB2146 /* CreateOrizViewController.h */,
+				63CEB1C42443343300FB2146 /* CreateOrizViewController.m */,
+				63CEB1C62443344500FB2146 /* JoinOrizViewController.h */,
+				63CEB1C72443344500FB2146 /* JoinOrizViewController.m */,
 				63CEB14E242D03C000FB2146 /* Login.storyboard */,
 			);
 			path = Login;
@@ -204,6 +271,39 @@
 		63BE22F0242CF6630066A316 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				63CEB1C024432D9C00FB2146 /* UIView+DYKIOS.h */,
+				63CEB1C124432D9C00FB2146 /* UIView+DYKIOS.m */,
+				63CEB19C24432D8F00FB2146 /* CALayer+Addition.h */,
+				63CEB19A24432D8F00FB2146 /* CALayer+Addition.m */,
+				63CEB17924432D8900FB2146 /* NSArray+Addition.h */,
+				63CEB16E24432D8600FB2146 /* NSArray+Addition.m */,
+				63CEB18524432D8B00FB2146 /* NSDate+CalculateDay.h */,
+				63CEB19524432D8E00FB2146 /* NSDate+CalculateDay.m */,
+				63CEB17124432D8700FB2146 /* NSDateFormatter+Addition.h */,
+				63CEB18124432D8A00FB2146 /* NSDateFormatter+Addition.m */,
+				63CEB19F24432D9000FB2146 /* NSDictionary+Addition.h */,
+				63CEB16D24432D8600FB2146 /* NSDictionary+Addition.m */,
+				63CEB18E24432D8D00FB2146 /* NSNumber+Addition.h */,
+				63CEB18D24432D8D00FB2146 /* NSNumber+Addition.m */,
+				63CEB16F24432D8600FB2146 /* NSObject+Addition.h */,
+				63CEB1A324432D9000FB2146 /* NSObject+Addition.m */,
+				63CEB1A024432D9000FB2146 /* NSObject+YKRuntime.h */,
+				63CEB17B24432D8900FB2146 /* NSObject+YKRuntime.m */,
+				63CEB17F24432D8A00FB2146 /* UIAlertView+Addition.h */,
+				63CEB19724432D8E00FB2146 /* UIAlertView+Addition.m */,
+				63CEB17524432D8800FB2146 /* UIColor+Addition.h */,
+				63CEB18724432D8B00FB2146 /* UIColor+Addition.m */,
+				63CEB19624432D8E00FB2146 /* UIScreen+Addition.h */,
+				63CEB19B24432D8F00FB2146 /* UIScreen+Addition.m */,
+				63CEB18B24432D8C00FB2146 /* UITabBarItem+Addition.h */,
+				63CEB19D24432D8F00FB2146 /* UITabBarItem+Addition.m */,
+				63CEB17C24432D8900FB2146 /* UITableViewCell+Addition.h */,
+				63CEB17624432D8800FB2146 /* UITableViewCell+Addition.m */,
+				63CEB18324432D8B00FB2146 /* UIViewController+Addition.h */,
+				63CEB18424432D8B00FB2146 /* UIViewController+Addition.m */,
+				63CEB17A24432D8900FB2146 /* wwanconnect.c */,
+				63CEB18024432D8A00FB2146 /* wwanconnect.h */,
+				63CEB1A224432D9000FB2146 /* YKAddition.h */,
 				63CEB164243B88FE00FB2146 /* MBProgressHUD+helper.h */,
 				63CEB165243B88FE00FB2146 /* MBProgressHUD+helper.m */,
 			);
@@ -247,6 +347,24 @@
 				63BE22F4242CF95F0066A316 /* User.m */,
 				63CEB167243B8B9B00FB2146 /* UserSession.h */,
 				63CEB168243B8B9B00FB2146 /* UserSession.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63CEB1C924433F3100FB2146 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63CEB1CA24433F4B00FB2146 /* CommonCellModel.h */,
+				63CEB1CB24433F4B00FB2146 /* CommonCellModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		63CEB1CD24434D7D00FB2146 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63CEB1CE24434DBF00FB2146 /* CommonCell.h */,
+				63CEB1CF24434DBF00FB2146 /* CommonCell.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -436,15 +554,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				63BE22F5242CF95F0066A316 /* User.m in Sources */,
+				63CEB1BA24432D9000FB2146 /* CALayer+Addition.m in Sources */,
+				63CEB1BF24432D9000FB2146 /* NSObject+Addition.m in Sources */,
 				63CEB163243B7FB900FB2146 /* ChooseOrizViewController.m in Sources */,
 				63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */,
 				63BE22C0242BCB0E0066A316 /* RootViewController.m in Sources */,
+				63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */,
+				63CEB1B224432D9000FB2146 /* NSNumber+Addition.m in Sources */,
 				63CEB166243B88FE00FB2146 /* MBProgressHUD+helper.m in Sources */,
+				63CEB1AA24432D9000FB2146 /* wwanconnect.c in Sources */,
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
+				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
+				63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */,
+				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
+				63CEB1AC24432D9000FB2146 /* NSDateFormatter+Addition.m in Sources */,
 				63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */,
 				63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */,
+				63CEB1B824432D9000FB2146 /* UIAlertView+Addition.m in Sources */,
+				63CEB1CC24433F4B00FB2146 /* CommonCellModel.m in Sources */,
+				63CEB1A824432D9000FB2146 /* UITableViewCell+Addition.m in Sources */,
+				63CEB1AE24432D9000FB2146 /* UIViewController+Addition.m in Sources */,
 				63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */,
+				63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */,
+				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
+				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
+				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,
+				63CEB1C224432D9C00FB2146 /* UIView+DYKIOS.m in Sources */,
+				63CEB1D024434DBF00FB2146 /* CommonCell.m in Sources */,
+				63CEB1B724432D9000FB2146 /* NSDate+CalculateDay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

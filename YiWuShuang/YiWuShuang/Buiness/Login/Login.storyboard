@@ -283,6 +283,87 @@
             </objects>
             <point key="canvasLocation" x="1524.6376811594205" y="-125.22321428571428"/>
         </scene>
+        <!--Create Oriz View Controller-->
+        <scene sceneID="S0b-Ud-eJs">
+            <objects>
+                <viewController storyboardIdentifier="createOri" id="SkR-rl-BM0" customClass="CreateOrizViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zwP-lm-4dl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl7-D6-38N">
+                                <rect key="frame" x="18" y="748" width="378" height="50"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.75686274509999996" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zz7-Jv-ePM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="完成">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickLogin:" destination="ieh-B4-XiV" eventType="touchUpInside" id="Zko-da-Wh6"/>
+                                    <action selector="finishBtnClick:" destination="SkR-rl-BM0" eventType="touchUpInside" id="hzC-w9-nBq"/>
+                                    <action selector="joinBtnClick:" destination="FDt-g8-oBD" eventType="touchUpInside" id="6nH-au-d1N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="O1W-4B-ykB" firstAttribute="bottom" secondItem="rl7-D6-38N" secondAttribute="bottom" constant="64" id="Arh-ft-hjL"/>
+                            <constraint firstItem="O1W-4B-ykB" firstAttribute="trailing" secondItem="rl7-D6-38N" secondAttribute="trailing" constant="18" id="CQJ-vB-37l"/>
+                            <constraint firstItem="rl7-D6-38N" firstAttribute="leading" secondItem="O1W-4B-ykB" secondAttribute="leading" constant="18" id="HfM-TK-iFU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1W-4B-ykB"/>
+                    </view>
+                    <connections>
+                        <outlet property="finishBtn" destination="rl7-D6-38N" id="YDf-V4-J8L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJs-Dn-3f0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2269.5652173913045" y="-125.22321428571428"/>
+        </scene>
+        <!--Join Oriz View Controller-->
+        <scene sceneID="Uue-gD-Ppu">
+            <objects>
+                <viewController storyboardIdentifier="joinOriz" id="xd4-lh-Nww" customClass="JoinOrizViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uZk-DS-L3c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alu-r6-zeL">
+                                <rect key="frame" x="18" y="748" width="378" height="50"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.75686274509999996" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i3V-8x-9FK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="完成">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickLogin:" destination="ieh-B4-XiV" eventType="touchUpInside" id="Sqi-js-gYs"/>
+                                    <action selector="finishBtnClick:" destination="xd4-lh-Nww" eventType="touchUpInside" id="WjY-F7-t7w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kyc-9o-CaE" firstAttribute="bottom" secondItem="alu-r6-zeL" secondAttribute="bottom" constant="64" id="2JM-HP-KoG"/>
+                            <constraint firstItem="alu-r6-zeL" firstAttribute="leading" secondItem="Kyc-9o-CaE" secondAttribute="leading" constant="18" id="Wdm-hl-REI"/>
+                            <constraint firstItem="Kyc-9o-CaE" firstAttribute="trailing" secondItem="alu-r6-zeL" secondAttribute="trailing" constant="18" id="mH4-4d-mQ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kyc-9o-CaE"/>
+                    </view>
+                    <connections>
+                        <outlet property="finishBtn" destination="alu-r6-zeL" id="pCn-rq-1hF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCE-nm-5nU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2971" y="-125"/>
+        </scene>
     </scenes>
     <resources>
         <image name="login_close" width="18" height="17"/>

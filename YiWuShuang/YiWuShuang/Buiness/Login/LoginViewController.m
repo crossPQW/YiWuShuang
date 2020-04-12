@@ -51,11 +51,14 @@
     [self.navigationController setNavigationBarHidden:YES];
 }
 
+#pragma mark - event
 - (IBAction)clickClose:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)clickLogin:(id)sender {
+    [self handleLoginSuccess];
+    return;
     BOOL hasAgress = self.checkBtn.isSelected;
     if (!hasAgress) {
         [MBProgressHUD showText:@"您还没有勾选同意" inView:self.view];
@@ -65,7 +68,7 @@
         NSString *code = self.pwdTextField.text;
         [[UserSession session] loginWithPhoneNumber:phoneNumber code:code success:^(User * _Nonnull user) {
             if (user) {
-                [ws jumpToChooseOri];
+                [ws handleLoginSuccess];
             }
         } failure:^(NSError * _Nonnull error) {
             
@@ -99,6 +102,7 @@
     }];
 }
 
+#pragma mark - private
 - (void)countDown {
     [self setBtnText:@"60s"];
     __block int t = 60;
@@ -126,6 +130,27 @@
 - (void)jumpToChooseOri {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
     ChooseOrizViewController *chooseVc = [sb instantiateViewControllerWithIdentifier:@"chooseOrgiVc"];
-    [self presentViewController:chooseVc animated:YES completion:nil];
+    [self.navigationController pushViewController:chooseVc animated:YES];
+//    [self presentViewController:chooseVc animated:YES completion:nil];
+    
+}
+
+- (void)handleLoginSuccess {
+    User *user = [[UserSession session] currentUser];
+    __weak typeof(self) ws = self;
+    [[ApiManager manager] getOrganization:user.token success:^(BaseModel * _Nonnull baseModel) {
+        NSArray *list = baseModel.data;
+        if ([list isKindOfClass:[NSArray class]] && list.count > 0) {
+            [ws jumpToMainPage];
+        }else{
+            [ws jumpToChooseOri];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+}
+
+- (void)jumpToMainPage{
+    
 }
 @end

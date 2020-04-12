@@ -30,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSString *mobile;
 @property (nonatomic, strong)NSString *token;
 
+@property (nonatomic, assign)NSTimeInterval createtime;
+@property (nonatomic, assign)NSTimeInterval expiretime;
+@property (nonatomic, assign)NSTimeInterval expires_in;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseModel : NSObject
 @property (nonatomic, assign) int code;
-@property (nonatomic, strong, nullable) NSDictionary *data;
+@property (nonatomic, strong, nullable) id data;
 @property (nonatomic, strong) NSString *msg;
 @property (nonatomic, assign) int time;
 

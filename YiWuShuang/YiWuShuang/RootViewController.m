@@ -28,6 +28,7 @@
     loginVc.modalPresentationStyle = UIModalPresentationFullScreen;
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVc];
+    nav.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:nav animated:YES completion:nil];
 }
 @end

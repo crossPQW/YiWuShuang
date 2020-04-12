@@ -7,6 +7,8 @@
 //
 
 #import "ChooseOrizViewController.h"
+#import "CreateOrizViewController.h"
+#import "JoinOrizViewController.h"
 
 @interface ChooseOrizViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *createBtn;
@@ -25,9 +27,20 @@
     self.joinBtn.layer.masksToBounds = YES;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (IBAction)createBtnClick:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    CreateOrizViewController *chooseVc = [sb instantiateViewControllerWithIdentifier:@"createOri"];
+    [self.navigationController pushViewController:chooseVc animated:YES];
 }
 - (IBAction)joinBtnClick:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    JoinOrizViewController *chooseVc = [sb instantiateViewControllerWithIdentifier:@"joinOriz"];
+    [self.navigationController pushViewController:chooseVc animated:YES];
 }
 
 @end
