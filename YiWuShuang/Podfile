@@ -8,5 +8,6 @@ target 'YiWuShuang' do
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'YYModel'
   pod  'YKWoodpecker'
+  pod 'CYLTabBarController', '~> 1.24.0'
 
 end

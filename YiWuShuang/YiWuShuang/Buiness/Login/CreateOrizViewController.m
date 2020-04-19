@@ -16,7 +16,7 @@
 #import "UIView+DYKIOS.h"
 #import "CommonCell.h"
 #import "AppDelegate.h"
-#import "RootViewController.h"
+#import "HomeViewController.h"
 @interface CreateOrizViewController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *finishBtn;
@@ -84,7 +84,7 @@
 
 - (void)jumpToMain {
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
-    RootViewController *rootVc = [[RootViewController alloc] init];
+    HomeViewController *rootVc = [[HomeViewController alloc] init];
     [window setRootViewController:rootVc];
     [window makeKeyAndVisible];
 }

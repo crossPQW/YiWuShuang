@@ -13,7 +13,7 @@
 #import "ApiManager.h"
 #import "UserSession.h"
 #import "MBProgressHUD+helper.h"
-#import "RootViewController.h"
+#import "HomeViewController.h"
 
 @interface JoinOrizViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -74,7 +74,7 @@
 
 - (void)jumpToMain {
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
-    RootViewController *rootVc = [[RootViewController alloc] init];
+    HomeViewController *rootVc = [[HomeViewController alloc] init];
     [window setRootViewController:rootVc];
     [window makeKeyAndVisible];
 }

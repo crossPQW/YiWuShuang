@@ -11,12 +11,12 @@
 #import "NSObject+YYModel.h"
 #import "UserSession.h"
 #import "YKAddition.h"
-static NSString *sendCodeUrl = @"http://www.yws.com/api/sms/send";
-static NSString *loginUrl = @"http://www.yws.com/api/user/login";
-static NSString *getOrigUrl = @"http://www.yws.com/api/team/list";
-static NSString *getOrizIDUrl = @"http://www.yws.com/api/team/create";
-static NSString *teamNatureListUrl = @"http://www.yws.com/api/category/team";
-static NSString *joinTeam = @"http://www.yws.com/api/team/add";
+static NSString *sendCodeUrl = @"http://yiwushuang.sabinetek.com.cn/api/sms/send";
+static NSString *loginUrl = @"http://yiwushuang.sabinetek.com.cn/api/user/login";
+static NSString *getOrigUrl = @"http://yiwushuang.sabinetek.com.cn/api/team/list";
+static NSString *getOrizIDUrl = @"http://yiwushuang.sabinetek.com.cn/api/team/create";
+static NSString *teamNatureListUrl = @"http://yiwushuang.sabinetek.com.cn/api/category/team";
+static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
 @implementation ApiManager
 + (instancetype)manager {
     static ApiManager *manager;

@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		084906CDFC1F636C28D6635C /* Pods_YiWuShuang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C1F7CBFA98556F05A1B3D5 /* Pods_YiWuShuang.framework */; };
+		631BCBD0244C88B700D4ABAC /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBCF244C88B700D4ABAC /* BaseNavigationController.m */; };
+		631BCBD3244C8C8500D4ABAC /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBD2244C8C8500D4ABAC /* BaseTabBarController.m */; };
+		631BCBD6244C8CC100D4ABAC /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBD5244C8CC100D4ABAC /* ClassViewController.m */; };
+		631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBD8244C8CD100D4ABAC /* MineViewController.m */; };
+		631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBDC244C972100D4ABAC /* HomeTopView.m */; };
+		631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
-		63BE22C0242BCB0E0066A316 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* RootViewController.m */; };
+		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
 		63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C4242BCB100066A316 /* Assets.xcassets */; };
 		63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C6242BCB100066A316 /* LaunchScreen.storyboard */; };
@@ -65,11 +71,23 @@
 
 /* Begin PBXFileReference section */
 		35C1F7CBFA98556F05A1B3D5 /* Pods_YiWuShuang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YiWuShuang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		631BCBCE244C88B700D4ABAC /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		631BCBCF244C88B700D4ABAC /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		631BCBD1244C8C8500D4ABAC /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		631BCBD2244C8C8500D4ABAC /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		631BCBD4244C8CC100D4ABAC /* ClassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
+		631BCBD5244C8CC100D4ABAC /* ClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
+		631BCBD7244C8CD100D4ABAC /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		631BCBD8244C8CD100D4ABAC /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		631BCBDB244C972100D4ABAC /* HomeTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTopView.h; sourceTree = "<group>"; };
+		631BCBDC244C972100D4ABAC /* HomeTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTopView.m; sourceTree = "<group>"; };
+		631BCBE0244CA9F200D4ABAC /* PersonCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonCellTableViewCell.h; sourceTree = "<group>"; };
+		631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonCellTableViewCell.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		63BE22BE242BCB0E0066A316 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		63BE22BF242BCB0E0066A316 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		63BE22BE242BCB0E0066A316 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		63BE22BF242BCB0E0066A316 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		63BE22C2242BCB0E0066A316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63BE22C4242BCB100066A316 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63BE22C7242BCB100066A316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -176,6 +194,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		631BCBCA244C7F5800D4ABAC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				631BCBDA244C970200D4ABAC /* View */,
+				63BE22BE242BCB0E0066A316 /* HomeViewController.h */,
+				63BE22BF242BCB0E0066A316 /* HomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		631BCBCB244C7F5F00D4ABAC /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				631BCBD4244C8CC100D4ABAC /* ClassViewController.h */,
+				631BCBD5244C8CC100D4ABAC /* ClassViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		631BCBCC244C7F9500D4ABAC /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				631BCBD7244C8CD100D4ABAC /* MineViewController.h */,
+				631BCBD8244C8CD100D4ABAC /* MineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		631BCBCD244C813E00D4ABAC /* Thirdpart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Thirdpart;
+			sourceTree = "<group>";
+		};
+		631BCBDA244C970200D4ABAC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				631BCBDB244C972100D4ABAC /* HomeTopView.h */,
+				631BCBDC244C972100D4ABAC /* HomeTopView.m */,
+				631BCBE0244CA9F200D4ABAC /* PersonCellTableViewCell.h */,
+				631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		63BE22AC242BCB0E0066A316 = {
 			isa = PBXGroup;
 			children = (
@@ -201,13 +265,12 @@
 		63BE22B7242BCB0E0066A316 /* YiWuShuang */ = {
 			isa = PBXGroup;
 			children = (
+				631BCBCD244C813E00D4ABAC /* Thirdpart */,
 				63CEB15D2438DD4F00FB2146 /* Common */,
 				63CEB1592438D36200FB2146 /* Manager */,
 				63BE22F0242CF6630066A316 /* Category */,
 				63BE22ED242CF6180066A316 /* Buiness */,
 				63BE22F2242CF9360066A316 /* Resource */,
-				63BE22BE242BCB0E0066A316 /* RootViewController.h */,
-				63BE22BF242BCB0E0066A316 /* RootViewController.m */,
 				63BE22CA242BCB100066A316 /* main.m */,
 				63BE22C9242BCB100066A316 /* Info.plist */,
 				63BE22F1242CF68C0066A316 /* PrefixHeader.pch */,
@@ -236,6 +299,9 @@
 		63BE22ED242CF6180066A316 /* Buiness */ = {
 			isa = PBXGroup;
 			children = (
+				631BCBCC244C7F9500D4ABAC /* Mine */,
+				631BCBCB244C7F5F00D4ABAC /* Class */,
+				631BCBCA244C7F5800D4ABAC /* Home */,
 				63BE22EF242CF64E0066A316 /* UserSystem */,
 				63BE22EE242CF6430066A316 /* Login */,
 			);
@@ -336,6 +402,10 @@
 			children = (
 				63CEB15E2438DD5F00FB2146 /* BaseModel.h */,
 				63CEB15F2438DD5F00FB2146 /* BaseModel.m */,
+				631BCBCE244C88B700D4ABAC /* BaseNavigationController.h */,
+				631BCBCF244C88B700D4ABAC /* BaseNavigationController.m */,
+				631BCBD1244C8C8500D4ABAC /* BaseTabBarController.h */,
+				631BCBD2244C8C8500D4ABAC /* BaseTabBarController.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -553,15 +623,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631BCBD0244C88B700D4ABAC /* BaseNavigationController.m in Sources */,
 				63BE22F5242CF95F0066A316 /* User.m in Sources */,
 				63CEB1BA24432D9000FB2146 /* CALayer+Addition.m in Sources */,
 				63CEB1BF24432D9000FB2146 /* NSObject+Addition.m in Sources */,
 				63CEB163243B7FB900FB2146 /* ChooseOrizViewController.m in Sources */,
 				63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */,
-				63BE22C0242BCB0E0066A316 /* RootViewController.m in Sources */,
+				63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */,
 				63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */,
 				63CEB1B224432D9000FB2146 /* NSNumber+Addition.m in Sources */,
 				63CEB166243B88FE00FB2146 /* MBProgressHUD+helper.m in Sources */,
+				631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */,
 				63CEB1AA24432D9000FB2146 /* wwanconnect.c in Sources */,
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
@@ -575,13 +647,17 @@
 				63CEB1CC24433F4B00FB2146 /* CommonCellModel.m in Sources */,
 				63CEB1A824432D9000FB2146 /* UITableViewCell+Addition.m in Sources */,
 				63CEB1AE24432D9000FB2146 /* UIViewController+Addition.m in Sources */,
+				631BCBD6244C8CC100D4ABAC /* ClassViewController.m in Sources */,
 				63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */,
 				63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
 				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,
+				631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */,
+				631BCBD3244C8C8500D4ABAC /* BaseTabBarController.m in Sources */,
 				63CEB1C224432D9C00FB2146 /* UIView+DYKIOS.m in Sources */,
 				63CEB1D024434DBF00FB2146 /* CommonCell.m in Sources */,
+				631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */,
 				63CEB1B724432D9000FB2146 /* NSDate+CalculateDay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,11 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "RootViewController.h"
+#import "HomeViewController.h"
 #import "UserSession.h"
 #import "LoginViewController.h"
 #import "YKWoodpecker.h"
-
+#import "BaseNavigationController.h"
+#import "BaseTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -29,14 +30,15 @@
 #endif
     
     if ([[UserSession session] isAvailable]) {
-        RootViewController *rootVc = [[RootViewController alloc] init];
-        [self.window setRootViewController:rootVc];
+        BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
+//        BaseNavigationController *root = [[BaseNavigationController alloc] initWithRootViewController:tabBar];
+        [self.window setRootViewController:tabBar];
         [self.window makeKeyAndVisible];
     }else{
         UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
         LoginViewController *loginVc = [loginSb instantiateViewControllerWithIdentifier:@"loginVc"];
         
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVc];
+        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVc];
         [self.window setRootViewController:nav];
         [self.window makeKeyAndVisible];
     }
