@@ -59,6 +59,11 @@ NS_ASSUME_NONNULL_BEGIN
              name:(NSString *)name
           success:(void (^)(BaseModel *baseModel))success
           failure:(void (^)(NSError *error))failure;
+
+//成员列表
+- (void) memberList:(NSString *)teamId
+            success:(void (^)(BaseModel *baseModel))success
+            failure:(void (^)(NSError *error))failure;
 @end
 
 NS_ASSUME_NONNULL_END

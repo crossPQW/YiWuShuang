@@ -11,12 +11,20 @@
 #import "NSObject+YYModel.h"
 #import "UserSession.h"
 #import "YKAddition.h"
+//发送验证码
 static NSString *sendCodeUrl = @"/api/sms/send";
+//登录
 static NSString *loginUrl = @"/api/user/login";
+//获取组织列表
 static NSString *getOrigUrl = @"/api/team/list";
+//创建组织
 static NSString *getOrizIDUrl = @"/api/team/create";
+//获取组织分类
 static NSString *teamNatureListUrl = @"/api/category/team";
+//加入组织
 static NSString *joinTeam = @"/api/team/add";
+//成员列表
+static NSString *memberList = @"/api/team/departs";
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
 static NSString *releaseHost = @"https://www.yiwushuang.cn";
@@ -126,21 +134,21 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
              name:(NSString *)name
           success:(void (^)(BaseModel *baseModel))success
           failure:(void (^)(NSError *error))failure {
-    if (token.length == 0) {
-        if (failure) {
-            failure(nil);
-        }
-        return;
-    }
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
 //    [params setValue:token forKey:@"token"];
     [params yk_setValue:teamId forKey:@"team_id"];
     [params yk_setValue:name forKey:@"name"];
     [self requestWithApi:loginUrl params:params success:success failure:failure];
-    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
 }
 
+- (void) memberList:(NSString *)teamId
+            success:(void (^)(BaseModel *baseModel))success
+            failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:teamId forKey:@"team_id"];
+    [self requestWithApi:memberList params:params success:success failure:failure];
+}
 #pragma mark - basic
 - (void)requestWithApi:(NSString *)api params:(NSDictionary *)params success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {
     AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];

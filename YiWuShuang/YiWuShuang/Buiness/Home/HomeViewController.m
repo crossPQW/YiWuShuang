@@ -32,7 +32,7 @@
     self.teamList = @[];
     self.students = @[];
     [self setupSubviews];
-    [self requestData];
+    [self requestTeamList];
 }
 
 
@@ -64,7 +64,7 @@
     }];
 }
 
-- (void)requestData {
+- (void)requestTeamList {
     __weak typeof(self) weakSelf = self;
     [[ApiManager manager] getOrganization:[UserSession session].currentUser.token success:^(BaseModel * _Nonnull baseModel) {
         if ([baseModel.data isKindOfClass:[NSArray class]]) {
@@ -73,12 +73,24 @@
             NSString *name = [firstTeam stringForKey:@"name"];
             [weakSelf.navigationItem.leftBarButtonItem setTitle:name];
             [weakSelf.topView fillData:firstTeam];
+            [weakSelf requestMemberList];
         }
     } failure:^(NSError * _Nonnull error) {
         
     }];
+    
 }
 
+- (void)requestMemberList {
+    NSDictionary *firstTeam = self.teamList.firstObject;
+    NSString *teamID = [firstTeam stringForKey:@"id"];
+    [[ApiManager manager] memberList:teamID success:^(BaseModel * _Nonnull baseModel) {
+        
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+
+}
 #pragma mark - action
 - (void)tapLeftItem {
     
