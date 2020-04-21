@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface User : NSObject
 
 @property (nonatomic, strong)NSString *userId;
-@property (nonatomic, strong)NSString *username;
+@property (nonatomic, strong)NSString *avatar;
 @property (nonatomic, strong)NSString *nickname;
 @property (nonatomic, strong)NSString *mobile;
 @property (nonatomic, strong)NSString *token;

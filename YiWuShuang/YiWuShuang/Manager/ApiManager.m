@@ -11,12 +11,15 @@
 #import "NSObject+YYModel.h"
 #import "UserSession.h"
 #import "YKAddition.h"
-static NSString *sendCodeUrl = @"http://yiwushuang.sabinetek.com.cn/api/sms/send";
-static NSString *loginUrl = @"http://yiwushuang.sabinetek.com.cn/api/user/login";
-static NSString *getOrigUrl = @"http://yiwushuang.sabinetek.com.cn/api/team/list";
-static NSString *getOrizIDUrl = @"http://yiwushuang.sabinetek.com.cn/api/team/create";
-static NSString *teamNatureListUrl = @"http://yiwushuang.sabinetek.com.cn/api/category/team";
-static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
+static NSString *sendCodeUrl = @"/api/sms/send";
+static NSString *loginUrl = @"/api/user/login";
+static NSString *getOrigUrl = @"/api/team/list";
+static NSString *getOrizIDUrl = @"/api/team/create";
+static NSString *teamNatureListUrl = @"/api/category/team";
+static NSString *joinTeam = @"/api/team/add";
+
+static NSString *debugHost = @"https://test.yiwushuang.cn";
+static NSString *releaseHost = @"https://www.yiwushuang.cn";
 @implementation ApiManager
 + (instancetype)manager {
     static ApiManager *manager;
@@ -31,17 +34,7 @@ static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:phoneNumber forKey:@"mobile"];
     
-    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
-    [httpManager POST:sendCodeUrl parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BaseModel *model = [[BaseModel alloc] initWithDictionary:responseObject];
-        if (success) {
-            success(model);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
+    [self requestWithApi:sendCodeUrl params:params success:success failure:failure];
 }
 
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {
@@ -53,20 +46,9 @@ static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
     }
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:phoneNumber forKey:@"mobile"];
+//    [params setValue:phoneNumber forKey:@"mobile"];
     [params setValue:code forKey:@"captcha"];
-    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
-    [httpManager POST:loginUrl parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BaseModel *model = [[BaseModel alloc] initWithDictionary:responseObject];
-        if (success) {
-            success(model);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
-    
+    [self requestWithApi:loginUrl params:params success:success failure:failure];
 }
 
 - (void) getOrganization:(NSString *)token success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {
@@ -79,17 +61,7 @@ static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:token forKey:@"token"];
-    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
-    [httpManager POST:loginUrl parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BaseModel *model = [[BaseModel alloc] initWithDictionary:responseObject];
-        if (success) {
-            success(model);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
+    [self requestWithApi:getOrigUrl params:params success:success failure:failure];
 }
 
 - (void) getNatureList:(NSString *)token
@@ -104,17 +76,7 @@ static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:token forKey:@"token"];
-    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
-    [httpManager POST:teamNatureListUrl parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BaseModel *model = [[BaseModel alloc] initWithDictionary:responseObject];
-        if (success) {
-            success(model);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
+    [self requestWithApi:teamNatureListUrl params:params success:success failure:failure];
 }
 
 - (void) getOrganizationID:(NSString *)token
@@ -129,17 +91,7 @@ static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:token forKey:@"token"];
     [params yk_setValue:@"base" forKey:@"event"];
-    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
-    [httpManager POST:getOrizIDUrl parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BaseModel *model = [[BaseModel alloc] initWithDictionary:responseObject];
-        if (success) {
-            success(model);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
+    [self requestWithApi:getOrizIDUrl params:params success:success failure:failure];
 }
 
 
@@ -158,7 +110,7 @@ static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
         return;
     }
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:token forKey:@"token"];
+//    [params setValue:token forKey:@"token"];
     [params yk_setValue:@"info" forKey:@"event"];
     [params yk_setValue:teamId forKey:@"team_id"];
     [params yk_setValue:catId forKey:@"cat_id"];
@@ -166,17 +118,7 @@ static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
     [params yk_setValue:manager forKey:@"manager"];
     [params yk_setValue:name forKey:@"name"];
     
-    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
-    [httpManager POST:getOrizIDUrl parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BaseModel *model = [[BaseModel alloc] initWithDictionary:responseObject];
-        if (success) {
-            success(model);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
+    [self requestWithApi:getOrizIDUrl params:params success:success failure:failure];
 }
 
 - (void) joinTeam:(NSString *)token
@@ -192,11 +134,25 @@ static NSString *joinTeam = @"http://yiwushuang.sabinetek.com.cn/api/team/add";
     }
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:token forKey:@"token"];
+//    [params setValue:token forKey:@"token"];
     [params yk_setValue:teamId forKey:@"team_id"];
     [params yk_setValue:name forKey:@"name"];
+    [self requestWithApi:loginUrl params:params success:success failure:failure];
     AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
-    [httpManager POST:loginUrl parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+}
+
+#pragma mark - basic
+- (void)requestWithApi:(NSString *)api params:(NSDictionary *)params success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {
+    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
+    NSString *host = releaseHost;
+#ifdef DEBUG
+    host = debugHost;
+#endif
+    NSString *url = [host stringByAppendingString:api];
+    NSMutableDictionary *paramter = @{}.mutableCopy;
+    [paramter yk_setValue:[UserSession session].currentUser.token forKey:@"token"];
+    [paramter addEntriesFromDictionary:params];
+    [httpManager POST:url parameters:paramter headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         BaseModel *model = [[BaseModel alloc] initWithDictionary:responseObject];
         if (success) {
             success(model);

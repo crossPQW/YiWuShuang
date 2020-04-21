@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeTopView : UIView
-
+- (void)fillData:(NSDictionary *)data;
 @end
 
 NS_ASSUME_NONNULL_END
