@@ -14,6 +14,7 @@
 #import "MBProgressHUD+helper.h"
 #import "UserSession.h"
 #import "ChooseOrizViewController.h"
+#import "BaseTabBarController.h"
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
@@ -57,8 +58,6 @@
 }
 
 - (IBAction)clickLogin:(id)sender {
-    [self handleLoginSuccess];
-    return;
     BOOL hasAgress = self.checkBtn.isSelected;
     if (!hasAgress) {
         [MBProgressHUD showText:@"您还没有勾选同意" inView:self.view];
@@ -151,6 +150,8 @@
 }
 
 - (void)jumpToMainPage{
-    
+    BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
+    [[UIApplication sharedApplication].delegate.window setRootViewController:tabBar];
+    [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
 }
 @end

@@ -54,7 +54,7 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     }
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    [params setValue:phoneNumber forKey:@"mobile"];
+    [params setValue:phoneNumber forKey:@"mobile"];
     [params setValue:code forKey:@"captcha"];
     [self requestWithApi:loginUrl params:params success:success failure:failure];
 }
