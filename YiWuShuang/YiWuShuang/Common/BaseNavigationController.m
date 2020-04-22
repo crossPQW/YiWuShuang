@@ -25,4 +25,18 @@
     navBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]};
 }
 
+- (void)setBarStyle:(BOOL)themeStyle {
+    UIColor *titleColor;
+    UIColor *tineColor;
+    if (themeStyle) {
+        titleColor = [UIColor whiteColor];
+        tineColor = [UIColor colorWithHexRGB:@"#03C1AD"];
+    }else{
+        titleColor = [UIColor blackColor];
+        tineColor = [UIColor whiteColor];
+    }
+    UINavigationBar *navBar = [UINavigationBar appearance];
+    [navBar setBarTintColor:tineColor];
+    navBar.titleTextAttributes = @{NSForegroundColorAttributeName: titleColor,NSFontAttributeName:[UIFont systemFontOfSize:18]};
+}
 @end

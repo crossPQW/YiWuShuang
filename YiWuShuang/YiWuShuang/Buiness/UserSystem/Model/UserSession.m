@@ -62,7 +62,6 @@ static NSString *userkey = @"kUserInfoKey";
 }
 
 - (BOOL)isAvailable {
-    return NO;
     if (![self currentUser]) {
         return NO;
     }

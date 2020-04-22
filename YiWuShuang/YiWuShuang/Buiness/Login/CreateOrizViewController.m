@@ -17,12 +17,13 @@
 #import "CommonCell.h"
 #import "AppDelegate.h"
 #import "HomeViewController.h"
-@interface CreateOrizViewController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>
+#import "BaseNavigationController.h"
+#import "TeamPickView.h"
+@interface CreateOrizViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,TeamPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *finishBtn;
 @property (nonatomic, strong) NSString *oriID;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UIPickerView *pickerView;
 
 //组织名
 @property (nonatomic, strong) NSString *teamName;
@@ -33,6 +34,7 @@
 //联系人姓名
 @property (nonatomic, strong) NSString *userName;
 
+@property (nonatomic, strong) TeamPickView *pickView;
 @property (nonatomic, strong) NSArray *natureList;
 @property (nonatomic, strong) NSArray *dataSources;
 @end
@@ -48,7 +50,8 @@
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem = backItem;
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
     [self getOrgId];
     [self getNatureList];
     [self initTableView];
@@ -223,43 +226,37 @@
     CommonCellModel *model = self.dataSources[indexPath.row];
     if (model.tag == 100) {
         [self.view endEditing:YES];
-        self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.height - 300, self.view.width, 300)];
-        self.pickerView.backgroundColor = [UIColor whiteColor];
-        self.pickerView.delegate = self;
-        self.pickerView.dataSource = self;
-        [self.view addSubview:self.pickerView];
+        
+        
+        TeamPickView *pickView = [[TeamPickView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 320, self.view.width, 320)];
+        self.pickView = pickView;
+        pickView.delegate = self;
+        UIView *bgView = [[UIView alloc] init];
+        bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+        bgView.frame = [UIScreen mainScreen].bounds;
+        [bgView addSubview:pickView];
+        [[UIApplication sharedApplication].delegate.window addSubview:bgView];
+        [pickView setData:self.natureList];
     }
 }
 
-#pragma mark - pickerview
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
-
-- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return self.natureList.count;
-}
-
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSDictionary *dict = self.natureList[row];
-    NSString *name = [dict stringForKey:@"name"];
-    return name;
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSDictionary *dict = self.natureList[row];
+- (void)didSelectedTeamWithIndex:(NSInteger)index {
+    NSDictionary *dict = self.natureList[index];
     NSString *ID = [dict stringForKey:@"id"];
     NSString *name = [dict stringForKey:@"name"];
     self.teamNature = ID;
-    [pickerView removeFromSuperview];
-    
+    [self.pickView.superview removeFromSuperview];
+
     for (CommonCellModel *model in self.dataSources) {
         if (model.tag == 100) {
             model.subtitle = name;
             [self.tableView reloadData];
         }
     }
+}
+
+- (void)didDismiss {
+    [self.pickView.superview removeFromSuperview];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -309,7 +306,6 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.pickerView removeFromSuperview];
     [self.view endEditing:YES];
 }
 @end

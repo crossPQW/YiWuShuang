@@ -14,6 +14,7 @@
 		631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBD8244C8CD100D4ABAC /* MineViewController.m */; };
 		631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBDC244C972100D4ABAC /* HomeTopView.m */; };
 		631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */; };
+		6367A128245096C200F20404 /* TeamPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A127245096C200F20404 /* TeamPickView.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
@@ -83,6 +84,8 @@
 		631BCBDC244C972100D4ABAC /* HomeTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTopView.m; sourceTree = "<group>"; };
 		631BCBE0244CA9F200D4ABAC /* PersonCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonCellTableViewCell.h; sourceTree = "<group>"; };
 		631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonCellTableViewCell.m; sourceTree = "<group>"; };
+		6367A126245096C200F20404 /* TeamPickView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamPickView.h; sourceTree = "<group>"; };
+		6367A127245096C200F20404 /* TeamPickView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamPickView.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -312,7 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				63CEB1CD24434D7D00FB2146 /* Model */,
-				63CEB1C924433F3100FB2146 /* Models */,
+				63CEB1C924433F3100FB2146 /* Views */,
 				63BE22F6242CFB2D0066A316 /* LoginViewController.h */,
 				63BE22F7242CFB2D0066A316 /* LoginViewController.m */,
 				63CEB161243B7FB900FB2146 /* ChooseOrizViewController.h */,
@@ -421,13 +424,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		63CEB1C924433F3100FB2146 /* Models */ = {
+		63CEB1C924433F3100FB2146 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				63CEB1CA24433F4B00FB2146 /* CommonCellModel.h */,
 				63CEB1CB24433F4B00FB2146 /* CommonCellModel.m */,
+				6367A126245096C200F20404 /* TeamPickView.h */,
+				6367A127245096C200F20404 /* TeamPickView.m */,
 			);
-			path = Models;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		63CEB1CD24434D7D00FB2146 /* Model */ = {
@@ -644,6 +649,7 @@
 				63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */,
 				63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */,
 				63CEB1B824432D9000FB2146 /* UIAlertView+Addition.m in Sources */,
+				6367A128245096C200F20404 /* TeamPickView.m in Sources */,
 				63CEB1CC24433F4B00FB2146 /* CommonCellModel.m in Sources */,
 				63CEB1A824432D9000FB2146 /* UITableViewCell+Addition.m in Sources */,
 				63CEB1AE24432D9000FB2146 /* UIViewController+Addition.m in Sources */,
