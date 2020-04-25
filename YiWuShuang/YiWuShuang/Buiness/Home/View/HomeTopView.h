@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeTopView : UIView
+@property (strong, nonatomic)  UIButton *managericon;
 - (void)fillData:(NSDictionary *)data;
 @end
 

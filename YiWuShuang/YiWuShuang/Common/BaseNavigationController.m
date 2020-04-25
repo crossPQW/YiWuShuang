@@ -39,4 +39,5 @@
     [navBar setBarTintColor:tineColor];
     navBar.titleTextAttributes = @{NSForegroundColorAttributeName: titleColor,NSFontAttributeName:[UIFont systemFontOfSize:18]};
 }
+
 @end

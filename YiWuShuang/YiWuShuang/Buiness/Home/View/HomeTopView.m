@@ -16,7 +16,6 @@
 @interface HomeTopView()
 @property (strong, nonatomic)  UIImageView *avatarImage;
 @property (strong, nonatomic)  UILabel *nameLabel;
-@property (strong, nonatomic)  UIButton *managericon;
 @property (strong, nonatomic)  UILabel *flowLabel;
 
 @end

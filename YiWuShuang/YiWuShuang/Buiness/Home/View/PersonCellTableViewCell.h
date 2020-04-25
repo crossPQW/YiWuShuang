@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PersonModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonCellTableViewCell : UITableViewCell
-
+@property (nonatomic, strong) PersonModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

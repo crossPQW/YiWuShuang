@@ -15,6 +15,16 @@
 		631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBDC244C972100D4ABAC /* HomeTopView.m */; };
 		631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */; };
 		6367A128245096C200F20404 /* TeamPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A127245096C200F20404 /* TeamPickView.m */; };
+		6367A12E2454112A00F20404 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A12D2454112A00F20404 /* EmptyView.m */; };
+		6367A1302454113A00F20404 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A12F2454113A00F20404 /* EmptyView.xib */; };
+		6367A13824541F6900F20404 /* PersonHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A13724541F6900F20404 /* PersonHeaderView.m */; };
+		6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A13924541F8400F20404 /* PersonHeaderView.xib */; };
+		6367A13E2454478F00F20404 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A13D2454478F00F20404 /* PersonModel.m */; };
+		6367A1412454493D00F20404 /* TeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A1402454493D00F20404 /* TeamModel.m */; };
+		6367A14724544FCE00F20404 /* TeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A14524544FCE00F20404 /* TeamCell.m */; };
+		6367A14824544FCE00F20404 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A14624544FCE00F20404 /* TeamCell.xib */; };
+		6367A14B24546D8600F20404 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A14A24546D8600F20404 /* TeamViewController.m */; };
+		6367A14E24547FDF00F20404 /* AddPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A14D24547FDF00F20404 /* AddPersonViewController.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
@@ -86,6 +96,23 @@
 		631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonCellTableViewCell.m; sourceTree = "<group>"; };
 		6367A126245096C200F20404 /* TeamPickView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamPickView.h; sourceTree = "<group>"; };
 		6367A127245096C200F20404 /* TeamPickView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamPickView.m; sourceTree = "<group>"; };
+		6367A12C2454112A00F20404 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		6367A12D2454112A00F20404 /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		6367A12F2454113A00F20404 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		6367A13624541F6900F20404 /* PersonHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonHeaderView.h; sourceTree = "<group>"; };
+		6367A13724541F6900F20404 /* PersonHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonHeaderView.m; sourceTree = "<group>"; };
+		6367A13924541F8400F20404 /* PersonHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonHeaderView.xib; sourceTree = "<group>"; };
+		6367A13C2454478F00F20404 /* PersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		6367A13D2454478F00F20404 /* PersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		6367A13F2454493D00F20404 /* TeamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamModel.h; sourceTree = "<group>"; };
+		6367A1402454493D00F20404 /* TeamModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamModel.m; sourceTree = "<group>"; };
+		6367A14424544FCE00F20404 /* TeamCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamCell.h; sourceTree = "<group>"; };
+		6367A14524544FCE00F20404 /* TeamCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamCell.m; sourceTree = "<group>"; };
+		6367A14624544FCE00F20404 /* TeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
+		6367A14924546D8600F20404 /* TeamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamViewController.h; sourceTree = "<group>"; };
+		6367A14A24546D8600F20404 /* TeamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamViewController.m; sourceTree = "<group>"; };
+		6367A14C24547FDF00F20404 /* AddPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPersonViewController.h; sourceTree = "<group>"; };
+		6367A14D24547FDF00F20404 /* AddPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPersonViewController.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -200,9 +227,14 @@
 		631BCBCA244C7F5800D4ABAC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6367A13B2454477900F20404 /* Model */,
 				631BCBDA244C970200D4ABAC /* View */,
 				63BE22BE242BCB0E0066A316 /* HomeViewController.h */,
 				63BE22BF242BCB0E0066A316 /* HomeViewController.m */,
+				6367A14924546D8600F20404 /* TeamViewController.h */,
+				6367A14A24546D8600F20404 /* TeamViewController.m */,
+				6367A14C24547FDF00F20404 /* AddPersonViewController.h */,
+				6367A14D24547FDF00F20404 /* AddPersonViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -237,10 +269,30 @@
 			children = (
 				631BCBDB244C972100D4ABAC /* HomeTopView.h */,
 				631BCBDC244C972100D4ABAC /* HomeTopView.m */,
+				6367A14424544FCE00F20404 /* TeamCell.h */,
+				6367A14524544FCE00F20404 /* TeamCell.m */,
+				6367A14624544FCE00F20404 /* TeamCell.xib */,
 				631BCBE0244CA9F200D4ABAC /* PersonCellTableViewCell.h */,
 				631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */,
+				6367A13624541F6900F20404 /* PersonHeaderView.h */,
+				6367A13724541F6900F20404 /* PersonHeaderView.m */,
+				6367A13924541F8400F20404 /* PersonHeaderView.xib */,
+				6367A12C2454112A00F20404 /* EmptyView.h */,
+				6367A12D2454112A00F20404 /* EmptyView.m */,
+				6367A12F2454113A00F20404 /* EmptyView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6367A13B2454477900F20404 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6367A13C2454478F00F20404 /* PersonModel.h */,
+				6367A13D2454478F00F20404 /* PersonModel.m */,
+				6367A13F2454493D00F20404 /* TeamModel.h */,
+				6367A1402454493D00F20404 /* TeamModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		63BE22AC242BCB0E0066A316 = {
@@ -560,8 +612,11 @@
 			files = (
 				63CEB14F242D03C000FB2146 /* Login.storyboard in Resources */,
 				63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */,
+				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
 				63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */,
+				6367A14824544FCE00F20404 /* TeamCell.xib in Resources */,
 				63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */,
+				6367A1302454113A00F20404 /* EmptyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,18 +683,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6367A13E2454478F00F20404 /* PersonModel.m in Sources */,
 				631BCBD0244C88B700D4ABAC /* BaseNavigationController.m in Sources */,
 				63BE22F5242CF95F0066A316 /* User.m in Sources */,
 				63CEB1BA24432D9000FB2146 /* CALayer+Addition.m in Sources */,
 				63CEB1BF24432D9000FB2146 /* NSObject+Addition.m in Sources */,
 				63CEB163243B7FB900FB2146 /* ChooseOrizViewController.m in Sources */,
 				63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */,
+				6367A13824541F6900F20404 /* PersonHeaderView.m in Sources */,
+				6367A14724544FCE00F20404 /* TeamCell.m in Sources */,
 				63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */,
 				63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */,
 				63CEB1B224432D9000FB2146 /* NSNumber+Addition.m in Sources */,
 				63CEB166243B88FE00FB2146 /* MBProgressHUD+helper.m in Sources */,
 				631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */,
 				63CEB1AA24432D9000FB2146 /* wwanconnect.c in Sources */,
+				6367A12E2454112A00F20404 /* EmptyView.m in Sources */,
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
@@ -647,6 +706,7 @@
 				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
 				63CEB1AC24432D9000FB2146 /* NSDateFormatter+Addition.m in Sources */,
 				63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */,
+				6367A1412454493D00F20404 /* TeamModel.m in Sources */,
 				63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */,
 				63CEB1B824432D9000FB2146 /* UIAlertView+Addition.m in Sources */,
 				6367A128245096C200F20404 /* TeamPickView.m in Sources */,
@@ -655,12 +715,14 @@
 				63CEB1AE24432D9000FB2146 /* UIViewController+Addition.m in Sources */,
 				631BCBD6244C8CC100D4ABAC /* ClassViewController.m in Sources */,
 				63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */,
+				6367A14B24546D8600F20404 /* TeamViewController.m in Sources */,
 				63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
 				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,
 				631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */,
 				631BCBD3244C8C8500D4ABAC /* BaseTabBarController.m in Sources */,
+				6367A14E24547FDF00F20404 /* AddPersonViewController.m in Sources */,
 				63CEB1C224432D9C00FB2146 /* UIView+DYKIOS.m in Sources */,
 				63CEB1D024434DBF00FB2146 /* CommonCell.m in Sources */,
 				631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */,
