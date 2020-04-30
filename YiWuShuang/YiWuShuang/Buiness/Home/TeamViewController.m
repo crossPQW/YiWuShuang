@@ -24,6 +24,7 @@
 #import "AddPersonViewController.h"
 
 @interface TeamViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) HomeTopView *topView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *data;
@@ -72,6 +73,15 @@
 - (void)setupSubviews {
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.title = self.model.name;
+    
+    [self.view addSubview:self.serchBar];
+    [self.serchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(15);
+        make.right.equalTo(self.view.mas_right).offset(-15);
+        make.top.mas_equalTo(10);
+        make.height.mas_equalTo(42);
+    }];
+    
     HomeTopView *topView = [[HomeTopView alloc] init];
     self.topView = topView;
     [self.view addSubview:topView];
@@ -82,7 +92,7 @@
     [self.view addSubview:self.addStudentBtn];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).with.offset(0);
-        make.top.equalTo(self.view).with.offset(0);
+        make.top.equalTo(self.serchBar.mas_bottom).with.offset(0);
         make.right.equalTo(self.view).with.offset(0);
         make.height.mas_equalTo(74);
     }];
@@ -218,5 +228,14 @@
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     return btn;
+}
+
+- (UISearchBar *)serchBar {
+    if (!_serchBar) {
+        _serchBar = [[UISearchBar alloc] init];
+        _serchBar.placeholder = @"搜索";
+        _serchBar.searchBarStyle = UISearchBarStyleMinimal;
+    }
+    return _serchBar;
 }
 @end

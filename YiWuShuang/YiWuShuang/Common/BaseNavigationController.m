@@ -23,6 +23,7 @@
     UINavigationBar *navBar = [UINavigationBar appearance];
     [navBar setBarTintColor:[UIColor colorWithHexRGB:@"#03C1AD"]];
     navBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]};
+
 }
 
 - (void)setBarStyle:(BOOL)themeStyle {

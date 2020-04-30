@@ -30,6 +30,7 @@
 - (void)setModel:(TeamModel *)model {
     _model = model;
     self.name.text = model.name;
+    self.image.image = [UIImage imageNamed:@"team_avatar"];
     self.count.text = [NSString stringWithFormat:@"%d人",model.members.count];
     
 }

@@ -25,6 +25,8 @@
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) NSArray *teamList;//组织列表
+
+@property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) HomeTopView *topView;
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -37,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithHexRGB:@"#F5F7FA"];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.showFirstSection = YES;
     self.showSecondSection = YES;
     self.data = @[];
@@ -62,12 +64,20 @@
 - (void)setupSubviews {
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    [self.view addSubview:self.serchBar];
+    [self.serchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(15);
+        make.right.equalTo(self.view.mas_right).offset(-15);
+        make.top.mas_equalTo(10);
+        make.height.mas_equalTo(42);
+    }];
+    
     HomeTopView *topView = [[HomeTopView alloc] init];
     self.topView = topView;
     [self.view addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).with.offset(0);
-        make.top.equalTo(self.view).with.offset(0);
+        make.top.equalTo(self.serchBar.mas_bottom).with.offset(0);
         make.right.equalTo(self.view).with.offset(0);
         make.height.mas_equalTo(74);
     }];
@@ -266,5 +276,14 @@
         _tableView.dataSource = self;
     }
     return _tableView;
+}
+
+- (UISearchBar *)serchBar {
+    if (!_serchBar) {
+        _serchBar = [[UISearchBar alloc] init];
+        _serchBar.placeholder = @"搜索";
+        _serchBar.searchBarStyle = UISearchBarStyleMinimal;
+    }
+    return _serchBar;
 }
 @end
