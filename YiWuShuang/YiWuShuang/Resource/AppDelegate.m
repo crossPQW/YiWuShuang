@@ -29,19 +29,34 @@
     [[YKWoodpeckerManager sharedInstance] show];
 #endif
     
-    if ([[UserSession session] isAvailable]) {
-        BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
-//        BaseNavigationController *root = [[BaseNavigationController alloc] initWithRootViewController:tabBar];
-        [self.window setRootViewController:tabBar];
-        [self.window makeKeyAndVisible];
-    }else{
-        UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-        LoginViewController *loginVc = [loginSb instantiateViewControllerWithIdentifier:@"loginVc"];
-        
-        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVc];
-        [self.window setRootViewController:nav];
-        [self.window makeKeyAndVisible];
-    }
+    BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
+    [self.window setRootViewController:tabBar];
+    [self.window makeKeyAndVisible];
+    
+    [[UserSession session] checkUserAvailable:^(BOOL availble) {
+        if (!availble) {
+            
+            UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+            LoginViewController *loginVc = [loginSb instantiateViewControllerWithIdentifier:@"loginVc"];
+            
+            BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVc];
+            [self.window setRootViewController:nav];
+            [self.window makeKeyAndVisible];
+        }
+    }];
+//    if ([[UserSession session] isAvailable]) {
+//        BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
+////        BaseNavigationController *root = [[BaseNavigationController alloc] initWithRootViewController:tabBar];
+//        [self.window setRootViewController:tabBar];
+//        [self.window makeKeyAndVisible];
+//    }else{
+//        UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+//        LoginViewController *loginVc = [loginSb instantiateViewControllerWithIdentifier:@"loginVc"];
+//
+//        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVc];
+//        [self.window setRootViewController:nav];
+//        [self.window makeKeyAndVisible];
+//    }
     
     return YES;
 }

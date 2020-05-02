@@ -8,7 +8,7 @@
 
 #import "UserSession.h"
 #import "ApiManager.h"
-
+#import "YKAddition.h"
 static NSString *userkey = @"kUserInfoKey";
 @interface UserSession()
 @property (nonatomic, strong) User *user;
@@ -73,5 +73,34 @@ static NSString *userkey = @"kUserInfoKey";
         return NO;
     }
     
+}
+
+- (void)checkUserAvailable:(void (^)(BOOL availble))available {
+    __weak typeof(self) weakSelf = self;
+    [[ApiManager manager] checkTokenSuccess:^(BaseModel * _Nonnull baseModel) {
+        if (baseModel.code == 1 && available) {
+            available(YES);
+            [[ApiManager manager] refreshTokenSuccess:^(BaseModel * _Nonnull baseModel) {
+                NSDictionary *data = baseModel.data;
+                NSString *token = [data stringForKey:@"token"];
+                [weakSelf updateToken:token];
+            } failure:nil];
+        }else{
+            available(NO);
+        }
+    } failure:^(NSError * _Nonnull error) {
+        if (available) {
+            available(NO);
+        }
+    }];
+}
+
+- (void)updateToken:(NSString *)token {
+    [self currentUser].token = token;
+    
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] valueForKey:userkey];
+    NSMutableDictionary *tempDict = userInfo.mutableCopy;
+    [tempDict yk_setValue:token forKey:@"token"];
+    [self saveUserInfo:tempDict];
 }
 @end

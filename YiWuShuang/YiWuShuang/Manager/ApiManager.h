@@ -15,11 +15,18 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiManager : NSObject
 + (instancetype)manager;
 
-
+- (NSString *)getHost;
 //获取验证码
 - (void)sendMessageWithPhoneNumber:(NSString *)phoneNumber
                            success:(void (^)(BaseModel *baseModel))success
                            failure:(void (^)(NSError *error))failure;
+
+//检查 token
+- (void)checkTokenSuccess:(void (^)(BaseModel *baseModel))success
+                  failure:(void (^)(NSError *error))failure;
+//刷新 token
+- (void)refreshTokenSuccess:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure;
 
 //登录
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber

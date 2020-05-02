@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (User *)currentUser;
 
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code success:(void (^)(User *user))success failure:(void (^)(NSError *error))failure;
+- (void)checkUserAvailable:(void (^)(BOOL availble))available;
 @end
 
 NS_ASSUME_NONNULL_END

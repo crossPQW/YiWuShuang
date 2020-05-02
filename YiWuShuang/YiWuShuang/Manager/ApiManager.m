@@ -13,6 +13,10 @@
 #import "YKAddition.h"
 //发送验证码
 static NSString *sendCodeUrl = @"/api/sms/send";
+//检查 token
+static NSString *checkTokenUrl = @"/api/token/check";
+//刷新 token
+static NSString *refreshTokenUrl = @"/api/token/refresh";
 //登录
 static NSString *loginUrl = @"/api/user/login";
 //获取组织列表
@@ -38,11 +42,29 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     return manager;
 }
 
+- (NSString *)getHost {
+#ifdef DEBUG
+    return debugHost;
+#endif
+    return releaseHost;
+}
+
 - (void)sendMessageWithPhoneNumber:(NSString *)phoneNumber success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure; {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:phoneNumber forKey:@"mobile"];
     
     [self requestWithApi:sendCodeUrl params:params success:success failure:failure];
+}
+
+- (void)checkTokenSuccess:(void (^)(BaseModel *baseModel))success
+                  failure:(void (^)(NSError *error))failure {
+    [self requestWithApi:checkTokenUrl params:nil success:success failure:failure];
+}
+
+//刷新 token
+- (void)refreshTokenSuccess:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure {
+    [self requestWithApi:refreshTokenUrl params:nil success:success failure:failure];
 }
 
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {
