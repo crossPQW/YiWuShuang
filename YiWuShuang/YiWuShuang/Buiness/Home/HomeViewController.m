@@ -99,10 +99,14 @@
         make.bottom.equalTo(self.view.mas_bottom);
     }];
     
+    __weak typeof(self) weakSelf = self;
     EmptyView *emptyView = [EmptyView emptyView];
     emptyView.block = ^{
-        NSLog(@"tap invate member");
-        [self.tableView reloadData];
+        AddPersonViewController *addStu = [[AddPersonViewController alloc] init];
+        addStu.hidesBottomBarWhenPushed = YES;
+        addStu.teamID = self.currentTeamID;
+        addStu.type = 1;
+        [weakSelf.navigationController pushViewController:addStu animated:YES];
     };
     self.tableView.backgroundView = emptyView;
 }
