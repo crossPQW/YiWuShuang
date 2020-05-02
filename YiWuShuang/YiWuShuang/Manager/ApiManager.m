@@ -29,6 +29,8 @@ static NSString *teamNatureListUrl = @"/api/category/team";
 static NSString *joinTeam = @"/api/team/add";
 //成员列表
 static NSString *memberList = @"/api/team/departs";
+//添加成员、学员
+static NSString *addMemberUrl = @"/api/team/user";
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
 static NSString *releaseHost = @"https://www.yiwushuang.cn";
@@ -171,6 +173,22 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [params yk_setValue:teamId forKey:@"team_id"];
     [self requestWithApi:memberList params:params success:success failure:failure];
 }
+
+- (void)addMemberWithTeamId:(NSString *)teamId partId:(NSString *)part_id name:(NSString *)name mobild:(NSString *)mobile type:(NSString *)type isManager:(BOOL)isManager success:(void (^)(BaseModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params yk_setValue:teamId forKey:@"team_id"];
+    [params yk_setValue:part_id forKey:@"part_id"];
+    [params yk_setValue:name forKey:@"name"];
+    [params yk_setValue:mobile forKey:@"mobile"];
+    [params yk_setValue:type forKey:@"type"];
+    if (isManager) {
+        [params yk_setValue:@1 forKey:@"is_manager"];
+    }else{
+        [params yk_setValue:@0 forKey:@"is_manager"];
+    }
+    [self requestWithApi:addMemberUrl params:params success:success failure:failure];
+}
+
 #pragma mark - basic
 - (void)requestWithApi:(NSString *)api params:(NSDictionary *)params success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {
     AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AddPersonViewController : BaseViewController
 @property (nonatomic, assign) NSInteger type;//1. 成员, 2.学员
+
+//组织 ID
+@property (nonatomic, strong) NSString *teamID;
 @end
 
 NS_ASSUME_NONNULL_END

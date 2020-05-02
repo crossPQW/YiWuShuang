@@ -124,11 +124,13 @@
 - (void)addMember:(id)sender {
     AddPersonViewController *vc = [[AddPersonViewController alloc] init];
     vc.type = 1;
+    vc.teamID = self.model.ID;
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)addStudent:(id)sender {
     AddPersonViewController *vc = [[AddPersonViewController alloc] init];
     vc.type = 2;
+    vc.teamID = self.model.ID;
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - tableview

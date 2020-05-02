@@ -38,6 +38,8 @@
 
 @property (nonatomic, assign) BOOL showFirstSection;
 @property (nonatomic, assign) BOOL showSecondSection;
+
+@property (nonatomic, strong) NSString *currentTeamID;
 @end
 
 @implementation HomeViewController
@@ -51,7 +53,7 @@
     self.data = @[];
     self.teamList = @[];
     [self setupSubviews];
-    [self requestTeamList];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,6 +66,7 @@
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexRGB:@"#03C1AD"];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithHexRGB:@"#03C1AD"]};
+    [self requestTeamList];
 }
 
 
@@ -124,6 +127,7 @@
 - (void)requestMemberList {
     NSDictionary *firstTeam = self.teamList.firstObject;
     NSString *teamID = [firstTeam stringForKey:@"id"];
+    self.currentTeamID = teamID;
     [[ApiManager manager] memberList:teamID success:^(BaseModel * _Nonnull baseModel) {
         [self parseDataWithDictionary:baseModel.data];
     } failure:^(NSError * _Nonnull error) {
@@ -281,13 +285,15 @@
         popView.addMemberBlock = ^{
             AddPersonViewController *addMemberVc = [[AddPersonViewController alloc] init];
             addMemberVc.hidesBottomBarWhenPushed = YES;
-            addMemberVc.type = 1;
+            addMemberVc.teamID = self.currentTeamID;
+            addMemberVc.type = 2;
             [weakSelf.navigationController pushViewController:addMemberVc animated:YES];
         };
         popView.addStudentBlock = ^{
             AddPersonViewController *addStu = [[AddPersonViewController alloc] init];
             addStu.hidesBottomBarWhenPushed = YES;
-            addStu.type = 2;
+            addStu.teamID = self.currentTeamID;
+            addStu.type = 1;
             [weakSelf.navigationController pushViewController:addStu animated:YES];
         };
         popView.addTeamBlock = ^{

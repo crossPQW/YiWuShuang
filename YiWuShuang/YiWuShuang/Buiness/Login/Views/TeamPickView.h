@@ -12,7 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TeamPickerViewDelegate <NSObject>
 
+@required
 - (void)didSelectedTeamWithIndex:(NSInteger)index;
+
+@optional
 - (void)didDismiss;
 
 @end

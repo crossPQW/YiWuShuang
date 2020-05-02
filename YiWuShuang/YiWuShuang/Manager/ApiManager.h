@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)manager;
 
 - (NSString *)getHost;
+
+#pragma mark - 登录
 //获取验证码
 - (void)sendMessageWithPhoneNumber:(NSString *)phoneNumber
                            success:(void (^)(BaseModel *baseModel))success
@@ -34,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
                      success:(void (^)(BaseModel *baseModel))success
                      failure:(void (^)(NSError *error))failure;
 
+#pragma mark - 组织相关
 //获取组织列表
 - (void) getOrganization:(NSString *)token
                  success:(void (^)(BaseModel *baseModel))success
@@ -67,8 +70,19 @@ NS_ASSUME_NONNULL_BEGIN
           success:(void (^)(BaseModel *baseModel))success
           failure:(void (^)(NSError *error))failure;
 
+#pragma mark - 成员相关
 //成员列表
 - (void) memberList:(NSString *)teamId
+            success:(void (^)(BaseModel *baseModel))success
+            failure:(void (^)(NSError *error))failure;
+
+//添加学员、成员，type 1=成员。2=学员
+- (void) addMemberWithTeamId:(NSString *)teamId
+                      partId:(NSString *)part_id
+                        name:(NSString *)name
+                      mobild:(NSString *)mobile
+                        type:(NSString *)type
+                   isManager:(BOOL)isManager
             success:(void (^)(BaseModel *baseModel))success
             failure:(void (^)(NSError *error))failure;
 @end
