@@ -22,9 +22,15 @@
 #import "TeamModel.h"
 #import "TeamCell.h"
 #import "TeamViewController.h"
+#import "HomePopView.h"
+#import "AddPersonViewController.h"
+#import "CreateOrizViewController.h"
+#import "JoinOrizViewController.h"
+#import "AddTeamViewController.h"
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) NSArray *teamList;//组织列表
+@property (nonatomic, strong) HomePopView *popView;
 
 @property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) HomeTopView *topView;
@@ -262,7 +268,44 @@
 }
 
 - (void)tapRightItem {
-    
+    if (self.popView.superview) {
+        [self.popView removeFromSuperview];
+        self.popView = nil;
+    }else{
+        HomePopView *popView = [HomePopView popView];
+        self.popView = popView;
+        [self.view addSubview:popView];
+        popView.frame = CGRectMake(self.view.width - 143 - 10, 0, 143, 264);
+        
+        __weak typeof(self) weakSelf = self;
+        popView.addMemberBlock = ^{
+            AddPersonViewController *addMemberVc = [[AddPersonViewController alloc] init];
+            addMemberVc.hidesBottomBarWhenPushed = YES;
+            addMemberVc.type = 1;
+            [weakSelf.navigationController pushViewController:addMemberVc animated:YES];
+        };
+        popView.addStudentBlock = ^{
+            AddPersonViewController *addStu = [[AddPersonViewController alloc] init];
+            addStu.hidesBottomBarWhenPushed = YES;
+            addStu.type = 2;
+            [weakSelf.navigationController pushViewController:addStu animated:YES];
+        };
+        popView.addTeamBlock = ^{
+            AddTeamViewController *teamVc = [[AddTeamViewController alloc] init];
+            teamVc.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:teamVc animated:YES];
+        };
+        popView.addOrigBlock = ^{
+            CreateOrizViewController *creatVc = [[CreateOrizViewController alloc] init];
+            creatVc.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:creatVc animated:YES];
+        };
+        popView.joinOrigBlock = ^{
+            JoinOrizViewController *joinVc = [[JoinOrizViewController alloc] init];
+            joinVc.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:joinVc animated:YES];
+        };
+    }
 }
 
 - (UITableView *)tableView {

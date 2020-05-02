@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomePopView">
+            <rect key="frame" x="0.0" y="0.0" width="143" height="264"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Y1g-RD-wWx">
+                    <rect key="frame" x="0.0" y="0.0" width="143" height="264"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHM-nt-H90">
+                    <rect key="frame" x="0.0" y="164" width="143" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="xwJ-UX-1cu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="创建组织" image="pop_add_orig">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapBtn3:" destination="iN0-l3-epB" eventType="touchUpInside" id="h0Q-8A-xCS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txp-VA-J0R">
+                    <rect key="frame" x="0.0" y="14" width="143" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="hNt-bg-L8E"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="添加学员" image="pop_add_student">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapBtn0:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ea6-ea-zOd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACj-WK-rLW">
+                    <rect key="frame" x="0.0" y="114" width="143" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="erN-4o-4fH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="创建部门" image="pop_add_team">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapBtn2:" destination="iN0-l3-epB" eventType="touchUpInside" id="6bi-PP-x5L"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMa-1W-Bwg">
+                    <rect key="frame" x="0.0" y="64" width="143" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Fsm-aP-qNA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="添加成员" image="pop_add_member">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapBtn1:" destination="iN0-l3-epB" eventType="touchUpInside" id="tSD-gM-jJh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-In-QEy">
+                    <rect key="frame" x="0.0" y="214" width="143" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="dj5-JN-1QQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="加入组织" image="pop_join_orig">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapBtn4:" destination="iN0-l3-epB" eventType="touchUpInside" id="wO6-Wd-W15"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Y1g-RD-wWx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4hK-mR-2Z3"/>
+                <constraint firstAttribute="bottom" secondItem="Y1g-RD-wWx" secondAttribute="bottom" id="66v-z7-v1R"/>
+                <constraint firstItem="txp-VA-J0R" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="8Lo-bv-hA0"/>
+                <constraint firstItem="wMa-1W-Bwg" firstAttribute="top" secondItem="txp-VA-J0R" secondAttribute="bottom" id="K1R-J6-ZFY"/>
+                <constraint firstItem="ACj-WK-rLW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QUM-Jx-QS8"/>
+                <constraint firstAttribute="trailing" secondItem="Y1g-RD-wWx" secondAttribute="trailing" id="TuR-6U-z2P"/>
+                <constraint firstItem="1LJ-In-QEy" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WDo-dV-Mcz"/>
+                <constraint firstItem="txp-VA-J0R" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Wqb-jL-smZ"/>
+                <constraint firstItem="ACj-WK-rLW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="bmG-fY-ZB4"/>
+                <constraint firstItem="wMa-1W-Bwg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="cbR-e3-oau"/>
+                <constraint firstItem="1LJ-In-QEy" firstAttribute="top" secondItem="ZHM-nt-H90" secondAttribute="bottom" id="clg-xc-Lh5"/>
+                <constraint firstItem="ACj-WK-rLW" firstAttribute="top" secondItem="wMa-1W-Bwg" secondAttribute="bottom" id="hBQ-MV-kF5"/>
+                <constraint firstItem="1LJ-In-QEy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iDJ-ph-Ii8"/>
+                <constraint firstItem="Y1g-RD-wWx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kNv-TR-Nzl"/>
+                <constraint firstItem="ZHM-nt-H90" firstAttribute="top" secondItem="ACj-WK-rLW" secondAttribute="bottom" id="oI3-Mm-Krc"/>
+                <constraint firstItem="ZHM-nt-H90" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="saR-ht-YXf"/>
+                <constraint firstItem="wMa-1W-Bwg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tDi-62-prD"/>
+                <constraint firstItem="ZHM-nt-H90" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="uH1-Ap-4El"/>
+                <constraint firstItem="txp-VA-J0R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wnK-tu-tku"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-504" y="33"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="black_bg" width="143" height="276"/>
+        <image name="pop_add_member" width="20" height="21"/>
+        <image name="pop_add_orig" width="20" height="20"/>
+        <image name="pop_add_student" width="16" height="18"/>
+        <image name="pop_add_team" width="20" height="20"/>
+        <image name="pop_join_orig" width="20" height="20"/>
+    </resources>
+</document>

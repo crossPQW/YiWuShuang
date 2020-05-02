@@ -25,6 +25,10 @@
 		6367A14824544FCE00F20404 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A14624544FCE00F20404 /* TeamCell.xib */; };
 		6367A14B24546D8600F20404 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A14A24546D8600F20404 /* TeamViewController.m */; };
 		6367A14E24547FDF00F20404 /* AddPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A14D24547FDF00F20404 /* AddPersonViewController.m */; };
+		6367A151245DA5A800F20404 /* HomePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A150245DA5A800F20404 /* HomePopView.m */; };
+		6367A153245DA5B500F20404 /* HomePopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A152245DA5B500F20404 /* HomePopView.xib */; };
+		6367A156245DB12500F20404 /* AddTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A155245DB12500F20404 /* AddTeamViewController.m */; };
+		6367A159245DB5C100F20404 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A158245DB5C100F20404 /* BaseViewController.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
@@ -113,6 +117,13 @@
 		6367A14A24546D8600F20404 /* TeamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamViewController.m; sourceTree = "<group>"; };
 		6367A14C24547FDF00F20404 /* AddPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPersonViewController.h; sourceTree = "<group>"; };
 		6367A14D24547FDF00F20404 /* AddPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPersonViewController.m; sourceTree = "<group>"; };
+		6367A14F245DA5A800F20404 /* HomePopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePopView.h; sourceTree = "<group>"; };
+		6367A150245DA5A800F20404 /* HomePopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePopView.m; sourceTree = "<group>"; };
+		6367A152245DA5B500F20404 /* HomePopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePopView.xib; sourceTree = "<group>"; };
+		6367A154245DB12500F20404 /* AddTeamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTeamViewController.h; sourceTree = "<group>"; };
+		6367A155245DB12500F20404 /* AddTeamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTeamViewController.m; sourceTree = "<group>"; };
+		6367A157245DB5C100F20404 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		6367A158245DB5C100F20404 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -235,6 +246,8 @@
 				6367A14A24546D8600F20404 /* TeamViewController.m */,
 				6367A14C24547FDF00F20404 /* AddPersonViewController.h */,
 				6367A14D24547FDF00F20404 /* AddPersonViewController.m */,
+				6367A154245DB12500F20404 /* AddTeamViewController.h */,
+				6367A155245DB12500F20404 /* AddTeamViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -280,6 +293,9 @@
 				6367A12C2454112A00F20404 /* EmptyView.h */,
 				6367A12D2454112A00F20404 /* EmptyView.m */,
 				6367A12F2454113A00F20404 /* EmptyView.xib */,
+				6367A14F245DA5A800F20404 /* HomePopView.h */,
+				6367A150245DA5A800F20404 /* HomePopView.m */,
+				6367A152245DA5B500F20404 /* HomePopView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -461,6 +477,8 @@
 				631BCBCF244C88B700D4ABAC /* BaseNavigationController.m */,
 				631BCBD1244C8C8500D4ABAC /* BaseTabBarController.h */,
 				631BCBD2244C8C8500D4ABAC /* BaseTabBarController.m */,
+				6367A157245DB5C100F20404 /* BaseViewController.h */,
+				6367A158245DB5C100F20404 /* BaseViewController.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -613,6 +631,7 @@
 				63CEB14F242D03C000FB2146 /* Login.storyboard in Resources */,
 				63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */,
 				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
+				6367A153245DA5B500F20404 /* HomePopView.xib in Resources */,
 				63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */,
 				6367A14824544FCE00F20404 /* TeamCell.xib in Resources */,
 				63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */,
@@ -694,6 +713,7 @@
 				6367A14724544FCE00F20404 /* TeamCell.m in Sources */,
 				63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */,
 				63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */,
+				6367A159245DB5C100F20404 /* BaseViewController.m in Sources */,
 				63CEB1B224432D9000FB2146 /* NSNumber+Addition.m in Sources */,
 				63CEB166243B88FE00FB2146 /* MBProgressHUD+helper.m in Sources */,
 				631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */,
@@ -716,6 +736,8 @@
 				631BCBD6244C8CC100D4ABAC /* ClassViewController.m in Sources */,
 				63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */,
 				6367A14B24546D8600F20404 /* TeamViewController.m in Sources */,
+				6367A156245DB12500F20404 /* AddTeamViewController.m in Sources */,
+				6367A151245DA5A800F20404 /* HomePopView.m in Sources */,
 				63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
