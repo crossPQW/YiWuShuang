@@ -35,6 +35,9 @@ static NSString *joinTeam = @"/api/team/add";
 static NSString *memberList = @"/api/team/departs";
 //添加成员、学员
 static NSString *addMemberUrl = @"/api/team/user";
+//删除成员、学员
+static NSString *deleteMemberUrl = @"/api/team/delete";
+
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
 static NSString *releaseHost = @"https://www.yiwushuang.cn";
@@ -211,6 +214,17 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
         [params yk_setValue:@0 forKey:@"is_manager"];
     }
     [self requestWithApi:addMemberUrl params:params success:success failure:failure];
+}
+
+- (void) deleteMembersWithIDs:(NSArray *)ids
+                       teamId:(NSString *)teamId
+                      success:(void (^)(BaseModel *baseModel))success
+                      failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params yk_setValue:teamId forKey:@"team_id"];
+    NSString *idsStr = [ids componentsJoinedByString:@","];
+    [params yk_setValue:idsStr forKey:@"user_ids"];
+    [self requestWithApi:deleteMemberUrl params:params success:success failure:failure];
 }
 
 #pragma mark - basic

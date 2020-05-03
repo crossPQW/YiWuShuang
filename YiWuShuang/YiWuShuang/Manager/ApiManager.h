@@ -95,6 +95,12 @@ NS_ASSUME_NONNULL_BEGIN
                    isManager:(BOOL)isManager
             success:(void (^)(BaseModel *baseModel))success
             failure:(void (^)(NSError *error))failure;
+
+//删除成员
+- (void) deleteMembersWithIDs:(NSArray *)ids
+                       teamId:(NSString *)teamId
+                      success:(void (^)(BaseModel *baseModel))success
+                      failure:(void (^)(NSError *error))failure;
 @end
 
 NS_ASSUME_NONNULL_END

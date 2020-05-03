@@ -29,6 +29,8 @@
 		6367A153245DA5B500F20404 /* HomePopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A152245DA5B500F20404 /* HomePopView.xib */; };
 		6367A156245DB12500F20404 /* AddTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A155245DB12500F20404 /* AddTeamViewController.m */; };
 		6367A159245DB5C100F20404 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A158245DB5C100F20404 /* BaseViewController.m */; };
+		6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A15B245E98C300F20404 /* HomeBottomView.m */; };
+		6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A15D245E98D000F20404 /* HomeBottomView.xib */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
@@ -124,6 +126,9 @@
 		6367A155245DB12500F20404 /* AddTeamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTeamViewController.m; sourceTree = "<group>"; };
 		6367A157245DB5C100F20404 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		6367A158245DB5C100F20404 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		6367A15A245E98C300F20404 /* HomeBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBottomView.h; sourceTree = "<group>"; };
+		6367A15B245E98C300F20404 /* HomeBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBottomView.m; sourceTree = "<group>"; };
+		6367A15D245E98D000F20404 /* HomeBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBottomView.xib; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -296,6 +301,9 @@
 				6367A14F245DA5A800F20404 /* HomePopView.h */,
 				6367A150245DA5A800F20404 /* HomePopView.m */,
 				6367A152245DA5B500F20404 /* HomePopView.xib */,
+				6367A15A245E98C300F20404 /* HomeBottomView.h */,
+				6367A15B245E98C300F20404 /* HomeBottomView.m */,
+				6367A15D245E98D000F20404 /* HomeBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -631,6 +639,7 @@
 				63CEB14F242D03C000FB2146 /* Login.storyboard in Resources */,
 				63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */,
 				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
+				6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */,
 				6367A153245DA5B500F20404 /* HomePopView.xib in Resources */,
 				63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */,
 				6367A14824544FCE00F20404 /* TeamCell.xib in Resources */,
@@ -722,6 +731,7 @@
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
+				6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */,
 				63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */,
 				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
 				63CEB1AC24432D9000FB2146 /* NSDateFormatter+Addition.m in Sources */,

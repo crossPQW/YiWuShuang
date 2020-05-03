@@ -28,14 +28,17 @@
 #import "JoinOrizViewController.h"
 #import "AddTeamViewController.h"
 #import "YKAddition.h"
+#import "HomeBottomView.h"
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) NSArray *teamList;//组织列表
 @property (nonatomic, strong) NSArray *members;//成员列表
 @property (nonatomic, strong) HomePopView *popView;
 
+
 @property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) HomeTopView *topView;
+@property (nonatomic, strong) HomeBottomView *bottomView;
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, assign) BOOL showFirstSection;
@@ -262,7 +265,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
         NSArray *teams = [self.data yk_objectAtIndex:0];
         TeamModel *model = [teams yk_objectAtIndex:indexPath.row];
@@ -272,7 +275,61 @@
         teamVc.hidesBottomBarWhenPushed = YES;
         
         [self.navigationController pushViewController:teamVc animated:YES];
+    }else{
+        NSArray *persons = [self.data yk_objectAtIndex:indexPath.section];
+        PersonModel *model = [persons yk_objectAtIndex:indexPath.row];
+        model.isChecked = !model.isChecked;
+        [tableView reloadData];
+        
+        [self configBottomView];
     }
+}
+
+- (void)configBottomView {
+    if (self.data.count == 0) {
+        return;
+    }
+    //记录选中的
+    NSMutableArray *checked = @[].mutableCopy;
+    for (int i = 1; i<self.data.count; i++) {
+        NSArray *array = [self.data yk_objectAtIndex:i];
+        for (PersonModel *p in array) {
+            if (p.isChecked) {
+                [checked yk_addObject:p.userID];
+            }
+        }
+    }
+    if (checked.count > 0) {
+        if (!self.bottomView.superview) {
+            UIWindow *window = [UIApplication sharedApplication].delegate.window;
+            [window addSubview:self.bottomView];
+            self.bottomView.frame = CGRectMake(0, window.height - 100, self.view.width, 100);
+            __weak typeof(self) weakSelf = self;
+            self.bottomView.deleteBlock = ^{
+                [weakSelf handleDeleteWithIds:checked];
+            };
+            self.bottomView.moveBlock = ^{
+                [weakSelf handleMoveIds:checked];
+            };
+        }
+    }else{
+        [self.bottomView removeFromSuperview];
+    }
+}
+
+- (void)handleDeleteWithIds:(NSArray *)ids {
+    __weak typeof(self) weakSelf = self;
+    [[ApiManager manager] deleteMembersWithIDs:ids teamId:self.currentTeamID success:^(BaseModel * _Nonnull baseModel) {
+        if (baseModel.code == 1) {
+            [weakSelf requestTeamList];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+}
+
+- (void)handleMoveIds:(NSArray *)ids {
+    
 }
 #pragma mark - action
 - (void)tapLeftItem {
@@ -347,5 +404,12 @@
         _serchBar.searchBarStyle = UISearchBarStyleMinimal;
     }
     return _serchBar;
+}
+
+- (HomeBottomView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [HomeBottomView bottomView];
+    }
+    return _bottomView;
 }
 @end
