@@ -86,10 +86,14 @@
 }
 
 - (void)jumpToMain {
-    UIWindow *window = [UIApplication sharedApplication].delegate.window;
-    HomeViewController *rootVc = [[HomeViewController alloc] init];
-    [window setRootViewController:rootVc];
-    [window makeKeyAndVisible];
+    if (self.isFromHomePage) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        UIWindow *window = [UIApplication sharedApplication].delegate.window;
+        HomeViewController *rootVc = [[HomeViewController alloc] init];
+        [window setRootViewController:rootVc];
+        [window makeKeyAndVisible];
+    }
 }
 
 - (void)back {

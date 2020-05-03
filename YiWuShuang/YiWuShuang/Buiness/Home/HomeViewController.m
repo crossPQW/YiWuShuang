@@ -311,14 +311,18 @@
             [weakSelf.navigationController pushViewController:teamVc animated:YES];
         };
         popView.addOrigBlock = ^{
-            CreateOrizViewController *creatVc = [[CreateOrizViewController alloc] init];
-            creatVc.hidesBottomBarWhenPushed = YES;
-            [weakSelf.navigationController pushViewController:creatVc animated:YES];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+            CreateOrizViewController *chooseVc = [sb instantiateViewControllerWithIdentifier:@"createOri"];
+            chooseVc.isFromHomePage = YES;
+            chooseVc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:chooseVc animated:YES];
         };
         popView.joinOrigBlock = ^{
-            JoinOrizViewController *joinVc = [[JoinOrizViewController alloc] init];
-            joinVc.hidesBottomBarWhenPushed = YES;
-            [weakSelf.navigationController pushViewController:joinVc animated:YES];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+            JoinOrizViewController *chooseVc = [sb instantiateViewControllerWithIdentifier:@"joinOriz"];
+            chooseVc.hidesBottomBarWhenPushed = YES;
+            chooseVc.isFromHomePage = YES;
+            [self.navigationController pushViewController:chooseVc animated:YES];
         };
     }
 }
