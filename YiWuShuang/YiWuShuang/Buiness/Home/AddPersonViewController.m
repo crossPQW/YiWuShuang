@@ -130,6 +130,7 @@
         content.height = 65;
         content.style = CellStyleSelectView;
         content.title = @"部门";
+        content.style = @"请选择部门";
         content.tag = 3;
         [dataSources addObject:content];
         [dataSources addObject:[self lineModel]];
