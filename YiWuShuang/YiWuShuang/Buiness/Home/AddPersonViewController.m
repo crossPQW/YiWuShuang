@@ -37,6 +37,7 @@
     [super viewDidLoad];
     self.title = self.type == 1 ? @"添加成员":@"添加学员";
     self.dataSources = @[];
+    self.parts = @[];
     [self setupSubviews];
     [self initDataSource];
     [self requestParts];
@@ -137,6 +138,7 @@
         privacy.height = 65;
         privacy.style = CellStyleSelectView;
         privacy.title = @"权限";
+        privacy.subtitle = @"无管理权限";
         privacy.tag = 4;
         [dataSources addObject:privacy];
         [dataSources addObject:[self lineModel]];
@@ -164,6 +166,7 @@
         content.height = 65;
         content.style = CellStyleSelectView;
         content.title = @"所属部门";
+        content.subtitle = @"请选择部门";
         content.tag = 3;
         [dataSources addObject:content];
         [dataSources addObject:[self lineModel]];
@@ -174,7 +177,13 @@
 }
 
 - (void)requestParts {
-    self.parts = @[@{@"name":@"部门 1"},@{@"name":@" 部门 2"},@{@"name":@" 部门 3"}];
+    [[ApiManager manager] getPartsWithTeamID:self.teamID success:^(BaseModel * _Nonnull baseModel) {
+        if (baseModel.code == 1) {
+            self.parts = baseModel.data;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
 }
 
 - (void)back {
@@ -209,6 +218,10 @@
     [self.pickView removeFromSuperview];
     CommonCellModel *model = self.dataSources[indexPath.row];
     if (model.tag == 3) {//部门
+        if (self.parts.count == 0) {
+            [MBProgressHUD showText:@"找不到部门" inView:self.view];
+            return;
+        }
         TeamPickView *pickView = [[TeamPickView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 320, self.view.width, 320)];
         pickView.tag = 3;
         self.pickView = pickView;
@@ -261,6 +274,10 @@
         }
     }
     
+    [self.pickView.superview removeFromSuperview];
+}
+
+- (void)didDismiss {
     [self.pickView.superview removeFromSuperview];
 }
 #pragma mark - UITextFiled

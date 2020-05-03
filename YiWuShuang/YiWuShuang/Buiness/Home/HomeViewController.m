@@ -27,9 +27,11 @@
 #import "CreateOrizViewController.h"
 #import "JoinOrizViewController.h"
 #import "AddTeamViewController.h"
+#import "YKAddition.h"
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) NSArray *teamList;//组织列表
+@property (nonatomic, strong) NSArray *members;//成员列表
 @property (nonatomic, strong) HomePopView *popView;
 
 @property (nonatomic, strong) UISearchBar *serchBar;
@@ -52,6 +54,7 @@
     self.showSecondSection = YES;
     self.data = @[];
     self.teamList = @[];
+    self.members = @[];
     [self setupSubviews];
     
 }
@@ -165,6 +168,7 @@
     if (!data) {return;}
     NSMutableArray *allData = @[].mutableCopy;
     NSArray *members = [NSArray yy_modelArrayWithClass:[PersonModel class] json:[data arrayForKey:@"members"]];//成员列表
+    self.members = members;
     NSArray *students = [NSArray yy_modelArrayWithClass:[PersonModel class] json:[data arrayForKey:@"students"]];//学员列表
     NSArray *teamList = [NSArray yy_modelArrayWithClass:[TeamModel class] json:[data arrayForKey:@"part_list"]];//部门列表
     [allData yk_addObject:teamList];
@@ -302,6 +306,7 @@
         };
         popView.addTeamBlock = ^{
             AddTeamViewController *teamVc = [[AddTeamViewController alloc] init];
+            teamVc.members = weakSelf.members;
             teamVc.hidesBottomBarWhenPushed = YES;
             [weakSelf.navigationController pushViewController:teamVc animated:YES];
         };

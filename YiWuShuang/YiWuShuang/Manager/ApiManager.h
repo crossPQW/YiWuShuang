@@ -41,7 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) getOrganization:(NSString *)token
                  success:(void (^)(BaseModel *baseModel))success
                  failure:(void (^)(NSError *error))failure;
-
+//获取部门列表
+- (void) getPartsWithTeamID:(NSString *)teamID
+                    success:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure;
 //组织性质列表
 - (void) getNatureList:(NSString *)token
                success:(void (^)(BaseModel *baseModel))success
@@ -69,6 +72,13 @@ NS_ASSUME_NONNULL_BEGIN
              name:(NSString *)name
           success:(void (^)(BaseModel *baseModel))success
           failure:(void (^)(NSError *error))failure;
+
+//创建部门
+- (void) createPartWithTeamID:(NSString *)teamID
+                     teamName:(NSString *)teamName
+                    managerID:(NSString *)managerID
+                      success:(void (^)(BaseModel *baseModel))success
+                      failure:(void (^)(NSError *error))failure;
 
 #pragma mark - 成员相关
 //成员列表

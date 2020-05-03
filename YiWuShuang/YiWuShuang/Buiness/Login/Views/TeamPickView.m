@@ -8,7 +8,7 @@
 
 #import "TeamPickView.h"
 #import "YKAddition.h"
-
+#import "PersonModel.h"
 @interface TeamPickView()<UIPickerViewDelegate,UIPickerViewDataSource>
 @property (nonatomic, strong) UIButton *cancelBtn;
 @property (nonatomic, strong) UIButton *doneBtn;
@@ -91,9 +91,16 @@
 
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSDictionary *dict = self.list[row];
-    NSString *name = [dict stringForKey:@"name"];
-    return name;
+    id data = self.list[row];
+    if ([data isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = (NSDictionary *)data;
+        NSString *name = [dict stringForKey:@"name"];
+        return name;
+    }else if ([data isKindOfClass:[PersonModel class]]){
+        PersonModel *model = (PersonModel *)data;
+        return model.nickname;
+    }
+    return nil;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {

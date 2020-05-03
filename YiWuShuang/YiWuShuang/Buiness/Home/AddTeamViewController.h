@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AddTeamViewController : BaseViewController
-
+@property (nonatomic, strong) NSArray *members;
 @end
 
 NS_ASSUME_NONNULL_END

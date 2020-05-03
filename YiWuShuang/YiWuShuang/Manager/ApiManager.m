@@ -21,8 +21,12 @@ static NSString *refreshTokenUrl = @"/api/token/refresh";
 static NSString *loginUrl = @"/api/user/login";
 //获取组织列表
 static NSString *getOrigUrl = @"/api/team/list";
+//获取部门列表
+static NSString *getPartsUrl = @"/api/team/getDepartsList";
 //创建组织
 static NSString *getOrizIDUrl = @"/api/team/create";
+//创建部门
+static NSString *createPartUrl = @"/api/team/department";
 //获取组织分类
 static NSString *teamNatureListUrl = @"/api/category/team";
 //加入组织
@@ -96,6 +100,14 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [self requestWithApi:getOrigUrl params:params success:success failure:failure];
 }
 
+- (void) getPartsWithTeamID:(NSString *)teamID
+                    success:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:teamID forKey:@"team_id"];
+    [self requestWithApi:getPartsUrl params:params success:success failure:failure];
+}
+
 - (void) getNatureList:(NSString *)token
                success:(void (^)(BaseModel *baseModel))success
                failure:(void (^)(NSError *error))failure {
@@ -164,6 +176,18 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [params yk_setValue:teamId forKey:@"team_id"];
     [params yk_setValue:name forKey:@"name"];
     [self requestWithApi:loginUrl params:params success:success failure:failure];
+}
+
+- (void) createPartWithTeamID:(NSString *)teamID
+                     teamName:(NSString *)teamName
+                    managerID:(NSString *)managerID
+                      success:(void (^)(BaseModel *baseModel))success
+                      failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *param = @{}.mutableCopy;
+    [param yk_setValue:teamID forKey:@"team_id"];
+    [param yk_setValue:teamName forKey:@"name"];
+    [param yk_setValue:managerID forKey:@"manager_id"];
+    [self requestWithApi:createPartUrl params:param success:success failure:failure];
 }
 
 - (void) memberList:(NSString *)teamId
