@@ -31,6 +31,12 @@
 		6367A159245DB5C100F20404 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A158245DB5C100F20404 /* BaseViewController.m */; };
 		6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A15B245E98C300F20404 /* HomeBottomView.m */; };
 		6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A15D245E98D000F20404 /* HomeBottomView.xib */; };
+		6367A161245F10C900F20404 /* ChoosePartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A160245F10C900F20404 /* ChoosePartViewController.m */; };
+		6367A164245F172400F20404 /* ChoosePartHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A163245F172400F20404 /* ChoosePartHeader.m */; };
+		6367A166245F173600F20404 /* ChoosePartHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A165245F173600F20404 /* ChoosePartHeader.xib */; };
+		6367A16A245FDFE600F20404 /* ChooseTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A168245FDFE600F20404 /* ChooseTeamCell.m */; };
+		6367A16B245FDFE600F20404 /* ChooseTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A169245FDFE600F20404 /* ChooseTeamCell.xib */; };
+		6367A16E245FE96500F20404 /* ChooseTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A16D245FE96500F20404 /* ChooseTeamModel.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
@@ -129,6 +135,16 @@
 		6367A15A245E98C300F20404 /* HomeBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBottomView.h; sourceTree = "<group>"; };
 		6367A15B245E98C300F20404 /* HomeBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBottomView.m; sourceTree = "<group>"; };
 		6367A15D245E98D000F20404 /* HomeBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBottomView.xib; sourceTree = "<group>"; };
+		6367A15F245F10C900F20404 /* ChoosePartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoosePartViewController.h; sourceTree = "<group>"; };
+		6367A160245F10C900F20404 /* ChoosePartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoosePartViewController.m; sourceTree = "<group>"; };
+		6367A162245F172400F20404 /* ChoosePartHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoosePartHeader.h; sourceTree = "<group>"; };
+		6367A163245F172400F20404 /* ChoosePartHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoosePartHeader.m; sourceTree = "<group>"; };
+		6367A165245F173600F20404 /* ChoosePartHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoosePartHeader.xib; sourceTree = "<group>"; };
+		6367A167245FDFE600F20404 /* ChooseTeamCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTeamCell.h; sourceTree = "<group>"; };
+		6367A168245FDFE600F20404 /* ChooseTeamCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTeamCell.m; sourceTree = "<group>"; };
+		6367A169245FDFE600F20404 /* ChooseTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTeamCell.xib; sourceTree = "<group>"; };
+		6367A16C245FE96500F20404 /* ChooseTeamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTeamModel.h; sourceTree = "<group>"; };
+		6367A16D245FE96500F20404 /* ChooseTeamModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTeamModel.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -249,6 +265,8 @@
 				63BE22BF242BCB0E0066A316 /* HomeViewController.m */,
 				6367A14924546D8600F20404 /* TeamViewController.h */,
 				6367A14A24546D8600F20404 /* TeamViewController.m */,
+				6367A15F245F10C900F20404 /* ChoosePartViewController.h */,
+				6367A160245F10C900F20404 /* ChoosePartViewController.m */,
 				6367A14C24547FDF00F20404 /* AddPersonViewController.h */,
 				6367A14D24547FDF00F20404 /* AddPersonViewController.m */,
 				6367A154245DB12500F20404 /* AddTeamViewController.h */,
@@ -287,6 +305,9 @@
 			children = (
 				631BCBDB244C972100D4ABAC /* HomeTopView.h */,
 				631BCBDC244C972100D4ABAC /* HomeTopView.m */,
+				6367A167245FDFE600F20404 /* ChooseTeamCell.h */,
+				6367A168245FDFE600F20404 /* ChooseTeamCell.m */,
+				6367A169245FDFE600F20404 /* ChooseTeamCell.xib */,
 				6367A14424544FCE00F20404 /* TeamCell.h */,
 				6367A14524544FCE00F20404 /* TeamCell.m */,
 				6367A14624544FCE00F20404 /* TeamCell.xib */,
@@ -304,6 +325,9 @@
 				6367A15A245E98C300F20404 /* HomeBottomView.h */,
 				6367A15B245E98C300F20404 /* HomeBottomView.m */,
 				6367A15D245E98D000F20404 /* HomeBottomView.xib */,
+				6367A162245F172400F20404 /* ChoosePartHeader.h */,
+				6367A163245F172400F20404 /* ChoosePartHeader.m */,
+				6367A165245F173600F20404 /* ChoosePartHeader.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +339,8 @@
 				6367A13D2454478F00F20404 /* PersonModel.m */,
 				6367A13F2454493D00F20404 /* TeamModel.h */,
 				6367A1402454493D00F20404 /* TeamModel.m */,
+				6367A16C245FE96500F20404 /* ChooseTeamModel.h */,
+				6367A16D245FE96500F20404 /* ChooseTeamModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -638,9 +664,11 @@
 			files = (
 				63CEB14F242D03C000FB2146 /* Login.storyboard in Resources */,
 				63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */,
+				6367A166245F173600F20404 /* ChoosePartHeader.xib in Resources */,
 				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
 				6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */,
 				6367A153245DA5B500F20404 /* HomePopView.xib in Resources */,
+				6367A16B245FDFE600F20404 /* ChooseTeamCell.xib in Resources */,
 				63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */,
 				6367A14824544FCE00F20404 /* TeamCell.xib in Resources */,
 				63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */,
@@ -721,6 +749,7 @@
 				6367A13824541F6900F20404 /* PersonHeaderView.m in Sources */,
 				6367A14724544FCE00F20404 /* TeamCell.m in Sources */,
 				63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */,
+				6367A164245F172400F20404 /* ChoosePartHeader.m in Sources */,
 				63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */,
 				6367A159245DB5C100F20404 /* BaseViewController.m in Sources */,
 				63CEB1B224432D9000FB2146 /* NSNumber+Addition.m in Sources */,
@@ -734,6 +763,8 @@
 				6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */,
 				63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */,
 				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
+				6367A16A245FDFE600F20404 /* ChooseTeamCell.m in Sources */,
+				6367A16E245FE96500F20404 /* ChooseTeamModel.m in Sources */,
 				63CEB1AC24432D9000FB2146 /* NSDateFormatter+Addition.m in Sources */,
 				63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */,
 				6367A1412454493D00F20404 /* TeamModel.m in Sources */,
@@ -749,6 +780,7 @@
 				6367A156245DB12500F20404 /* AddTeamViewController.m in Sources */,
 				6367A151245DA5A800F20404 /* HomePopView.m in Sources */,
 				63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */,
+				6367A161245F10C900F20404 /* ChoosePartViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
 				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,

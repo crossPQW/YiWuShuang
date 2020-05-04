@@ -101,6 +101,17 @@ NS_ASSUME_NONNULL_BEGIN
                        teamId:(NSString *)teamId
                       success:(void (^)(BaseModel *baseModel))success
                       failure:(void (^)(NSError *error))failure;
+
+//type 1 成员 2 学员
+- (void) moveMemberWithIDs :(NSArray *)ids
+                 fromTeamID:(NSString *)fromTeamID
+                 fromPartID:(NSString *)fromPartID
+                   fromType:(NSString *)fromType
+                   toTeamID:(NSString *)toTeamID
+                   toPartID:(NSString *)toPartID
+                     toType:(NSString *)toType
+                    success:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TeamViewController : UIViewController
 @property (nonatomic, strong) TeamModel *model;
+@property (nonatomic, strong) NSString *currentTeamName;
+@property (nonatomic, strong) NSString *currentTeamID;
 @end
-
 NS_ASSUME_NONNULL_END

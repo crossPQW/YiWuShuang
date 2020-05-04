@@ -22,7 +22,9 @@
 #import "TeamModel.h"
 #import "TeamCell.h"
 #import "AddPersonViewController.h"
-
+#import "HomeBottomView.h"
+#import "ApiManager.h"
+#import "ChoosePartViewController.h"
 @interface TeamViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) HomeTopView *topView;
@@ -32,6 +34,9 @@
 @property (nonatomic, assign) BOOL showSecondSection;
 @property (nonatomic, strong) UIButton *addMemberBtn;
 @property (nonatomic, strong) UIButton *addStudentBtn;
+
+@property (nonatomic, strong) HomeBottomView *bottomView;
+@property (nonatomic, strong) NSArray *checkIds;
 @end
 
 @implementation TeamViewController
@@ -40,7 +45,7 @@
     [super viewDidLoad];
     self.showFirstSection = YES;
     self.showSecondSection = YES;
-    
+    self.checkIds = @[];
     NSMutableArray *array = @[].mutableCopy;
     [array yk_addObject:[NSArray yy_modelArrayWithClass:[PersonModel class] json:self.model.members]];
     [array yk_addObject:[NSArray yy_modelArrayWithClass:[PersonModel class] json:self.model.students]];
@@ -178,6 +183,8 @@
             headerView.imageView.image = [UIImage imageNamed:@"person_arrow"];
         }
     }
+    NSArray  *array = [self.data yk_objectAtIndex:section];
+    headerView.numberLabel.text = [NSString stringWithFormat:@"%ld人",array.count];
     headerView.block = ^(BOOL isHidden) {
         [weakSelf handleTapHeader:section isHidden:isHidden];
     };
@@ -199,7 +206,69 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    NSArray *persons = [self.data yk_objectAtIndex:indexPath.section];
+    PersonModel *model = [persons yk_objectAtIndex:indexPath.row];
+    model.isChecked = !model.isChecked;
+    [tableView reloadData];
+    
+    [self configBottomView];
+}
+
+- (void)configBottomView {
+    if (self.data.count == 0) {
+        return;
+    }
+    //记录选中的
+    NSMutableArray *checked = @[].mutableCopy;
+    for (int i = 0; i<self.data.count; i++) {
+        NSArray *array = [self.data yk_objectAtIndex:i];
+        for (PersonModel *p in array) {
+            if (p.isChecked) {
+                [checked yk_addObject:p.userID];
+            }
+        }
+    }
+    self.checkIds = checked.copy;
+    if (checked.count > 0) {
+        if (!self.bottomView.superview) {
+            UIWindow *window = [UIApplication sharedApplication].delegate.window;
+            [window addSubview:self.bottomView];
+            self.bottomView.frame = CGRectMake(0, window.height - 100, self.view.width, 100);
+            __weak typeof(self) weakSelf = self;
+            self.bottomView.deleteBlock = ^{
+                [weakSelf handleDeleteWithIds:weakSelf.checkIds];
+            };
+            self.bottomView.moveBlock = ^{
+                [weakSelf handleMoveIds:weakSelf.checkIds];
+            };
+        }
+    }else{
+        [self.bottomView removeFromSuperview];
+    }
+}
+
+- (void)handleDeleteWithIds:(NSArray *)ids {
+    __weak typeof(self) weakSelf = self;
+    [[ApiManager manager] deleteMembersWithIDs:ids teamId:self.currentTeamID success:^(BaseModel * _Nonnull baseModel) {
+        if (baseModel.code == 1) {
+            [MBProgressHUD showText:@"删除成功" inView:self.view];
+            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+}
+
+- (void)handleMoveIds:(NSArray *)ids {
+    ChoosePartViewController *vc = [[ChoosePartViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.ids = ids;
+    vc.partID = self.model.ID;
+    vc.teamName = self.currentTeamName;
+    vc.teamID = self.currentTeamID;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (UITableView *)tableView {
@@ -239,5 +308,12 @@
         _serchBar.searchBarStyle = UISearchBarStyleMinimal;
     }
     return _serchBar;
+}
+
+- (HomeBottomView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [HomeBottomView bottomView];
+    }
+    return _bottomView;
 }
 @end

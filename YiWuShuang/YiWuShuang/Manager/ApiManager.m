@@ -37,7 +37,8 @@ static NSString *memberList = @"/api/team/departs";
 static NSString *addMemberUrl = @"/api/team/user";
 //删除成员、学员
 static NSString *deleteMemberUrl = @"/api/team/delete";
-
+//移动成员、学员
+static NSString *moveMemberUrl = @"/api/team/move";
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
 static NSString *releaseHost = @"https://www.yiwushuang.cn";
@@ -225,6 +226,19 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     NSString *idsStr = [ids componentsJoinedByString:@","];
     [params yk_setValue:idsStr forKey:@"user_ids"];
     [self requestWithApi:deleteMemberUrl params:params success:success failure:failure];
+}
+
+- (void)moveMemberWithIDs:(NSArray *)ids fromTeamID:(NSString *)fromTeamID fromPartID:(NSString *)fromPartID fromType:(NSString *)fromType toTeamID:(NSString *)toTeamID toPartID:(NSString *)toPartID toType:(NSString *)toType success:(void (^)(BaseModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    NSString *idsStr = [ids componentsJoinedByString:@","];
+    [params yk_setValue:idsStr forKey:@"user_ids"];
+    [params yk_setValue:fromTeamID forKey:@"from_team_id"];
+    [params yk_setValue:fromPartID forKey:@"from_part_id"];
+    [params yk_setValue:fromType forKey:@"from_type"];
+    [params yk_setValue:toTeamID forKey:@"to_team_id"];
+    [params yk_setValue:toPartID forKey:@"to_part_id"];
+    [params yk_setValue:toType forKey:@"to_type"];
+    [self requestWithApi:moveMemberUrl params:params success:success failure:failure];
 }
 
 #pragma mark - basic

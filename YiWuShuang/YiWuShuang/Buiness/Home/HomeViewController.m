@@ -29,6 +29,7 @@
 #import "AddTeamViewController.h"
 #import "YKAddition.h"
 #import "HomeBottomView.h"
+#import "ChoosePartViewController.h"
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) NSArray *teamList;//组织列表
@@ -45,6 +46,9 @@
 @property (nonatomic, assign) BOOL showSecondSection;
 
 @property (nonatomic, strong) NSString *currentTeamID;
+@property (nonatomic, strong) NSString *currentTeamName;
+
+@property (nonatomic, strong) NSArray *checkIds;
 @end
 
 @implementation HomeViewController
@@ -54,6 +58,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.showFirstSection = YES;
+    self.checkIds = @[];
     self.showSecondSection = YES;
     self.data = @[];
     self.teamList = @[];
@@ -64,7 +69,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"锐听音乐培训学校" style:UIBarButtonItemStylePlain target:self action:@selector(tapLeftItem)];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(tapLeftItem)];
     leftItem.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftItem;
     
@@ -137,6 +142,7 @@
 - (void)requestMemberList {
     NSDictionary *firstTeam = self.teamList.firstObject;
     NSString *teamID = [firstTeam stringForKey:@"id"];
+    self.currentTeamName = [firstTeam stringForKey:@"name"];
     self.currentTeamID = teamID;
     [[ApiManager manager] memberList:teamID success:^(BaseModel * _Nonnull baseModel) {
         [self parseDataWithDictionary:baseModel.data];
@@ -160,12 +166,13 @@
                 },
         ],
         @"members"   : @[
-                @{@"team_id" : @"123",@"part_id":@"1",@"user_id":@"7",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha1"},
-                @{@"team_id" : @"123",@"part_id":@"1",@"user_id":@"7",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha2"},
+                @{@"team_id" : @"123",@"part_id":@"1",@"user_id":@"9",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha1"},
+                @{@"team_id" : @"123",@"part_id":@"1",@"user_id":@"10",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha2"},
         ],
         @"students"  : @[
-                @{@"team_id" : @"123",@"part_id":@"1",@"user_id":@"7",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha3"},
-                @{@"team_id" : @"123",@"part_id":@"1",@"user_id":@"7",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha4"},
+                @{@"team_id" : @"123",@"part_id":@"1",@"user_id":@"11",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha3"},
+                @{@"team_id" : @"123",@"part_id":@"1",@"user_id":@"12",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha4"},
+                @{@"team_id" : @"1234",@"part_id":@"1",@"user_id":@"14",@"type":@"1",@"avatar":@"asdasd",@"nickname":@"hahaha4"},
         ],
     };
     if (!data) {return;}
@@ -237,6 +244,8 @@
                 headerView.imageView.image = [UIImage imageNamed:@"person_arrow"];
             }
         }
+        NSArray  *array = [self.data yk_objectAtIndex:section];
+        headerView.numberLabel.text = [NSString stringWithFormat:@"%ld人",array.count];
         headerView.block = ^(BOOL isHidden) {
             [weakSelf handleTapHeader:section isHidden:isHidden];
         };
@@ -272,6 +281,8 @@
         
         TeamViewController *teamVc = [[TeamViewController alloc] init];
         teamVc.model = model;
+        teamVc.currentTeamName = self.currentTeamName;
+        teamVc.currentTeamID = self.currentTeamID;
         teamVc.hidesBottomBarWhenPushed = YES;
         
         [self.navigationController pushViewController:teamVc animated:YES];
@@ -299,6 +310,7 @@
             }
         }
     }
+    self.checkIds = checked.copy;
     if (checked.count > 0) {
         if (!self.bottomView.superview) {
             UIWindow *window = [UIApplication sharedApplication].delegate.window;
@@ -306,10 +318,10 @@
             self.bottomView.frame = CGRectMake(0, window.height - 100, self.view.width, 100);
             __weak typeof(self) weakSelf = self;
             self.bottomView.deleteBlock = ^{
-                [weakSelf handleDeleteWithIds:checked];
+                [weakSelf handleDeleteWithIds:weakSelf.checkIds];
             };
             self.bottomView.moveBlock = ^{
-                [weakSelf handleMoveIds:checked];
+                [weakSelf handleMoveIds:weakSelf.checkIds];
             };
         }
     }else{
@@ -329,7 +341,12 @@
 }
 
 - (void)handleMoveIds:(NSArray *)ids {
-    
+    ChoosePartViewController *vc = [[ChoosePartViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.ids = ids;
+    vc.teamName = self.currentTeamName;
+    vc.teamID = self.currentTeamID;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - action
 - (void)tapLeftItem {
