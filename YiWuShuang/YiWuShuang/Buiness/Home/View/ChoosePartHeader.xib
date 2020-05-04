@@ -65,9 +65,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="actionView" destination="gsl-Jb-FqJ" id="qq7-GG-X9Z"/>
                 <outlet property="teamName" destination="dgt-bf-1NS" id="dax-zJ-3bQ"/>
             </connections>
-            <point key="canvasLocation" x="73.913043478260875" y="-93.080357142857139"/>
+            <point key="canvasLocation" x="-32" y="-117"/>
         </view>
     </objects>
     <resources>

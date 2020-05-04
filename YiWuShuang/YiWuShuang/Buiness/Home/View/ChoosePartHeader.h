@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ChoosePartHeader : UIView
 @property (weak, nonatomic) IBOutlet UILabel *teamName;
 + (instancetype)partHeader;
+@property (weak, nonatomic) IBOutlet UIView *actionView;
 @end
 
 NS_ASSUME_NONNULL_END

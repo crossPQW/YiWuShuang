@@ -143,16 +143,20 @@
     [self.pickView removeFromSuperview];
     CommonCellModel *model = self.dataSources[indexPath.row];
     if (model.tag == 2) {//主管
-        TeamPickView *pickView = [[TeamPickView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 320, self.view.width, 320)];
-        pickView.tag = 1;
-        self.pickView = pickView;
-        pickView.delegate = self;
-        UIView *bgView = [[UIView alloc] init];
-        bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-        bgView.frame = [UIScreen mainScreen].bounds;
-        [bgView addSubview:pickView];
-        [[UIApplication sharedApplication].delegate.window addSubview:bgView];
-        [pickView setData:self.members];
+        if (self.members.count == 0) {
+            self.managerID = nil;
+        }else{
+            TeamPickView *pickView = [[TeamPickView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 320, self.view.width, 320)];
+            pickView.tag = 1;
+            self.pickView = pickView;
+            pickView.delegate = self;
+            UIView *bgView = [[UIView alloc] init];
+            bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+            bgView.frame = [UIScreen mainScreen].bounds;
+            [bgView addSubview:pickView];
+            [[UIApplication sharedApplication].delegate.window addSubview:bgView];
+            [pickView setData:self.members];
+        }
     }else if (model.tag == 3){
         if (self.teams.count == 0) {
             [MBProgressHUD showText:@"找不到组织" inView:self.view];

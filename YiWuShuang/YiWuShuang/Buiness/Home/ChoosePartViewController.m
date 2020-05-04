@@ -12,10 +12,13 @@
 #import "ChooseTeamCell.h"
 #import "ApiManager.h"
 #import "ChooseTeamModel.h"
+#import "AddTeamViewController.h"
+
 @interface ChoosePartViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) ChoosePartHeader *headerView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *parts;//部门列表
+
 @end
 
 @implementation ChoosePartViewController
@@ -32,6 +35,9 @@
 
 - (void)setupSubviews {
     self.headerView = [ChoosePartHeader partHeader];
+    UITapGestureRecognizer *tapHeader = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHeader:)];
+    [self.headerView.actionView addGestureRecognizer:tapHeader];
+    self.headerView.userInteractionEnabled = YES;
     self.headerView.teamName.text = self.teamName;
     [self.view addSubview:self.headerView];
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,6 +75,11 @@
     }];
 }
 
+- (void)tapHeader:(UITapGestureRecognizer *)ges {
+    AddTeamViewController *addTeamVc = [[AddTeamViewController alloc] init];
+    [self.navigationController pushViewController:addTeamVc animated:YES];
+    
+}
 - (void)done {
     NSString *partID;
     for (ChooseTeamModel *model in self.parts) {
