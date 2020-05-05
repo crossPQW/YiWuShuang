@@ -44,9 +44,10 @@
 {
     UIColor *normalColor = [UIColor colorWithHexRGB:@"#909399"];
     UIColor *seleceColor = [UIColor colorWithHexRGB:@"#03C1AD"];
-    
-    UIImage *image = [[UIImage imageNamed:imageNamed] imageWithTintColor:normalColor];
-    UIImage *selectImage = [[UIImage imageNamed:imageNamed] imageWithTintColor:selectImage];
+    NSString *normalImage = [imageNamed stringByAppendingString:@"_normal"];
+    NSString *selectedImagStr = [imageNamed stringByAppendingString:@"_selected"];
+    UIImage *image = [UIImage imageNamed:normalImage];
+    UIImage *selectImage = [UIImage imageNamed:selectedImagStr];
     vc.tabBarItem.title = title;
     vc.tabBarItem.selectedImage = selectImage;
     vc.tabBarItem.image = image;

@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,9 +12,54 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_top" translatesAutoresizingMaskIntoConstraints="NO" id="HtV-Nk-Vhr">
+                                <rect key="frame" x="217" y="0.0" width="197" height="106"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="106" id="g6N-1z-E3V"/>
+                                    <constraint firstAttribute="width" constant="197" id="tmk-WX-uz9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_left" translatesAutoresizingMaskIntoConstraints="NO" id="uUw-o8-mYD">
+                                <rect key="frame" x="0.0" y="237.5" width="90" height="152"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="152" id="Sz9-pE-OIC"/>
+                                    <constraint firstAttribute="width" constant="90" id="j7w-RU-Hja"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_right" translatesAutoresizingMaskIntoConstraints="NO" id="btk-LI-0Du">
+                                <rect key="frame" x="348" y="525.5" width="66" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="M2q-Oa-ENj"/>
+                                    <constraint firstAttribute="width" constant="66" id="VvK-OU-19X"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_desc" translatesAutoresizingMaskIntoConstraints="NO" id="q64-vo-nXX">
+                                <rect key="frame" x="193" y="229.5" width="28" height="347"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3t5-J9-4NU">
+                                <rect key="frame" x="126" y="721" width="162" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="pfp-iH-HNA"/>
+                                    <constraint firstAttribute="height" constant="54" id="r6Z-DU-K3j"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3t5-J9-4NU" secondAttribute="bottom" constant="87" id="2xz-ai-hAM"/>
+                            <constraint firstItem="uUw-o8-mYD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.7" id="APj-jt-xgt"/>
+                            <constraint firstItem="q64-vo-nXX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DJ5-Gv-qqo"/>
+                            <constraint firstItem="q64-vo-nXX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.9" id="MBM-dy-APQ"/>
+                            <constraint firstItem="btk-LI-0Du" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eA7-Wv-M4v"/>
+                            <constraint firstItem="HtV-Nk-Vhr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="eZ5-gk-TmZ"/>
+                            <constraint firstItem="3t5-J9-4NU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oga-Gg-wLG"/>
+                            <constraint firstItem="HtV-Nk-Vhr" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="qAk-g0-Q6F"/>
+                            <constraint firstItem="btk-LI-0Du" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="1.3" id="vp5-L0-07G"/>
+                            <constraint firstItem="uUw-o8-mYD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zjB-GO-gTE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +68,11 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch_desc" width="28" height="347"/>
+        <image name="launch_left" width="90" height="152"/>
+        <image name="launch_logo" width="162" height="54"/>
+        <image name="launch_right" width="66" height="114"/>
+        <image name="launch_top" width="197" height="106"/>
+    </resources>
 </document>

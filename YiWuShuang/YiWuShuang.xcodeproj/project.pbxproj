@@ -37,6 +37,9 @@
 		6367A16A245FDFE600F20404 /* ChooseTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A168245FDFE600F20404 /* ChooseTeamCell.m */; };
 		6367A16B245FDFE600F20404 /* ChooseTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A169245FDFE600F20404 /* ChooseTeamCell.xib */; };
 		6367A16E245FE96500F20404 /* ChooseTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A16D245FE96500F20404 /* ChooseTeamModel.m */; };
+		6367A17624603FBD00F20404 /* NavHeadTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A17024603FBC00F20404 /* NavHeadTitleView.m */; };
+		6367A17724603FBD00F20404 /* HeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A17124603FBC00F20404 /* HeadImageView.m */; };
+		6367A17A2461738000F20404 /* NavHeadTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A1792461738000F20404 /* NavHeadTitleView.xib */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
@@ -145,6 +148,11 @@
 		6367A169245FDFE600F20404 /* ChooseTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTeamCell.xib; sourceTree = "<group>"; };
 		6367A16C245FE96500F20404 /* ChooseTeamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTeamModel.h; sourceTree = "<group>"; };
 		6367A16D245FE96500F20404 /* ChooseTeamModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTeamModel.m; sourceTree = "<group>"; };
+		6367A17024603FBC00F20404 /* NavHeadTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavHeadTitleView.m; sourceTree = "<group>"; };
+		6367A17124603FBC00F20404 /* HeadImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadImageView.m; sourceTree = "<group>"; };
+		6367A17324603FBC00F20404 /* HeadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadImageView.h; sourceTree = "<group>"; };
+		6367A17424603FBD00F20404 /* NavHeadTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavHeadTitleView.h; sourceTree = "<group>"; };
+		6367A1792461738000F20404 /* NavHeadTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavHeadTitleView.xib; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -287,6 +295,7 @@
 		631BCBCC244C7F9500D4ABAC /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				6367A16F24603F9800F20404 /* Views */,
 				631BCBD7244C8CD100D4ABAC /* MineViewController.h */,
 				631BCBD8244C8CD100D4ABAC /* MineViewController.m */,
 			);
@@ -343,6 +352,18 @@
 				6367A16D245FE96500F20404 /* ChooseTeamModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6367A16F24603F9800F20404 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6367A17324603FBC00F20404 /* HeadImageView.h */,
+				6367A17124603FBC00F20404 /* HeadImageView.m */,
+				6367A17424603FBD00F20404 /* NavHeadTitleView.h */,
+				6367A17024603FBC00F20404 /* NavHeadTitleView.m */,
+				6367A1792461738000F20404 /* NavHeadTitleView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		63BE22AC242BCB0E0066A316 = {
@@ -667,6 +688,7 @@
 				6367A166245F173600F20404 /* ChoosePartHeader.xib in Resources */,
 				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
 				6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */,
+				6367A17A2461738000F20404 /* NavHeadTitleView.xib in Resources */,
 				6367A153245DA5B500F20404 /* HomePopView.xib in Resources */,
 				6367A16B245FDFE600F20404 /* ChooseTeamCell.xib in Resources */,
 				63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */,
@@ -760,12 +782,14 @@
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
+				6367A17624603FBD00F20404 /* NavHeadTitleView.m in Sources */,
 				6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */,
 				63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */,
 				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
 				6367A16A245FDFE600F20404 /* ChooseTeamCell.m in Sources */,
 				6367A16E245FE96500F20404 /* ChooseTeamModel.m in Sources */,
 				63CEB1AC24432D9000FB2146 /* NSDateFormatter+Addition.m in Sources */,
+				6367A17724603FBD00F20404 /* HeadImageView.m in Sources */,
 				63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */,
 				6367A1412454493D00F20404 /* TeamModel.m in Sources */,
 				63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */,
