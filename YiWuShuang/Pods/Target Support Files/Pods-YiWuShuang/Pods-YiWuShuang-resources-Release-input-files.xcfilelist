@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-YiWuShuang/Pods-YiWuShuang-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK_JS_FacebookMessenger.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK_JS_QQ.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK_JS_WeChat.bundle

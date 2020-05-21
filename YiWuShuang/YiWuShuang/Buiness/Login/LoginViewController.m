@@ -15,9 +15,10 @@
 #import "UserSession.h"
 #import "ChooseOrizViewController.h"
 #import "BaseTabBarController.h"
+#import <ShareSDK/ShareSDK.h>
+#import <MOBFoundation/MobSDK+Privacy.h>
 @interface LoginViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *accountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
@@ -39,12 +40,18 @@
     
     self.loginBtn.layer.cornerRadius = 4;
     self.loginBtn.layer.masksToBounds = YES;
+    CAGradientLayer *layer = [self gLayer];
+    layer.frame = self.loginBtn.bounds;
+    [self.loginBtn.layer addSublayer:layer];
+    
     
     [self.checkBtn setBackgroundImage:[UIImage imageNamed:@"login_uncheck"] forState:UIControlStateNormal];
     [self.checkBtn setBackgroundImage:[UIImage imageNamed:@"login_check"] forState:UIControlStateSelected];
     [self.checkBtn setSelected:NO];
     
-    
+    [MobSDK uploadPrivacyPermissionStatus:YES onResult:^(BOOL success) {
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,9 +60,6 @@
 }
 
 #pragma mark - event
-- (IBAction)clickClose:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (IBAction)clickLogin:(id)sender {
     BOOL hasAgress = self.checkBtn.isSelected;
@@ -79,6 +83,33 @@
     self.checkBtn.selected = !self.checkBtn.isSelected;
 }
 - (IBAction)wechatLogin:(id)sender {
+    [ShareSDK authorize:SSDKPlatformTypeWechat
+               settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
+        if (state == SSDKResponseStateSuccess)
+           {
+                NSLog(@"%@",user.rawData);
+                NSLog(@"uid===%@",user.uid);
+                NSLog(@"%@",user.credential);
+           }
+        else if (state == SSDKResponseStateCancel)
+           {
+                NSLog(@"取消");
+           }
+        else if (state == SSDKResponseStateFail)
+           {
+                NSLog(@"%@",error);
+           }
+    }];
+    
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    [params SSDKSetupShareParamsByText:@"test"
+//                                images:[UIImage imageNamed:@"shareImg.png"]
+//                                   url:[NSURL URLWithString:@"http://www.mob.com/"]
+//                                 title:@"title"
+//                              type:SSDKContentTypeAuto];
+//    [ShareSDK share:SSDKPlatformTypeWechat parameters:params onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+//        
+//    }];
 }
 
 
@@ -137,16 +168,17 @@
 - (void)handleLoginSuccess {
     User *user = [[UserSession session] currentUser];
     __weak typeof(self) ws = self;
-    [[ApiManager manager] getOrganization:user.token success:^(BaseModel * _Nonnull baseModel) {
-        NSArray *list = baseModel.data;
-        if ([list isKindOfClass:[NSArray class]] && list.count > 0) {
-            [ws jumpToMainPage];
-        }else{
-            [ws jumpToChooseOri];
-        }
-    } failure:^(NSError * _Nonnull error) {
-        
-    }];
+    [self jumpToMainPage];
+//    [[ApiManager manager] getOrganization:user.token success:^(BaseModel * _Nonnull baseModel) {
+//        NSArray *list = baseModel.data;
+//        if ([list isKindOfClass:[NSArray class]] && list.count > 0) {
+//            [ws jumpToMainPage];
+//        }else{
+//            [ws jumpToChooseOri];
+//        }
+//    } failure:^(NSError * _Nonnull error) {
+//
+//    }];
 }
 
 - (void)jumpToMainPage{
@@ -155,5 +187,17 @@
     [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (CAGradientLayer *)gLayer {
+    CAGradientLayer *gl = [CAGradientLayer layer];
+    gl.startPoint = CGPointMake(0, 0);
+    gl.endPoint = CGPointMake(1, 1);
+    gl.colors = @[(__bridge id)[UIColor colorWithRed:40/255.0 green:239/255.0 blue:162/255.0 alpha:1.0].CGColor, (__bridge id)[UIColor colorWithRed:20/255.0 green:193/255.0 blue:215/255.0 alpha:1.0].CGColor];
+    gl.locations = @[@(0), @(1.0f)];
+    return gl;
+}
 
 @end

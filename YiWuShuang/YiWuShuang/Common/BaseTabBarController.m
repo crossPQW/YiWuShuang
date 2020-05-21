@@ -25,19 +25,19 @@
 }
 
 - (void)setupControllers {
-    HomeViewController *homeVc = [[HomeViewController alloc] init];
-    BaseNavigationController *homeVcNav = [[BaseNavigationController alloc] initWithRootViewController:homeVc];
-    [self addChildViewController:homeVcNav title:@"首页" imageNamed:@"tabbar_home"];
-    
     ClassViewController *classVc = [[ClassViewController alloc] init];
     BaseNavigationController *classVcNav = [[BaseNavigationController alloc] initWithRootViewController:classVc];
     [self addChildViewController:classVcNav title:@"上课" imageNamed:@"tabbar_class"];
+    
+    HomeViewController *homeVc = [[HomeViewController alloc] init];
+    BaseNavigationController *homeVcNav = [[BaseNavigationController alloc] initWithRootViewController:homeVc];
+    [self addChildViewController:homeVcNav title:@"联系人" imageNamed:@"tabbar_home"];
     
     MineViewController *mineVc = [[MineViewController alloc] init];
     BaseNavigationController *mineVcNav = [[BaseNavigationController alloc] initWithRootViewController:mineVc];
     [self addChildViewController:mineVcNav title:@"我的" imageNamed:@"tabbar_mine"];
     
-    self.viewControllers = @[homeVcNav,classVcNav,mineVcNav];
+    self.viewControllers = @[classVcNav,homeVcNav,mineVcNav];
 }
 
 - (void)addChildViewController:(BaseNavigationController *)vc title:(NSString *)title imageNamed:(NSString *)imageNamed

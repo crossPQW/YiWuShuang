@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 platform :ios, '10.0'
 
 use_frameworks!
@@ -10,7 +10,13 @@ target 'YiWuShuang' do
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'YYModel'
   pod  'YKWoodpecker'
-  pod 'CYLTabBarController', '~> 1.24.0'
   pod 'SDWebImage', '~> 5.0'
+  
+  pod 'mob_sharesdk'
+  pod 'mob_sharesdk/ShareSDKPlatforms/QQ'
+  pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'
+  pod 'mob_sharesdk/ShareSDKRestoreScene'
+  pod 'mob_sharesdk/ShareSDKPlatforms/Messenger'
+
 
 end

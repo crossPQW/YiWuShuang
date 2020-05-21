@@ -16,6 +16,30 @@ PODS:
     - AFNetworking/NSURLSession
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
+  - mob_sharesdk (4.3.8):
+    - mob_sharesdk/ShareSDK (= 4.3.8)
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDK (4.3.8):
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKExtension (4.3.8):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/Messenger (4.3.8):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/QQ (4.3.8):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/WeChat (4.3.8):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKRestoreScene (4.3.8):
+    - mob_sharesdk/ShareSDKExtension
+    - MOBFoundation (>= 3.2.9)
+  - MOBFoundation (3.2.15)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
   - YKWoodpecker (1.2.1)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -26,15 +50,24 @@ DEPENDENCIES:
   - AFNetworking (~> 4.0)
   - Masonry
   - MBProgressHUD (~> 1.2.0)
+  - mob_sharesdk
+  - mob_sharesdk/ShareSDKPlatforms/Messenger
+  - mob_sharesdk/ShareSDKPlatforms/QQ
+  - mob_sharesdk/ShareSDKPlatforms/WeChat
+  - mob_sharesdk/ShareSDKRestoreScene
+  - SDWebImage (~> 5.0)
   - YKWoodpecker
   - YYKit
   - YYModel
 
 SPEC REPOS:
-  trunk:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - AFNetworking
     - Masonry
     - MBProgressHUD
+    - mob_sharesdk
+    - MOBFoundation
+    - SDWebImage
     - YKWoodpecker
     - YYKit
     - YYModel
@@ -43,10 +76,13 @@ SPEC CHECKSUMS:
   AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  mob_sharesdk: 7689cb066326e50d99c9fb552d5d608ae3b63025
+  MOBFoundation: eee0d2db4db34e475e736285b5cece0a5f7efe71
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   YKWoodpecker: 760cff9f244a4bcbfa9589ec3869f0071658e74c
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 86d5736cc2dd3710278d295f9a1dca676f4ffb54
+PODFILE CHECKSUM: 0aa3346f26e52a9e40f85090ef7bfa84df0c0992
 
 COCOAPODS: 1.9.1

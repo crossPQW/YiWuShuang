@@ -13,6 +13,13 @@
 #import "YKWoodpecker.h"
 #import "BaseNavigationController.h"
 #import "BaseTabBarController.h"
+#import <ShareSDK/ShareSDK.h>
+
+#define wechatAppKey @"wxea7ba9acc178cc95"
+#define wechatAppSecrect @"07c8294cbd4452a4729067183b361fef"
+#define dingAppKey @"dingoavdkwtbhmfcetfbwb"
+#define dingAppSecrect @"xp0AkyA0qLahK06kTe3Z146_GitvWCbMyr6fO1QBaFdvgVxAdaNpR8RbfYf1VvXB"
+#define kUniversalLink @"https://www.yiwushuang.app/"
 @interface AppDelegate ()
 
 @end
@@ -29,6 +36,11 @@
     [[YKWoodpeckerManager sharedInstance] show];
 #endif
     
+    [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
+        [platformsRegister setupWeChatWithAppId:@"wxea7ba9acc178cc95" appSecret:@"07c8294cbd4452a4729067183b361fef" universalLink:@"https://www.yiwushuang.cn"];
+//        [platformsRegister setupDingTalkAuthWithAppId:dingAppKey appSecret:dingAppSecrect redirectUrl:@""];
+    }];
+    
     BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
     [self.window setRootViewController:tabBar];
     [self.window makeKeyAndVisible];
@@ -44,19 +56,6 @@
             [self.window makeKeyAndVisible];
         }
     }];
-//    if ([[UserSession session] isAvailable]) {
-//        BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
-////        BaseNavigationController *root = [[BaseNavigationController alloc] initWithRootViewController:tabBar];
-//        [self.window setRootViewController:tabBar];
-//        [self.window makeKeyAndVisible];
-//    }else{
-//        UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-//        LoginViewController *loginVc = [loginSb instantiateViewControllerWithIdentifier:@"loginVc"];
-//
-//        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVc];
-//        [self.window setRootViewController:nav];
-//        [self.window makeKeyAndVisible];
-//    }
     
     return YES;
 }

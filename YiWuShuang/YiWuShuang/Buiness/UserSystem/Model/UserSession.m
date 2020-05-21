@@ -77,6 +77,8 @@ static NSString *userkey = @"kUserInfoKey";
 
 - (void)checkUserAvailable:(void (^)(BOOL availble))available {
     __weak typeof(self) weakSelf = self;
+    available(NO);
+    return;
     [[ApiManager manager] checkTokenSuccess:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1 && available) {
             available(YES);
