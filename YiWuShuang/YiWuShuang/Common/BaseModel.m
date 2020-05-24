@@ -18,7 +18,7 @@
         self.msg = [dict objectForKey:@"msg"];
         self.time = [[dict objectForKey:@"code"] intValue];
         id data = [dict objectForKey:@"data"];
-        if ([data isKindOfClass:[NSDictionary class]] || [data isKindOfClass:[NSArray class]]) {
+        if ([data isKindOfClass:[NSDictionary class]] || [data isKindOfClass:[NSArray class]] || [data isKindOfClass:[NSString class]]) {
             self.data = data;
         }else {
             self.data = nil;

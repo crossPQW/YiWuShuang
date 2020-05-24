@@ -12,20 +12,23 @@
 #import "EmptyView.h"
 #import "OrderClassCell.h"
 #import "StartClassViewController.h"
-
+#import "UserSession.h"
+#import "RealAuthView.h"
+#import "RealAuthViewController.h"
 @interface ClassViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) ClassTopView *topView;
 
 @property (nonatomic, strong) NSArray *list;
 
+@property (nonatomic, strong) RealAuthView *authView;
 @end
 
 @implementation ClassViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
+    
     __weak typeof(self) weakSelf = self;
     self.view.backgroundColor = [UIColor whiteColor];
     ClassTopView *topView = [ClassTopView topView];
@@ -56,8 +59,41 @@
     self.tableView.backgroundView = emptyView;
 
     [self.view addSubview:self.tableView];
+    
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+    //实名认证
+    [self checkAuth];
 }
 
+- (void)checkAuth {
+    User *user = [[UserSession session] currentUser];
+    if (!user.is_realauth) {
+        
+        UIView *bgView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+        
+        self.authView = [RealAuthView authView];
+        self.authView.frame = CGRectMake(0, 0, 300, 366);
+        self.authView.center = CGPointMake(self.view.width/2, self.view.height/2);
+        self.authView.layer.cornerRadius = 8;
+        self.authView.layer.masksToBounds = YES;
+        __weak typeof(self) ws = self;
+        self.authView.block = ^{
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+            RealAuthViewController *authVc = [sb instantiateViewControllerWithIdentifier:@"RealAuthVc"];
+            authVc.hidesBottomBarWhenPushed = YES;
+            [ws.navigationController pushViewController:authVc animated:YES];
+            
+            [bgView removeFromSuperview];
+        };
+
+        [bgView addSubview:self.authView];
+        [[UIApplication sharedApplication].delegate.window addSubview:bgView];
+    }
+}
 #pragma mark - tableview
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return self.list.count;

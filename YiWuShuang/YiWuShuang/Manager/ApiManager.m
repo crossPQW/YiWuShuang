@@ -19,6 +19,8 @@ static NSString *checkTokenUrl = @"/api/token/check";
 static NSString *refreshTokenUrl = @"/api/token/refresh";
 //登录
 static NSString *loginUrl = @"/api/user/login";
+//实名认证
+static NSString *realAuthUrl = @"/api/user/realauth";
 //获取组织列表
 static NSString *getOrigUrl = @"/api/team/list";
 //获取部门列表
@@ -89,6 +91,14 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [params setValue:phoneNumber forKey:@"mobile"];
     [params setValue:code forKey:@"captcha"];
     [self requestWithApi:loginUrl params:params success:success failure:failure];
+}
+
+- (void)realAuthWithRealName:(NSString *)name ID:(NSString *)ID img:(NSString *)img success:(void (^)(BaseModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params yk_setValue:name forKey:@"realname"];
+    [params yk_setValue:ID forKey:@"cardno"];
+    [params yk_setValue:img forKey:@"img"];
+    [self requestWithApi:realAuthUrl params:params success:success failure:failure];
 }
 
 - (void) getOrganization:(NSString *)token success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {

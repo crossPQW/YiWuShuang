@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ClassJoinView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sc-hf-qQm">
+                    <rect key="frame" x="15" y="64" width="384" height="1"/>
+                    <color key="backgroundColor" red="0.92941176470588238" green="0.93725490196078431" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="24X-cm-NbJ"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入您要加入的课程 ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRr-4j-EJq">
+                    <rect key="frame" x="15" y="0.0" width="384" height="64"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6y-xv-RCl">
+                    <rect key="frame" x="18" y="85" width="378" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="iDJ-Q3-1o5"/>
+                    </constraints>
+                    <state key="normal" title="立即加入"/>
+                    <connections>
+                        <action selector="join:" destination="iN0-l3-epB" eventType="touchUpInside" id="Lhx-UP-P42"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RRr-4j-EJq" secondAttribute="trailing" constant="15" id="2UC-z4-Kjr"/>
+                <constraint firstItem="D6y-xv-RCl" firstAttribute="top" secondItem="4sc-hf-qQm" secondAttribute="bottom" constant="20" id="3HY-UE-YJu"/>
+                <constraint firstItem="4sc-hf-qQm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="B0D-GI-J92"/>
+                <constraint firstItem="RRr-4j-EJq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ox8-R3-SYf"/>
+                <constraint firstItem="4sc-hf-qQm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Pmv-Mm-RQe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4sc-hf-qQm" secondAttribute="trailing" constant="15" id="SPX-6R-Hrz"/>
+                <constraint firstItem="RRr-4j-EJq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="VE5-6q-9aO"/>
+                <constraint firstItem="4sc-hf-qQm" firstAttribute="top" secondItem="RRr-4j-EJq" secondAttribute="bottom" id="WYd-p7-ro1"/>
+                <constraint firstItem="D6y-xv-RCl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="Wf7-l6-KTm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="D6y-xv-RCl" secondAttribute="trailing" constant="18" id="bcm-vf-JFs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="joinBtn" destination="D6y-xv-RCl" id="sa6-je-5sF"/>
+                <outlet property="textField" destination="RRr-4j-EJq" id="2PD-wv-jcP"/>
+            </connections>
+            <point key="canvasLocation" x="-139.13043478260872" y="32.477678571428569"/>
+        </view>
+    </objects>
+</document>

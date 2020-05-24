@@ -35,9 +35,9 @@
 #ifdef DEBUG
     [[YKWoodpeckerManager sharedInstance] show];
 #endif
-    
+
     [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
-        [platformsRegister setupWeChatWithAppId:@"wxea7ba9acc178cc95" appSecret:@"07c8294cbd4452a4729067183b361fef" universalLink:@"https://www.yiwushuang.cn"];
+        [platformsRegister setupWeChatWithAppId:@"wxea7ba9acc178cc95" appSecret:@"07c8294cbd4452a4729067183b361fef" universalLink:@"in0f5.share2dlink.com"];
 //        [platformsRegister setupDingTalkAuthWithAppId:dingAppKey appSecret:dingAppSecrect redirectUrl:@""];
     }];
     
@@ -60,7 +60,9 @@
     return YES;
 }
 
-
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return YES;
+}
 
 
 @end

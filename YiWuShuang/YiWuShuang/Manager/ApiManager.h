@@ -36,6 +36,12 @@ NS_ASSUME_NONNULL_BEGIN
                      success:(void (^)(BaseModel *baseModel))success
                      failure:(void (^)(NSError *error))failure;
 
+//实名认证
+- (void)realAuthWithRealName:(NSString *)name
+                          ID:(NSString *)ID
+                         img:(NSString *)img
+                     success:(void (^)(BaseModel *baseModel))success
+                     failure:(void (^)(NSError *error))failure;
 #pragma mark - 组织相关
 //获取组织列表
 - (void) getOrganization:(NSString *)token
@@ -112,6 +118,8 @@ NS_ASSUME_NONNULL_BEGIN
                      toType:(NSString *)toType
                     success:(void (^)(BaseModel *baseModel))success
                     failure:(void (^)(NSError *error))failure;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

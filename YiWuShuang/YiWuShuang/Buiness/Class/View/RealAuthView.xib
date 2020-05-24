@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RealAuthView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="366"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="realAuth" translatesAutoresizingMaskIntoConstraints="NO" id="bsK-7J-tSe">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="7eB-tR-w8m"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实名认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-cf-eQn">
+                    <rect key="frame" x="109" y="170" width="82" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有进行实名认证，认证成功后即可开启直播上课" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiX-y0-NBI">
+                    <rect key="frame" x="23" y="211" width="254" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="mMb-EK-1ax"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.46666666666666667" green="0.45882352941176469" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNR-ui-2Ab">
+                    <rect key="frame" x="57" y="287" width="186" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="186" id="awc-Sk-Qu9"/>
+                        <constraint firstAttribute="height" constant="42" id="dse-KS-NMf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <state key="normal" title="去实名认证">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="auth:" destination="iN0-l3-epB" eventType="touchUpInside" id="6qw-4N-GTD"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="CvS-cf-eQn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7G8-XF-l45"/>
+                <constraint firstAttribute="trailing" secondItem="AiX-y0-NBI" secondAttribute="trailing" constant="23" id="IeE-yr-Nv0"/>
+                <constraint firstItem="AiX-y0-NBI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="23" id="JCb-Cx-bYY"/>
+                <constraint firstItem="CvS-cf-eQn" firstAttribute="top" secondItem="bsK-7J-tSe" secondAttribute="bottom" constant="20" id="SK3-qf-Or0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bsK-7J-tSe" secondAttribute="trailing" id="ZiX-ba-IrO"/>
+                <constraint firstItem="bsK-7J-tSe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dE3-tJ-Z4i"/>
+                <constraint firstItem="uNR-ui-2Ab" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="f1d-7D-49H"/>
+                <constraint firstItem="AiX-y0-NBI" firstAttribute="top" secondItem="CvS-cf-eQn" secondAttribute="bottom" constant="17" id="hmT-le-YqM"/>
+                <constraint firstItem="uNR-ui-2Ab" firstAttribute="top" secondItem="AiX-y0-NBI" secondAttribute="bottom" constant="20" id="mDx-zm-0B3"/>
+                <constraint firstItem="bsK-7J-tSe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qIv-FP-nFM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="authBtn" destination="uNR-ui-2Ab" id="OkV-yc-tPX"/>
+            </connections>
+            <point key="canvasLocation" x="-94.20289855072464" y="-86.383928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="realAuth" width="302" height="151"/>
+    </resources>
+</document>

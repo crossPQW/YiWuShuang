@@ -61,24 +61,8 @@ static NSString *userkey = @"kUserInfoKey";
     [[NSUserDefaults standardUserDefaults] setValue:info forKey:userkey];
 }
 
-- (BOOL)isAvailable {
-    if (![self currentUser]) {
-        return NO;
-    }
-    User *user = [self currentUser];
-    NSTimeInterval current = [[NSDate date] timeIntervalSince1970];
-    if (current < user.expiretime) {
-        return YES;
-    }else{
-        return NO;
-    }
-    
-}
-
 - (void)checkUserAvailable:(void (^)(BOOL availble))available {
     __weak typeof(self) weakSelf = self;
-    available(NO);
-    return;
     [[ApiManager manager] checkTokenSuccess:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1 && available) {
             available(YES);

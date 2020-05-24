@@ -10,7 +10,6 @@
 		084906CDFC1F636C28D6635C /* Pods_YiWuShuang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C1F7CBFA98556F05A1B3D5 /* Pods_YiWuShuang.framework */; };
 		631BCBD0244C88B700D4ABAC /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBCF244C88B700D4ABAC /* BaseNavigationController.m */; };
 		631BCBD3244C8C8500D4ABAC /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBD2244C8C8500D4ABAC /* BaseTabBarController.m */; };
-		631BCBD6244C8CC100D4ABAC /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBD5244C8CC100D4ABAC /* ClassViewController.m */; };
 		631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBD8244C8CD100D4ABAC /* MineViewController.m */; };
 		631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBDC244C972100D4ABAC /* HomeTopView.m */; };
 		631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */; };
@@ -42,11 +41,23 @@
 		6367A17E2461842B00F20404 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A17D2461842B00F20404 /* MineModel.m */; };
 		6367A18524618AE000F20404 /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A18324618AE000F20404 /* MineCell.m */; };
 		6367A18624618AE000F20404 /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A18424618AE000F20404 /* MineCell.xib */; };
-		6377A480246FDD97003334A5 /* ClassTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377A47F246FDD97003334A5 /* ClassTopView.m */; };
-		6377A482246FDDA1003334A5 /* ClassTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377A481246FDDA1003334A5 /* ClassTopView.xib */; };
-		6377A486246FF03B003334A5 /* OrderClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377A484246FF03B003334A5 /* OrderClassCell.m */; };
-		6377A487246FF03B003334A5 /* OrderClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377A485246FF03B003334A5 /* OrderClassCell.xib */; };
-		6377A48A246FFD42003334A5 /* StartClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377A489246FFD42003334A5 /* StartClassViewController.m */; };
+		636BDC42247A7F58004C32A3 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 636BDC41247A7F58004C32A3 /* GradientButton.m */; };
+		636BDC45247AB779004C32A3 /* RealAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636BDC44247AB779004C32A3 /* RealAuthView.m */; };
+		636BDC47247AB786004C32A3 /* RealAuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636BDC46247AB786004C32A3 /* RealAuthView.xib */; };
+		636BDC4A247ABCEE004C32A3 /* RealAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636BDC49247ABCEE004C32A3 /* RealAuthViewController.m */; };
+		6381ECD224790F0700B7AE5B /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC224790F0700B7AE5B /* ClassViewController.m */; };
+		6381ECD324790F0700B7AE5B /* StartClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC324790F0700B7AE5B /* StartClassViewController.m */; };
+		6381ECD424790F0700B7AE5B /* ClassSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC724790F0700B7AE5B /* ClassSettingModel.m */; };
+		6381ECD524790F0700B7AE5B /* OrderClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6381ECC924790F0700B7AE5B /* OrderClassCell.xib */; };
+		6381ECD624790F0700B7AE5B /* OrderClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECCA24790F0700B7AE5B /* OrderClassCell.m */; };
+		6381ECD724790F0700B7AE5B /* ClassTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECCC24790F0700B7AE5B /* ClassTopView.m */; };
+		6381ECD824790F0700B7AE5B /* ClassTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6381ECCD24790F0700B7AE5B /* ClassTopView.xib */; };
+		6381ECD924790F0700B7AE5B /* ClassSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECCE24790F0700B7AE5B /* ClassSettingCell.m */; };
+		6381ECDC2479384800B7AE5B /* ClassNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECDB2479384800B7AE5B /* ClassNoticeView.m */; };
+		6381ECDE2479385100B7AE5B /* ClassNoticeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6381ECDD2479385100B7AE5B /* ClassNoticeView.xib */; };
+		6381ECE024796C6E00B7AE5B /* ClassJoinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6381ECDF24796C6E00B7AE5B /* ClassJoinView.xib */; };
+		6381ECE324796C7A00B7AE5B /* ClassJoinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECE224796C7A00B7AE5B /* ClassJoinView.m */; };
+		6381ECE62479858300B7AE5B /* ClassApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECE52479858300B7AE5B /* ClassApiManager.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
@@ -108,8 +119,6 @@
 		631BCBCF244C88B700D4ABAC /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		631BCBD1244C8C8500D4ABAC /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
 		631BCBD2244C8C8500D4ABAC /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
-		631BCBD4244C8CC100D4ABAC /* ClassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
-		631BCBD5244C8CC100D4ABAC /* ClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
 		631BCBD7244C8CD100D4ABAC /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		631BCBD8244C8CD100D4ABAC /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		631BCBDB244C972100D4ABAC /* HomeTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTopView.h; sourceTree = "<group>"; };
@@ -163,14 +172,35 @@
 		6367A18224618AE000F20404 /* MineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
 		6367A18324618AE000F20404 /* MineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
 		6367A18424618AE000F20404 /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
-		6377A47E246FDD97003334A5 /* ClassTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassTopView.h; sourceTree = "<group>"; };
-		6377A47F246FDD97003334A5 /* ClassTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassTopView.m; sourceTree = "<group>"; };
-		6377A481246FDDA1003334A5 /* ClassTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassTopView.xib; sourceTree = "<group>"; };
-		6377A483246FF03B003334A5 /* OrderClassCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderClassCell.h; sourceTree = "<group>"; };
-		6377A484246FF03B003334A5 /* OrderClassCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderClassCell.m; sourceTree = "<group>"; };
-		6377A485246FF03B003334A5 /* OrderClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderClassCell.xib; sourceTree = "<group>"; };
-		6377A488246FFD42003334A5 /* StartClassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartClassViewController.h; sourceTree = "<group>"; };
-		6377A489246FFD42003334A5 /* StartClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartClassViewController.m; sourceTree = "<group>"; };
+		636BDC40247A7F58004C32A3 /* GradientButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
+		636BDC41247A7F58004C32A3 /* GradientButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
+		636BDC43247AB779004C32A3 /* RealAuthView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealAuthView.h; sourceTree = "<group>"; };
+		636BDC44247AB779004C32A3 /* RealAuthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealAuthView.m; sourceTree = "<group>"; };
+		636BDC46247AB786004C32A3 /* RealAuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealAuthView.xib; sourceTree = "<group>"; };
+		636BDC48247ABCEE004C32A3 /* RealAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealAuthViewController.h; sourceTree = "<group>"; };
+		636BDC49247ABCEE004C32A3 /* RealAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealAuthViewController.m; sourceTree = "<group>"; };
+		6381ECC224790F0700B7AE5B /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
+		6381ECC324790F0700B7AE5B /* StartClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartClassViewController.m; sourceTree = "<group>"; };
+		6381ECC424790F0700B7AE5B /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
+		6381ECC624790F0700B7AE5B /* ClassSettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSettingModel.h; sourceTree = "<group>"; };
+		6381ECC724790F0700B7AE5B /* ClassSettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSettingModel.m; sourceTree = "<group>"; };
+		6381ECC924790F0700B7AE5B /* OrderClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderClassCell.xib; sourceTree = "<group>"; };
+		6381ECCA24790F0700B7AE5B /* OrderClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderClassCell.m; sourceTree = "<group>"; };
+		6381ECCB24790F0700B7AE5B /* ClassSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSettingCell.h; sourceTree = "<group>"; };
+		6381ECCC24790F0700B7AE5B /* ClassTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassTopView.m; sourceTree = "<group>"; };
+		6381ECCD24790F0700B7AE5B /* ClassTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassTopView.xib; sourceTree = "<group>"; };
+		6381ECCE24790F0700B7AE5B /* ClassSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSettingCell.m; sourceTree = "<group>"; };
+		6381ECCF24790F0700B7AE5B /* OrderClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderClassCell.h; sourceTree = "<group>"; };
+		6381ECD024790F0700B7AE5B /* ClassTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassTopView.h; sourceTree = "<group>"; };
+		6381ECD124790F0700B7AE5B /* StartClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartClassViewController.h; sourceTree = "<group>"; };
+		6381ECDA2479384800B7AE5B /* ClassNoticeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassNoticeView.h; sourceTree = "<group>"; };
+		6381ECDB2479384800B7AE5B /* ClassNoticeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassNoticeView.m; sourceTree = "<group>"; };
+		6381ECDD2479385100B7AE5B /* ClassNoticeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassNoticeView.xib; sourceTree = "<group>"; };
+		6381ECDF24796C6E00B7AE5B /* ClassJoinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassJoinView.xib; sourceTree = "<group>"; };
+		6381ECE124796C7A00B7AE5B /* ClassJoinView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassJoinView.h; sourceTree = "<group>"; };
+		6381ECE224796C7A00B7AE5B /* ClassJoinView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassJoinView.m; sourceTree = "<group>"; };
+		6381ECE42479858300B7AE5B /* ClassApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassApiManager.h; sourceTree = "<group>"; };
+		6381ECE52479858300B7AE5B /* ClassApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassApiManager.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -301,18 +331,6 @@
 			path = "Home联系人";
 			sourceTree = "<group>";
 		};
-		631BCBCB244C7F5F00D4ABAC /* Class上课 */ = {
-			isa = PBXGroup;
-			children = (
-				6377A47D246FDD88003334A5 /* View */,
-				631BCBD4244C8CC100D4ABAC /* ClassViewController.h */,
-				631BCBD5244C8CC100D4ABAC /* ClassViewController.m */,
-				6377A488246FFD42003334A5 /* StartClassViewController.h */,
-				6377A489246FFD42003334A5 /* StartClassViewController.m */,
-			);
-			path = "Class上课";
-			sourceTree = "<group>";
-		};
 		631BCBCC244C7F9500D4ABAC /* Mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,15 +416,48 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6377A47D246FDD88003334A5 /* View */ = {
+		6381ECC124790F0700B7AE5B /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				6377A47E246FDD97003334A5 /* ClassTopView.h */,
-				6377A47F246FDD97003334A5 /* ClassTopView.m */,
-				6377A481246FDDA1003334A5 /* ClassTopView.xib */,
-				6377A483246FF03B003334A5 /* OrderClassCell.h */,
-				6377A484246FF03B003334A5 /* OrderClassCell.m */,
-				6377A485246FF03B003334A5 /* OrderClassCell.xib */,
+				6381ECC524790F0700B7AE5B /* Model */,
+				6381ECC824790F0700B7AE5B /* View */,
+				6381ECC424790F0700B7AE5B /* ClassViewController.h */,
+				6381ECC224790F0700B7AE5B /* ClassViewController.m */,
+				6381ECD124790F0700B7AE5B /* StartClassViewController.h */,
+				6381ECC324790F0700B7AE5B /* StartClassViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		6381ECC524790F0700B7AE5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6381ECC624790F0700B7AE5B /* ClassSettingModel.h */,
+				6381ECC724790F0700B7AE5B /* ClassSettingModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6381ECC824790F0700B7AE5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6381ECCB24790F0700B7AE5B /* ClassSettingCell.h */,
+				6381ECCE24790F0700B7AE5B /* ClassSettingCell.m */,
+				6381ECDA2479384800B7AE5B /* ClassNoticeView.h */,
+				6381ECDB2479384800B7AE5B /* ClassNoticeView.m */,
+				6381ECDD2479385100B7AE5B /* ClassNoticeView.xib */,
+				6381ECD024790F0700B7AE5B /* ClassTopView.h */,
+				6381ECCC24790F0700B7AE5B /* ClassTopView.m */,
+				6381ECCD24790F0700B7AE5B /* ClassTopView.xib */,
+				6381ECCF24790F0700B7AE5B /* OrderClassCell.h */,
+				6381ECCA24790F0700B7AE5B /* OrderClassCell.m */,
+				6381ECC924790F0700B7AE5B /* OrderClassCell.xib */,
+				6381ECE124796C7A00B7AE5B /* ClassJoinView.h */,
+				6381ECE224796C7A00B7AE5B /* ClassJoinView.m */,
+				6381ECDF24796C6E00B7AE5B /* ClassJoinView.xib */,
+				636BDC43247AB779004C32A3 /* RealAuthView.h */,
+				636BDC44247AB779004C32A3 /* RealAuthView.m */,
+				636BDC46247AB786004C32A3 /* RealAuthView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,7 +521,7 @@
 		63BE22ED242CF6180066A316 /* Buiness */ = {
 			isa = PBXGroup;
 			children = (
-				631BCBCB244C7F5F00D4ABAC /* Class上课 */,
+				6381ECC124790F0700B7AE5B /* Class */,
 				631BCBCA244C7F5800D4ABAC /* Home联系人 */,
 				631BCBCC244C7F9500D4ABAC /* Mine */,
 				63BE22EF242CF64E0066A316 /* UserSystem */,
@@ -492,6 +543,8 @@
 				63CEB1C42443343300FB2146 /* CreateOrizViewController.m */,
 				63CEB1C62443344500FB2146 /* JoinOrizViewController.h */,
 				63CEB1C72443344500FB2146 /* JoinOrizViewController.m */,
+				636BDC48247ABCEE004C32A3 /* RealAuthViewController.h */,
+				636BDC49247ABCEE004C32A3 /* RealAuthViewController.m */,
 				63CEB14E242D03C000FB2146 /* Login.storyboard */,
 			);
 			path = Login;
@@ -564,6 +617,8 @@
 			children = (
 				63CEB15A2438D37500FB2146 /* ApiManager.h */,
 				63CEB15B2438D37500FB2146 /* ApiManager.m */,
+				6381ECE42479858300B7AE5B /* ClassApiManager.h */,
+				6381ECE52479858300B7AE5B /* ClassApiManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -579,6 +634,8 @@
 				631BCBD2244C8C8500D4ABAC /* BaseTabBarController.m */,
 				6367A157245DB5C100F20404 /* BaseViewController.h */,
 				6367A158245DB5C100F20404 /* BaseViewController.m */,
+				636BDC40247A7F58004C32A3 /* GradientButton.h */,
+				636BDC41247A7F58004C32A3 /* GradientButton.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -729,18 +786,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6381ECD824790F0700B7AE5B /* ClassTopView.xib in Resources */,
 				63CEB14F242D03C000FB2146 /* Login.storyboard in Resources */,
+				6381ECD524790F0700B7AE5B /* OrderClassCell.xib in Resources */,
 				63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */,
 				6367A18624618AE000F20404 /* MineCell.xib in Resources */,
 				6367A166245F173600F20404 /* ChoosePartHeader.xib in Resources */,
 				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
+				6381ECDE2479385100B7AE5B /* ClassNoticeView.xib in Resources */,
+				636BDC47247AB786004C32A3 /* RealAuthView.xib in Resources */,
 				6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */,
 				6367A17A2461738000F20404 /* NavHeadTitleView.xib in Resources */,
-				6377A482246FDDA1003334A5 /* ClassTopView.xib in Resources */,
 				6367A153245DA5B500F20404 /* HomePopView.xib in Resources */,
 				6367A16B245FDFE600F20404 /* ChooseTeamCell.xib in Resources */,
+				6381ECE024796C6E00B7AE5B /* ClassJoinView.xib in Resources */,
 				63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */,
-				6377A487246FF03B003334A5 /* OrderClassCell.xib in Resources */,
 				6367A14824544FCE00F20404 /* TeamCell.xib in Resources */,
 				63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */,
 				6367A1302454113A00F20404 /* EmptyView.xib in Resources */,
@@ -828,30 +888,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				6367A13E2454478F00F20404 /* PersonModel.m in Sources */,
+				6381ECD224790F0700B7AE5B /* ClassViewController.m in Sources */,
 				631BCBD0244C88B700D4ABAC /* BaseNavigationController.m in Sources */,
 				63BE22F5242CF95F0066A316 /* User.m in Sources */,
 				63CEB1BA24432D9000FB2146 /* CALayer+Addition.m in Sources */,
 				63CEB1BF24432D9000FB2146 /* NSObject+Addition.m in Sources */,
 				63CEB163243B7FB900FB2146 /* ChooseOrizViewController.m in Sources */,
 				63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */,
+				6381ECD324790F0700B7AE5B /* StartClassViewController.m in Sources */,
 				6367A13824541F6900F20404 /* PersonHeaderView.m in Sources */,
 				6367A18524618AE000F20404 /* MineCell.m in Sources */,
 				6367A14724544FCE00F20404 /* TeamCell.m in Sources */,
-				6377A48A246FFD42003334A5 /* StartClassViewController.m in Sources */,
 				63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */,
 				6367A164245F172400F20404 /* ChoosePartHeader.m in Sources */,
 				63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */,
-				6377A480246FDD97003334A5 /* ClassTopView.m in Sources */,
 				6367A159245DB5C100F20404 /* BaseViewController.m in Sources */,
 				63CEB1B224432D9000FB2146 /* NSNumber+Addition.m in Sources */,
+				6381ECD924790F0700B7AE5B /* ClassSettingCell.m in Sources */,
 				63CEB166243B88FE00FB2146 /* MBProgressHUD+helper.m in Sources */,
 				631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */,
 				63CEB1AA24432D9000FB2146 /* wwanconnect.c in Sources */,
+				636BDC42247A7F58004C32A3 /* GradientButton.m in Sources */,
+				6381ECE324796C7A00B7AE5B /* ClassJoinView.m in Sources */,
 				6367A12E2454112A00F20404 /* EmptyView.m in Sources */,
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
+				6381ECE62479858300B7AE5B /* ClassApiManager.m in Sources */,
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
 				6367A17624603FBD00F20404 /* NavHeadTitleView.m in Sources */,
+				6381ECD624790F0700B7AE5B /* OrderClassCell.m in Sources */,
+				6381ECD724790F0700B7AE5B /* ClassTopView.m in Sources */,
 				6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */,
 				63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */,
 				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
@@ -859,19 +925,21 @@
 				6367A16E245FE96500F20404 /* ChooseTeamModel.m in Sources */,
 				63CEB1AC24432D9000FB2146 /* NSDateFormatter+Addition.m in Sources */,
 				63CEB1602438DD5F00FB2146 /* BaseModel.m in Sources */,
+				636BDC4A247ABCEE004C32A3 /* RealAuthViewController.m in Sources */,
 				6367A1412454493D00F20404 /* TeamModel.m in Sources */,
 				63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */,
 				63CEB1B824432D9000FB2146 /* UIAlertView+Addition.m in Sources */,
 				6367A128245096C200F20404 /* TeamPickView.m in Sources */,
+				6381ECD424790F0700B7AE5B /* ClassSettingModel.m in Sources */,
 				63CEB1CC24433F4B00FB2146 /* CommonCellModel.m in Sources */,
 				63CEB1A824432D9000FB2146 /* UITableViewCell+Addition.m in Sources */,
 				63CEB1AE24432D9000FB2146 /* UIViewController+Addition.m in Sources */,
-				631BCBD6244C8CC100D4ABAC /* ClassViewController.m in Sources */,
 				63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */,
 				6367A14B24546D8600F20404 /* TeamViewController.m in Sources */,
 				6367A156245DB12500F20404 /* AddTeamViewController.m in Sources */,
 				6367A151245DA5A800F20404 /* HomePopView.m in Sources */,
-				6377A486246FF03B003334A5 /* OrderClassCell.m in Sources */,
+				6381ECDC2479384800B7AE5B /* ClassNoticeView.m in Sources */,
+				636BDC45247AB779004C32A3 /* RealAuthView.m in Sources */,
 				63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */,
 				6367A161245F10C900F20404 /* ChoosePartViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
@@ -1054,6 +1122,7 @@
 			baseConfigurationReference = C9771E284689BA46DE20A8FB /* Pods-YiWuShuang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HE3M4LJKL5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1077,6 +1146,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yiwushuang.esmart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1086,6 +1156,7 @@
 			baseConfigurationReference = 9A36C3F608AC21002832D28D /* Pods-YiWuShuang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HE3M4LJKL5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1109,6 +1180,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yiwushuang.esmart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
