@@ -268,6 +268,10 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
             success(model);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+#ifdef DEBUG
+        NSString* errResponse = [[NSString alloc] initWithData:(NSData*)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+        NSLog(@"[request ERROR] url = %@\n, params = %@\n *********************************\n errResponse = %@",url,paramter,errResponse);
+#endif
         if (failure) {
             failure(error);
         }

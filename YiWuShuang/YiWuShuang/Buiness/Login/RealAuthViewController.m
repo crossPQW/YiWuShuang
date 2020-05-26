@@ -10,6 +10,7 @@
 #import "ClassApiManager.h"
 #import "YKAddition.h"
 #import "ApiManager.h"
+#import "UserSession.h"
 @interface RealAuthViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *IDTextField;
@@ -41,7 +42,8 @@
     NSString *ID = self.IDTextField.text;
     [[ApiManager manager] realAuthWithRealName:name ID:ID img:self.imageUrl success:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1) {
-            
+            [[UserSession session] updateRealAuthState];
+            [self.navigationController popViewControllerAnimated:YES];
         }else{
             [MBProgressHUD showText:@"认证失败" inView:self.view];
         }

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)session;
 
 - (User *)currentUser;
-
+- (void)updateRealAuthState;
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code success:(void (^)(User *user))success failure:(void (^)(NSError *error))failure;
 - (void)checkUserAvailable:(void (^)(BOOL availble))available;
 

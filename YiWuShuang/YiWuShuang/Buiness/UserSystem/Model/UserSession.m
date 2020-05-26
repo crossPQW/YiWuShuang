@@ -35,6 +35,14 @@ static NSString *userkey = @"kUserInfoKey";
     return nil;
 }
 
+- (void)updateRealAuthState {
+    self.currentUser.is_realauth = YES;
+    NSDictionary *userinfo = [[NSUserDefaults standardUserDefaults] valueForKey:userkey];
+    NSMutableDictionary *temp = userinfo.mutableCopy;
+    [temp yk_setValue:@(1) forKey:@"is_realauth"];
+    [[NSUserDefaults standardUserDefaults] setValue:temp forKey:userkey];
+}
+
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code success:(void (^)(User * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
     __weak typeof(self) weakSelf = self;
     [[ApiManager manager] loginWithPhoneNumber:phoneNumber code:code success:^(BaseModel * _Nonnull baseModel) {
