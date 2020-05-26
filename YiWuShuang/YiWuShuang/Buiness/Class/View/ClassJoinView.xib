@@ -31,7 +31,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="iDJ-Q3-1o5"/>
                     </constraints>
-                    <state key="normal" title="立即加入"/>
+                    <state key="normal" title="立即加入">
+                        <color key="titleColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                     <connections>
                         <action selector="join:" destination="iN0-l3-epB" eventType="touchUpInside" id="Lhx-UP-P42"/>
                     </connections>

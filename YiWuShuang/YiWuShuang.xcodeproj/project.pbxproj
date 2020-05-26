@@ -45,6 +45,7 @@
 		636BDC45247AB779004C32A3 /* RealAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636BDC44247AB779004C32A3 /* RealAuthView.m */; };
 		636BDC47247AB786004C32A3 /* RealAuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636BDC46247AB786004C32A3 /* RealAuthView.xib */; };
 		636BDC4A247ABCEE004C32A3 /* RealAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636BDC49247ABCEE004C32A3 /* RealAuthViewController.m */; };
+		636BDC4D247D6D92004C32A3 /* JoinClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636BDC4C247D6D92004C32A3 /* JoinClassViewController.m */; };
 		6381ECD224790F0700B7AE5B /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC224790F0700B7AE5B /* ClassViewController.m */; };
 		6381ECD324790F0700B7AE5B /* StartClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC324790F0700B7AE5B /* StartClassViewController.m */; };
 		6381ECD424790F0700B7AE5B /* ClassSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC724790F0700B7AE5B /* ClassSettingModel.m */; };
@@ -179,6 +180,8 @@
 		636BDC46247AB786004C32A3 /* RealAuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealAuthView.xib; sourceTree = "<group>"; };
 		636BDC48247ABCEE004C32A3 /* RealAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealAuthViewController.h; sourceTree = "<group>"; };
 		636BDC49247ABCEE004C32A3 /* RealAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealAuthViewController.m; sourceTree = "<group>"; };
+		636BDC4B247D6D92004C32A3 /* JoinClassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoinClassViewController.h; sourceTree = "<group>"; };
+		636BDC4C247D6D92004C32A3 /* JoinClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoinClassViewController.m; sourceTree = "<group>"; };
 		6381ECC224790F0700B7AE5B /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
 		6381ECC324790F0700B7AE5B /* StartClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartClassViewController.m; sourceTree = "<group>"; };
 		6381ECC424790F0700B7AE5B /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
@@ -425,6 +428,8 @@
 				6381ECC224790F0700B7AE5B /* ClassViewController.m */,
 				6381ECD124790F0700B7AE5B /* StartClassViewController.h */,
 				6381ECC324790F0700B7AE5B /* StartClassViewController.m */,
+				636BDC4B247D6D92004C32A3 /* JoinClassViewController.h */,
+				636BDC4C247D6D92004C32A3 /* JoinClassViewController.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -913,6 +918,7 @@
 				6367A12E2454112A00F20404 /* EmptyView.m in Sources */,
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
+				636BDC4D247D6D92004C32A3 /* JoinClassViewController.m in Sources */,
 				6381ECE62479858300B7AE5B /* ClassApiManager.m in Sources */,
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
 				6367A17624603FBD00F20404 /* NavHeadTitleView.m in Sources */,

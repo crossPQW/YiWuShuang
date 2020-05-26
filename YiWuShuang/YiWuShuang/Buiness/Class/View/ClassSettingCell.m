@@ -171,7 +171,7 @@
     self.rightBtn.centerY = self.titleLabel.centerY;
     self.switchBtn.centerY = self.titleLabel.centerY;
     self.switchBtn.right = self.width - 18;
-    
+    self.joinView.frame = self.contentView.bounds;
     switch (self.model.style) {
         case ClassSettingModelTitle:
             self.titleLabel.top = 14;

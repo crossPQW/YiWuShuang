@@ -28,6 +28,9 @@
 
 @property (nonatomic, strong) TeamPickView *pickview;
 @property (nonatomic, strong) NSArray *countList;
+
+@property (nonatomic, strong) NSString *course_id;
+@property (nonatomic, strong) NSString *unique_id;
 @end
 
 @implementation StartClassViewController
@@ -36,6 +39,12 @@
     [super viewDidLoad];
     self.title = @"发起课程";
     [self.navigationController setNavigationBarHidden:NO];
+    
+    //default
+    self.clearly = @"超清";
+    self.stuCount = @"1";
+    self.isOpenSmartMic = YES;
+
     
     self.startClassBtn.layer.cornerRadius = 4;
     self.startClassBtn.layer.masksToBounds = YES;
@@ -57,11 +66,6 @@
     } failure:^(NSError * _Nonnull error) {
         
     }];
-    
-    //default
-    self.clearly = @"超清";
-    self.stuCount = @"1";
-    self.isOpenSmartMic = YES;
 }
 
 - (void)startClass {
@@ -74,7 +78,16 @@
         return;
     }
     [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuCount ratio:self.clearly type:1 start_at:nil isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
-        
+        if (baseModel.code == 1) {
+            if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *data = (NSDictionary *)baseModel.data;
+                self.course_id = [data stringForKey:@"course_id"];
+                self.unique_id = [data stringForKey:@"unique_id"];
+            }
+        }else{
+            NSString *errstr = baseModel.msg;
+            [MBProgressHUD showText:errstr inView:self.view];
+        }
     } failure:^(NSError * _Nonnull error) {
         
     }];
@@ -110,7 +123,11 @@
     classID.title = @"课程ID";
     classID.subtitle = self.classID;
     [dataSources addObject:classID];
-    [dataSources addObject:[self lineModel]];
+    
+    ClassSettingModel *space = [[ClassSettingModel alloc] init];
+    space.height = 7;
+    space.style = ClassSettingModelStyleSpace;
+    [dataSources addObject:space];
     
     ClassSettingModel *video = [[ClassSettingModel alloc] init];
     video.height = 60;
@@ -142,8 +159,9 @@
     smartMic.style = ClassSettingModelButton;
     smartMic.title = @"智麦";
     smartMic.tag = 5;
-    smartMic.btnImg = @"class_notice";
     smartMic.switchOn = self.isOpenSmartMic;
+    NSString *img = self.isOpenSmartMic ? @"class_smartMic_able" : @"class_smartMic_enable";
+    smartMic.btnImg = img;
     [dataSources addObject: smartMic];
     [dataSources addObject:[self lineModel]];
     self.dataSources = dataSources.copy;
@@ -235,6 +253,7 @@
             break;
         case 5:
             self.isOpenSmartMic = model.switchOn;
+            [self initDataSource];
             break;
         default:
             break;

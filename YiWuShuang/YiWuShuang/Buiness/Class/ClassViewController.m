@@ -15,6 +15,8 @@
 #import "UserSession.h"
 #import "RealAuthView.h"
 #import "RealAuthViewController.h"
+#import "JoinClassViewController.h"
+
 @interface ClassViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) ClassTopView *topView;
@@ -49,7 +51,9 @@
         [weakSelf.navigationController pushViewController:startVc animated:YES];
     };
     topView.tapJoinClassBlock = ^{
-        
+        JoinClassViewController *joinVc = [[JoinClassViewController alloc] init];
+        joinVc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:joinVc animated:YES];
     };
     topView.tapOrderClassBlock = ^{
         
