@@ -22,10 +22,12 @@
 @property (nonatomic, strong) NSString *className;
 @property (nonatomic, strong) NSString *stuCount;
 @property (nonatomic, strong) NSString *clearly;
+@property (nonatomic, strong) NSString *orderTime;
 @property (nonatomic, assign) BOOL isOpenMic;
 @property (nonatomic, assign) BOOL isOpenCamera;
 @property (nonatomic, assign) BOOL isOpenSmartMic;
 
+@property (nonatomic, strong) UIDatePicker *datePikcer;
 @property (nonatomic, strong) TeamPickView *pickview;
 @property (nonatomic, strong) NSArray *countList;
 
@@ -38,6 +40,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"发起课程";
+    if (self.isOrder) {
+        self.title = @"预约课程";
+    }
     [self.navigationController setNavigationBarHidden:NO];
     
     //default
@@ -77,7 +82,8 @@
         [MBProgressHUD showText:@"请输入课程名称" inView:self.view];
         return;
     }
-    [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuCount ratio:self.clearly type:1 start_at:nil isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
+    
+    [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuCount ratio:self.clearly type:1 start_at:self.orderTime isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1) {
             if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *data = (NSDictionary *)baseModel.data;
@@ -128,6 +134,24 @@
     space.height = 7;
     space.style = ClassSettingModelStyleSpace;
     [dataSources addObject:space];
+    
+    if (self.isOrder) {
+        ClassSettingModel *time = [[ClassSettingModel alloc] init];
+        time.height = 60;
+        time.style = ClassSettingModelSelect;
+        time.title = @"开始时间";
+        time.subtitle = @"请选择时间";
+        if (self.orderTime) {
+            time.subtitle = self.orderTime;
+        }
+        time.tag = 10;
+        [dataSources addObject:time];
+        
+        ClassSettingModel *space2 = [[ClassSettingModel alloc] init];
+        space2.height = 7;
+        space2.style = ClassSettingModelStyleSpace;
+        [dataSources addObject:space2];
+    }
     
     ClassSettingModel *video = [[ClassSettingModel alloc] init];
     video.height = 60;
@@ -255,6 +279,9 @@
             self.isOpenSmartMic = model.switchOn;
             [self initDataSource];
             break;
+        case 10:
+            [self handleSelectTimeWithModel:model];
+            break;
         default:
             break;
     }
@@ -277,6 +304,57 @@
     [self.pickview.superview removeFromSuperview];
 }
 
+- (void)handleSelectTimeWithModel:(ClassSettingModel *)model {
+    self.datePikcer = [[UIDatePicker alloc] init];
+    self.datePikcer.frame = CGRectMake(0, self.view.height - 320, self.view.width, 320);
+    self.datePikcer.backgroundColor = [UIColor whiteColor];
+    self.datePikcer.locale = [NSLocale localeWithLocaleIdentifier:@"zh"];
+    self.datePikcer.datePickerMode = UIDatePickerModeDateAndTime;
+    [self.datePikcer setDate:[NSDate date] animated:YES];
+    [self.datePikcer addTarget:self action:@selector(dateChange:) forControlEvents:UIControlEventValueChanged];
+    
+    UIView *btnView = [[UIView alloc] init];
+    btnView.backgroundColor = [UIColor whiteColor];
+    btnView.frame = CGRectMake(0, self.view.height - 320 - 47, self.view.width, 47);
+    
+    UIButton *cancelBtn = [[UIButton alloc] init];
+    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancelBtn.titleLabel setFont:[UIFont systemFontOfSize:16]];
+    [cancelBtn addTarget:self action:@selector(didClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
+    cancelBtn.frame = CGRectMake(0, 0, 52, 47);
+    [btnView addSubview:cancelBtn];
+    
+    UIButton *doneBtn = [[UIButton alloc] init];
+    [doneBtn setTitle:@"确认" forState:UIControlStateNormal];
+    doneBtn.frame = CGRectMake(self.view.width - 52, 0, 52, 47);
+    [doneBtn setTitleColor:[UIColor colorWithHexRGB:@"#03C1AD"] forState:UIControlStateNormal];
+    [doneBtn.titleLabel setFont:[UIFont systemFontOfSize:16]];
+    [doneBtn addTarget:self action:@selector(didClickDonelBtn) forControlEvents:UIControlEventTouchUpInside];
+    [btnView addSubview:doneBtn];
+    
+    UIView *bgView = [[UIView alloc] init];
+    bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    bgView.frame = [UIScreen mainScreen].bounds;
+    [bgView addSubview:btnView];
+    [bgView addSubview:self.datePikcer];
+    [[UIApplication sharedApplication].delegate.window addSubview:bgView];
+}
+
+- (void)dateChange:(UIDatePicker *)picker {
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    format.dateFormat = @"yyyy年/MM月/dd日 HH:mm";
+    NSString *dataStr = [format stringFromDate:picker.date];
+    self.orderTime = dataStr;
+}
+
+- (void)didClickCancelBtn {
+    [self.datePikcer.superview removeFromSuperview];
+}
+- (void)didClickDonelBtn {
+    [self initDataSource];
+    [self.datePikcer.superview removeFromSuperview];
+}
 #pragma mark - getter
 - (ClassSettingModel *)lineModel {
     ClassSettingModel *line = [[ClassSettingModel alloc] init];

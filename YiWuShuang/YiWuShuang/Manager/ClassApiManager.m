@@ -14,6 +14,7 @@
 
 static NSString *getCourseID = @"/api/course/getCourseId";
 static NSString *createClassUrl = @"/api/course/create";
+static NSString *joinClassUrl = @"/api/course/addCourse";
 static NSString *uploadUrl = @"/api/common/upload";
 
 
@@ -57,6 +58,14 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [params yk_setValue:@(isMic) forKey:@"is_make"];
     [params yk_setValue:@(isSmartMic) forKey:@"is_zhimai"];
     [self requestWithApi:createClassUrl params:params success:success failure:failure];
+}
+
+- (void)joinClassWithID:(NSString *)classID
+                success:(void (^)(BaseModel *baseModel))success
+                failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:classID forKey:@"unique_id"];
+    [self requestWithApi:joinClassUrl params:params success:success failure:failure];
 }
 #pragma mark - basic
 - (void)requestWithApi:(NSString *)api params:(NSDictionary *)params success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {

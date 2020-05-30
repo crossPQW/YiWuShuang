@@ -29,7 +29,9 @@
     
 }
 - (IBAction)join:(id)sender {
-    
+    if (self.block) {
+        self.block(self.textField.text);
+    }
 }
 
 - (CAGradientLayer *)gLayer {

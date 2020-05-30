@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^JoinBlock)(NSString *classID);
 @interface ClassJoinView : UIView
+@property (nonatomic, copy) JoinBlock block;
 + (instancetype)joinView;
 @end
 

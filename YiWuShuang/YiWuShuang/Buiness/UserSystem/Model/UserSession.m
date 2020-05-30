@@ -73,7 +73,6 @@ static NSString *userkey = @"kUserInfoKey";
     __weak typeof(self) weakSelf = self;
     [[ApiManager manager] checkTokenSuccess:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1 && available) {
-            available(YES);
             [[ApiManager manager] refreshTokenSuccess:^(BaseModel * _Nonnull baseModel) {
                 NSDictionary *data = baseModel.data;
                 NSString *token = [data stringForKey:@"token"];

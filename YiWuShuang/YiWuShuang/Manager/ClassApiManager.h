@@ -31,6 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
                  success:(void (^)(BaseModel *baseModel))success
                  failure:(void (^)(NSError *error))failure;
 
+//加入课程
+- (void)joinClassWithID:(NSString *)classID
+                success:(void (^)(BaseModel *baseModel))success
+                failure:(void (^)(NSError *error))failure;
+
 //上传图片
 - (void)uploadWithParams:(NSDictionary *)params
                    image:(UIImage *)img

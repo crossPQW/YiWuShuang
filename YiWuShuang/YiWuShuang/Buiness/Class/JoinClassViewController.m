@@ -21,6 +21,7 @@
 @property (nonatomic, assign) BOOL isOpenMic;
 @property (nonatomic, assign) BOOL isOpenCamera;
 @property (nonatomic, assign) BOOL isOpenSmartMic;
+@property (nonatomic, strong) NSString *classID;
 @end
 
 @implementation JoinClassViewController
@@ -44,6 +45,7 @@
     
     ClassSettingModel *notice = [[ClassSettingModel alloc] init];
     notice.height = 155;
+    notice.tag = 1;
     notice.style = ClassSettingModelJoin;
     [dataSources addObject:notice];
     
@@ -108,7 +110,49 @@
 
 - (void)handleCellClick:(ClassSettingModel *)model indexPath:(NSIndexPath *)indexPath
 {
-    
+    switch (model.tag) {
+        case 1:
+        {
+            self.classID = model.title;
+            [self joinClass];
+        }
+            break;
+        case 3:
+        {
+            self.isOpenMic = model.switchOn;
+        }
+            break;
+        case 4:
+        {
+            self.isOpenCamera = model.switchOn;
+        }
+            break;
+        case 5:
+        {
+            self.isOpenSmartMic = model.switchOn;
+            [self initDataSource];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)joinClass {
+    if (!self.classID) {
+        [MBProgressHUD showText:@"请输入课程ID" inView:self.view];
+        return;
+    }
+    [[ClassApiManager manager] joinClassWithID:self.classID success:^(BaseModel * _Nonnull baseModel) {
+        if (baseModel.code == 1) {
+            [MBProgressHUD showText:@"加入成功" inView:self.view];
+        }else{
+            NSString *errorMsg = baseModel.msg;
+            [MBProgressHUD showText:errorMsg inView:self.view];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
 }
 #pragma mark - getter
 - (ClassSettingModel *)lineModel {

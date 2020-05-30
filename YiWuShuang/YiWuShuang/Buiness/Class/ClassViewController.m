@@ -56,7 +56,10 @@
         [weakSelf.navigationController pushViewController:joinVc animated:YES];
     };
     topView.tapOrderClassBlock = ^{
-        
+        StartClassViewController *startVc = [[StartClassViewController alloc] init];
+        startVc.hidesBottomBarWhenPushed = YES;
+        startVc.isOrder = YES;
+        [weakSelf.navigationController pushViewController:startVc animated:YES];
     };
     
     EmptyView *emptyView = [EmptyView emptyView];

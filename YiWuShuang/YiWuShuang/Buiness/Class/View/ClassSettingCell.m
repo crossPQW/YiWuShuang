@@ -150,8 +150,16 @@
         }
         break;
         case ClassSettingModelJoin:
+        {
             self.joinView = [ClassJoinView joinView];
+            self.joinView.block = ^(NSString * _Nonnull classID) {
+                weakSelf.model.title = classID;
+                if (weakSelf.clickBlock) {
+                    weakSelf.clickBlock(weakSelf.model);
+                }
+            };
             [self.contentView addSubview:self.joinView];
+        }
         break;
         default:
             break;
@@ -161,10 +169,12 @@
 - (void)layout {
     CGFloat x = 18;
     self.lineview.frame = CGRectMake(x, 0, self.width - x * 2, self.height);
-    self.titleLabel.frame = CGRectMake(x, 29, 120, 22);
-    CGFloat rightWidth = 150;
+//    self.titleLabel.frame = CGRectMake(x, 29, 120, 22);
+    [self.titleLabel sizeToFit];
+    self.titleLabel.left = x;
+    self.titleLabel.top = 29;
     self.inputTextField.frame = CGRectMake(x, 36, self.width - x*2, 63);
-    self.subtitleLabel.frame = CGRectMake(self.width - rightWidth - x, 29, rightWidth , 22);
+    self.subtitleLabel.frame = CGRectMake(self.titleLabel.right + 10, 29, self.width - self.titleLabel.right - 10 , 22);
     self.arrowView.frame = CGRectMake(self.width - 16 - 18, (self.height - 16) * 0.5, 6, 10);
     self.arrowView.centerY = self.subtitleLabel.centerY;
     self.rightBtn.frame = CGRectMake(self.width - 18 - 26, 0, 26, 26);
@@ -177,7 +187,7 @@
             self.titleLabel.top = 14;
             break;
         case ClassSettingModelSelect:
-            self.subtitleLabel.frame = CGRectMake(self.arrowView.left - rightWidth - 5, 0, rightWidth, 22);
+            self.subtitleLabel.frame = CGRectMake(self.titleLabel.right + 10, 29, self.arrowView.left - self.titleLabel.right - 20, 22);
             self.subtitleLabel.centerY = self.titleLabel.centerY;
             break;
         case ClassSettingModelCopy:
