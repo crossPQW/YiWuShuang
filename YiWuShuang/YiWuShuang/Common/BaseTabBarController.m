@@ -31,7 +31,7 @@
     
     HomeViewController *homeVc = [[HomeViewController alloc] init];
     BaseNavigationController *homeVcNav = [[BaseNavigationController alloc] initWithRootViewController:homeVc];
-    [self addChildViewController:homeVcNav title:@"联系人" imageNamed:@"tabbar_home"];
+    [self addChildViewController:homeVcNav title:@"联系人" imageNamed:@"tabbar_contact"];
     
     MineViewController *mineVc = [[MineViewController alloc] init];
     BaseNavigationController *mineVcNav = [[BaseNavigationController alloc] initWithRootViewController:mineVc];

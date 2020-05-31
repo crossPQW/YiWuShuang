@@ -82,8 +82,11 @@
         [MBProgressHUD showText:@"请输入课程名称" inView:self.view];
         return;
     }
-    
-    [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuCount ratio:self.clearly type:1 start_at:self.orderTime isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
+    int type = 1;
+    if (self.isOrder) {
+        type = 2;
+    }
+    [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuCount ratio:self.clearly type:type start_at:self.orderTime isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1) {
             if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *data = (NSDictionary *)baseModel.data;
@@ -306,7 +309,7 @@
 
 - (void)handleSelectTimeWithModel:(ClassSettingModel *)model {
     self.datePikcer = [[UIDatePicker alloc] init];
-    self.datePikcer.frame = CGRectMake(0, self.view.height - 320, self.view.width, 320);
+    self.datePikcer.frame = CGRectMake(0, self.view.height - 300, self.view.width, 300);
     self.datePikcer.backgroundColor = [UIColor whiteColor];
     self.datePikcer.locale = [NSLocale localeWithLocaleIdentifier:@"zh"];
     self.datePikcer.datePickerMode = UIDatePickerModeDateAndTime;
@@ -315,7 +318,7 @@
     
     UIView *btnView = [[UIView alloc] init];
     btnView.backgroundColor = [UIColor whiteColor];
-    btnView.frame = CGRectMake(0, self.view.height - 320 - 47, self.view.width, 47);
+    btnView.frame = CGRectMake(0, self.view.height - 300 - 47, self.view.width, 47);
     
     UIButton *cancelBtn = [[UIButton alloc] init];
     [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
