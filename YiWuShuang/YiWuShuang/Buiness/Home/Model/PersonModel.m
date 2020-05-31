@@ -14,6 +14,7 @@
         @"teamID":@"team_id",
         @"partID":@"part_id",
         @"userID":@"user_id",
+        @"friendId":@"to_id",
     };
 }
 @end

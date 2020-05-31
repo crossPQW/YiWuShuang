@@ -43,6 +43,10 @@ NS_ASSUME_NONNULL_BEGIN
                 fileName:(NSString *)fileName
                  success:(void (^)(BaseModel *baseModel))success
                  failure:(void (^)(NSError *error))failure;
+
+//获取好友列表
+- (void)getFriendsSuccess:(void (^)(BaseModel *baseModel))success
+                  failure:(void (^)(NSError *error))failure;
 @end
 
 NS_ASSUME_NONNULL_END

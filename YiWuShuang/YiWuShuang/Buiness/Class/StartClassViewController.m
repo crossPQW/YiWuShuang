@@ -13,6 +13,8 @@
 #import "ClassApiManager.h"
 #import "GradientButton.h"
 #import "TeamPickView.h"
+#import "ChooseStudentViewController.h"
+#import "BaseNavigationController.h"
 
 @interface StartClassViewController ()<UITableViewDelegate,UITableViewDataSource, TeamPickerViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -29,7 +31,6 @@
 
 @property (nonatomic, strong) UIDatePicker *datePikcer;
 @property (nonatomic, strong) TeamPickView *pickview;
-@property (nonatomic, strong) NSArray *countList;
 
 @property (nonatomic, strong) NSString *course_id;
 @property (nonatomic, strong) NSString *unique_id;
@@ -71,6 +72,14 @@
     } failure:^(NSError * _Nonnull error) {
         
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(chooseStudent:) name:@"hasChooseStudent" object:nil];
+}
+
+- (void)chooseStudent:(NSNotification *)noti {
+    int count = [noti.userInfo intForKey:@"count"];
+    self.stuCount = [NSString stringWithFormat:@"%d",count];
+    [self initDataSource];
 }
 
 - (void)startClass {
@@ -121,7 +130,7 @@
     stuCount.height = 60;
     stuCount.style = ClassSettingModelSelect;
     stuCount.title = @"上课人员";
-    stuCount.subtitle = @"1人";
+    stuCount.subtitle = self.stuCount ?: @"请选择";
     stuCount.tag = 1;
     [dataSources addObject:stuCount];
     [dataSources addObject:[self lineModel]];
@@ -246,16 +255,10 @@
     switch (model.tag) {
         case 1:
         {
-            TeamPickView *pickview = [[TeamPickView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 320, self.view.width, 320)];
-            pickview.tag = model.tag;
-            self.pickview = pickview;
-            pickview.delegate = self;
-            UIView *bgView = [[UIView alloc] init];
-            bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-            bgView.frame = [UIScreen mainScreen].bounds;
-            [bgView addSubview:pickview];
-            [[UIApplication sharedApplication].delegate.window addSubview:bgView];
-            [pickview setData:self.countList];
+            ChooseStudentViewController *chooseVc = [[ChooseStudentViewController alloc] init];
+            BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:chooseVc];
+            nav.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:nav animated:YES completion:nil];
         }
             break;
         case 2:
@@ -291,11 +294,7 @@
 }
 
 - (void)didSelectedTeamWithIndex:(NSInteger)index {
-    if (self.pickview.tag == 1) {
-        NSDictionary *dict = [self.countList yk_objectAtIndex:index];
-        NSString *count = [dict stringForKey:@"data"];
-        self.stuCount = count;
-    }else if (self.pickview.tag == 2){
+    if (self.pickview.tag == 2){
         NSDictionary *dict = [[self clearlyList] yk_objectAtIndex:index];
         NSString *clearly = [dict stringForKey:@"data"];
         self.clearly = clearly;
@@ -375,21 +374,6 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
-}
-
-
-- (NSArray *)countList {
-    if (!_countList) {
-        NSMutableArray *array = @[].mutableCopy;
-        for (int i = 0; i<100; i++) {
-            NSString *name = [NSString stringWithFormat:@"%d人",i+1];
-            NSString *count = [NSString stringWithFormat:@"%d",i+1];
-            NSDictionary *data = @{@"name":name,@"data":count};
-            [array yk_addObject:data];
-        }
-        _countList = array;
-    }
-    return _countList;
 }
 
 - (NSArray *)clearlyList {

@@ -13,6 +13,13 @@
 		631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBD8244C8CD100D4ABAC /* MineViewController.m */; };
 		631BCBDD244C972100D4ABAC /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBDC244C972100D4ABAC /* HomeTopView.m */; };
 		631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */; };
+		6338D89E24839B3B0031F044 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6338D89D24839B3B0031F044 /* ContactViewController.m */; };
+		6338D8A12483A4C90031F044 /* ChooseStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6338D8A02483A4C90031F044 /* ChooseStudentViewController.m */; };
+		6338D8A92483AAE20031F044 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6338D8A82483AAE10031F044 /* HomeViewController.m */; };
+		6338D8AC2483B37D0031F044 /* InvateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6338D8AB2483B37D0031F044 /* InvateView.m */; };
+		6338D8AE2483B38A0031F044 /* InvateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6338D8AD2483B38A0031F044 /* InvateView.xib */; };
+		6338D8B02483BCAE0031F044 /* ChooseBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6338D8AF2483BCAE0031F044 /* ChooseBottomView.xib */; };
+		6338D8B32483BCC00031F044 /* ChooseBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6338D8B22483BCC00031F044 /* ChooseBottomView.m */; };
 		6367A128245096C200F20404 /* TeamPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A127245096C200F20404 /* TeamPickView.m */; };
 		6367A12E2454112A00F20404 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A12D2454112A00F20404 /* EmptyView.m */; };
 		6367A1302454113A00F20404 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A12F2454113A00F20404 /* EmptyView.xib */; };
@@ -60,7 +67,6 @@
 		6381ECE324796C7A00B7AE5B /* ClassJoinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECE224796C7A00B7AE5B /* ClassJoinView.m */; };
 		6381ECE62479858300B7AE5B /* ClassApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECE52479858300B7AE5B /* ClassApiManager.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
-		63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22BF242BCB0E0066A316 /* HomeViewController.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
 		63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C4242BCB100066A316 /* Assets.xcassets */; };
 		63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C6242BCB100066A316 /* LaunchScreen.storyboard */; };
@@ -126,6 +132,17 @@
 		631BCBDC244C972100D4ABAC /* HomeTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTopView.m; sourceTree = "<group>"; };
 		631BCBE0244CA9F200D4ABAC /* PersonCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonCellTableViewCell.h; sourceTree = "<group>"; };
 		631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonCellTableViewCell.m; sourceTree = "<group>"; };
+		6338D89C24839B3B0031F044 /* ContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		6338D89D24839B3B0031F044 /* ContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		6338D89F2483A4C90031F044 /* ChooseStudentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseStudentViewController.h; sourceTree = "<group>"; };
+		6338D8A02483A4C90031F044 /* ChooseStudentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseStudentViewController.m; sourceTree = "<group>"; };
+		6338D8A82483AAE10031F044 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		6338D8AA2483B37D0031F044 /* InvateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvateView.h; sourceTree = "<group>"; };
+		6338D8AB2483B37D0031F044 /* InvateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvateView.m; sourceTree = "<group>"; };
+		6338D8AD2483B38A0031F044 /* InvateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvateView.xib; sourceTree = "<group>"; };
+		6338D8AF2483BCAE0031F044 /* ChooseBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBottomView.xib; sourceTree = "<group>"; };
+		6338D8B12483BCC00031F044 /* ChooseBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseBottomView.h; sourceTree = "<group>"; };
+		6338D8B22483BCC00031F044 /* ChooseBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseBottomView.m; sourceTree = "<group>"; };
 		6367A126245096C200F20404 /* TeamPickView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamPickView.h; sourceTree = "<group>"; };
 		6367A127245096C200F20404 /* TeamPickView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamPickView.m; sourceTree = "<group>"; };
 		6367A12C2454112A00F20404 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
@@ -173,8 +190,8 @@
 		6367A18224618AE000F20404 /* MineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
 		6367A18324618AE000F20404 /* MineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
 		6367A18424618AE000F20404 /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
-		636BDC40247A7F58004C32A3 /* GradientButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
-		636BDC41247A7F58004C32A3 /* GradientButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
+		636BDC40247A7F58004C32A3 /* GradientButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GradientButton.h; path = ../GradientButton.h; sourceTree = "<group>"; };
+		636BDC41247A7F58004C32A3 /* GradientButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GradientButton.m; path = ../GradientButton.m; sourceTree = "<group>"; };
 		636BDC43247AB779004C32A3 /* RealAuthView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealAuthView.h; sourceTree = "<group>"; };
 		636BDC44247AB779004C32A3 /* RealAuthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealAuthView.m; sourceTree = "<group>"; };
 		636BDC46247AB786004C32A3 /* RealAuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealAuthView.xib; sourceTree = "<group>"; };
@@ -208,7 +225,6 @@
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		63BE22BE242BCB0E0066A316 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		63BE22BF242BCB0E0066A316 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		63BE22C2242BCB0E0066A316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63BE22C4242BCB100066A316 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63BE22C7242BCB100066A316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -315,13 +331,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		631BCBCA244C7F5800D4ABAC /* Home联系人 */ = {
+		631BCBCA244C7F5800D4ABAC /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				6367A13B2454477900F20404 /* Model */,
 				631BCBDA244C970200D4ABAC /* View */,
 				63BE22BE242BCB0E0066A316 /* HomeViewController.h */,
-				63BE22BF242BCB0E0066A316 /* HomeViewController.m */,
+				6338D8A82483AAE10031F044 /* HomeViewController.m */,
 				6367A14924546D8600F20404 /* TeamViewController.h */,
 				6367A14A24546D8600F20404 /* TeamViewController.m */,
 				6367A15F245F10C900F20404 /* ChoosePartViewController.h */,
@@ -331,7 +347,7 @@
 				6367A154245DB12500F20404 /* AddTeamViewController.h */,
 				6367A155245DB12500F20404 /* AddTeamViewController.m */,
 			);
-			path = "Home联系人";
+			path = Home;
 			sourceTree = "<group>";
 		};
 		631BCBCC244C7F9500D4ABAC /* Mine */ = {
@@ -384,6 +400,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6338D89B24839B250031F044 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				6338D89C24839B3B0031F044 /* ContactViewController.h */,
+				6338D89D24839B3B0031F044 /* ContactViewController.m */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		6338D8A22483A93A0031F044 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				636BDC40247A7F58004C32A3 /* GradientButton.h */,
+				636BDC41247A7F58004C32A3 /* GradientButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6367A13B2454477900F20404 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +464,8 @@
 				6381ECC324790F0700B7AE5B /* StartClassViewController.m */,
 				636BDC4B247D6D92004C32A3 /* JoinClassViewController.h */,
 				636BDC4C247D6D92004C32A3 /* JoinClassViewController.m */,
+				6338D89F2483A4C90031F044 /* ChooseStudentViewController.h */,
+				6338D8A02483A4C90031F044 /* ChooseStudentViewController.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -463,6 +499,12 @@
 				636BDC43247AB779004C32A3 /* RealAuthView.h */,
 				636BDC44247AB779004C32A3 /* RealAuthView.m */,
 				636BDC46247AB786004C32A3 /* RealAuthView.xib */,
+				6338D8AA2483B37D0031F044 /* InvateView.h */,
+				6338D8AB2483B37D0031F044 /* InvateView.m */,
+				6338D8AD2483B38A0031F044 /* InvateView.xib */,
+				6338D8B12483BCC00031F044 /* ChooseBottomView.h */,
+				6338D8B22483BCC00031F044 /* ChooseBottomView.m */,
+				6338D8AF2483BCAE0031F044 /* ChooseBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -526,8 +568,9 @@
 		63BE22ED242CF6180066A316 /* Buiness */ = {
 			isa = PBXGroup;
 			children = (
+				6338D89B24839B250031F044 /* Contact */,
 				6381ECC124790F0700B7AE5B /* Class */,
-				631BCBCA244C7F5800D4ABAC /* Home联系人 */,
+				631BCBCA244C7F5800D4ABAC /* Home */,
 				631BCBCC244C7F9500D4ABAC /* Mine */,
 				63BE22EF242CF64E0066A316 /* UserSystem */,
 				63BE22EE242CF6430066A316 /* Login */,
@@ -631,6 +674,7 @@
 		63CEB15D2438DD4F00FB2146 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6338D8A22483A93A0031F044 /* View */,
 				63CEB15E2438DD5F00FB2146 /* BaseModel.h */,
 				63CEB15F2438DD5F00FB2146 /* BaseModel.m */,
 				631BCBCE244C88B700D4ABAC /* BaseNavigationController.h */,
@@ -639,8 +683,6 @@
 				631BCBD2244C8C8500D4ABAC /* BaseTabBarController.m */,
 				6367A157245DB5C100F20404 /* BaseViewController.h */,
 				6367A158245DB5C100F20404 /* BaseViewController.m */,
-				636BDC40247A7F58004C32A3 /* GradientButton.h */,
-				636BDC41247A7F58004C32A3 /* GradientButton.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -799,7 +841,9 @@
 				6367A166245F173600F20404 /* ChoosePartHeader.xib in Resources */,
 				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
 				6381ECDE2479385100B7AE5B /* ClassNoticeView.xib in Resources */,
+				6338D8AE2483B38A0031F044 /* InvateView.xib in Resources */,
 				636BDC47247AB786004C32A3 /* RealAuthView.xib in Resources */,
+				6338D8B02483BCAE0031F044 /* ChooseBottomView.xib in Resources */,
 				6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */,
 				6367A17A2461738000F20404 /* NavHeadTitleView.xib in Resources */,
 				6367A153245DA5B500F20404 /* HomePopView.xib in Resources */,
@@ -894,6 +938,7 @@
 			files = (
 				6367A13E2454478F00F20404 /* PersonModel.m in Sources */,
 				6381ECD224790F0700B7AE5B /* ClassViewController.m in Sources */,
+				6338D8A12483A4C90031F044 /* ChooseStudentViewController.m in Sources */,
 				631BCBD0244C88B700D4ABAC /* BaseNavigationController.m in Sources */,
 				63BE22F5242CF95F0066A316 /* User.m in Sources */,
 				63CEB1BA24432D9000FB2146 /* CALayer+Addition.m in Sources */,
@@ -904,7 +949,6 @@
 				6367A13824541F6900F20404 /* PersonHeaderView.m in Sources */,
 				6367A18524618AE000F20404 /* MineCell.m in Sources */,
 				6367A14724544FCE00F20404 /* TeamCell.m in Sources */,
-				63BE22C0242BCB0E0066A316 /* HomeViewController.m in Sources */,
 				6367A164245F172400F20404 /* ChoosePartHeader.m in Sources */,
 				63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */,
 				6367A159245DB5C100F20404 /* BaseViewController.m in Sources */,
@@ -919,11 +963,13 @@
 				63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */,
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
 				636BDC4D247D6D92004C32A3 /* JoinClassViewController.m in Sources */,
+				6338D8B32483BCC00031F044 /* ChooseBottomView.m in Sources */,
 				6381ECE62479858300B7AE5B /* ClassApiManager.m in Sources */,
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
 				6367A17624603FBD00F20404 /* NavHeadTitleView.m in Sources */,
 				6381ECD624790F0700B7AE5B /* OrderClassCell.m in Sources */,
 				6381ECD724790F0700B7AE5B /* ClassTopView.m in Sources */,
+				6338D8A92483AAE20031F044 /* HomeViewController.m in Sources */,
 				6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */,
 				63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */,
 				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
@@ -946,9 +992,11 @@
 				6367A151245DA5A800F20404 /* HomePopView.m in Sources */,
 				6381ECDC2479384800B7AE5B /* ClassNoticeView.m in Sources */,
 				636BDC45247AB779004C32A3 /* RealAuthView.m in Sources */,
+				6338D8AC2483B37D0031F044 /* InvateView.m in Sources */,
 				63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */,
 				6367A161245F10C900F20404 /* ChoosePartViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
+				6338D89E24839B3B0031F044 /* ContactViewController.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
 				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,
 				631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */,

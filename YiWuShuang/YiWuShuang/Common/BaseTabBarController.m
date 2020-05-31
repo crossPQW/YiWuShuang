@@ -12,6 +12,7 @@
 #import "MineViewController.h"
 #import "BaseNavigationController.h"
 #import "UIColor+Addition.h"
+#import "ContactViewController.h"
 @interface BaseTabBarController ()
 
 @end
@@ -29,15 +30,18 @@
     BaseNavigationController *classVcNav = [[BaseNavigationController alloc] initWithRootViewController:classVc];
     [self addChildViewController:classVcNav title:@"上课" imageNamed:@"tabbar_class"];
     
-    HomeViewController *homeVc = [[HomeViewController alloc] init];
-    BaseNavigationController *homeVcNav = [[BaseNavigationController alloc] initWithRootViewController:homeVc];
-    [self addChildViewController:homeVcNav title:@"联系人" imageNamed:@"tabbar_contact"];
+//    HomeViewController *homeVc = [[HomeViewController alloc] init];
+//    BaseNavigationController *homeVcNav = [[BaseNavigationController alloc] initWithRootViewController:homeVc];
+//    [self addChildViewController:homeVcNav title:@"联系人" imageNamed:@"tabbar_contact"];
+    ContactViewController *contactVc = [[ContactViewController alloc] init];
+    BaseNavigationController *contactVcNav = [[BaseNavigationController alloc] initWithRootViewController:contactVc];
+    [self addChildViewController:contactVcNav title:@"联系人" imageNamed:@"tabbar_contact"];
     
     MineViewController *mineVc = [[MineViewController alloc] init];
     BaseNavigationController *mineVcNav = [[BaseNavigationController alloc] initWithRootViewController:mineVc];
     [self addChildViewController:mineVcNav title:@"我的" imageNamed:@"tabbar_mine"];
     
-    self.viewControllers = @[classVcNav,homeVcNav,mineVcNav];
+    self.viewControllers = @[classVcNav,contactVcNav,mineVcNav];
 }
 
 - (void)addChildViewController:(BaseNavigationController *)vc title:(NSString *)title imageNamed:(NSString *)imageNamed
@@ -47,7 +51,7 @@
     NSString *normalImage = [imageNamed stringByAppendingString:@"_normal"];
     NSString *selectedImagStr = [imageNamed stringByAppendingString:@"_selected"];
     UIImage *image = [UIImage imageNamed:normalImage];
-    UIImage *selectImage = [UIImage imageNamed:selectedImagStr];
+    UIImage *selectImage = [[UIImage imageNamed:selectedImagStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.title = title;
     vc.tabBarItem.selectedImage = selectImage;
     vc.tabBarItem.image = image;

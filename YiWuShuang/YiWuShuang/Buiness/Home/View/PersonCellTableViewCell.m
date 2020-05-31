@@ -19,6 +19,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.avatar = [[UIImageView alloc] init];
+        self.avatar.layer.cornerRadius = 20;
+        self.avatar.layer.masksToBounds = YES;
         [self.contentView addSubview:self.avatar];
         self.name = [[UILabel alloc] init];
         self.name.textColor = [UIColor colorWithHexRGB:@"#303033"];
@@ -54,7 +56,7 @@
 - (void)setModel:(PersonModel *)model {
     _model = model;
     self.name.text = model.nickname;
-    
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
     if (model.isChecked) {
         [self.checkBtn setBackgroundImage:[UIImage imageNamed:@"home_person_checked"] forState:UIControlStateNormal];
         _checkBtn.layer.borderColor = [UIColor clearColor].CGColor;

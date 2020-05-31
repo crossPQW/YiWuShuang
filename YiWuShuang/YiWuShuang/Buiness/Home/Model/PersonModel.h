@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger type;
 @property (nonatomic, strong) NSString *avatar;
 @property (nonatomic, strong) NSString *nickname;
+@property (nonatomic, strong) NSString *friendId;//好友 ID
 
 @property (nonatomic, assign) BOOL isChecked;
 @end
