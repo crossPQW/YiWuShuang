@@ -55,6 +55,7 @@
 
 - (void)setModel:(PersonModel *)model {
     _model = model;
+    self.checkBtn.hidden = self.hiddenCheckMark;
     self.name.text = model.nickname;
     [self.avatar sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
     if (model.isChecked) {
