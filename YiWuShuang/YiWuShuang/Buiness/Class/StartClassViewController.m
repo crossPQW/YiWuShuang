@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSString *classID;
 @property (nonatomic, strong) NSString *className;
 @property (nonatomic, strong) NSString *stuCount;
+@property (nonatomic, strong) NSString *stuIds;
 @property (nonatomic, strong) NSString *clearly;
 @property (nonatomic, strong) NSString *orderTime;
 @property (nonatomic, assign) BOOL isOpenMic;
@@ -78,6 +79,7 @@
 
 - (void)chooseStudent:(NSNotification *)noti {
     int count = [noti.userInfo intForKey:@"count"];
+    self.stuIds = [noti.userInfo stringForKey:@"ids"];
     self.stuCount = [NSString stringWithFormat:@"%d",count];
     [self initDataSource];
 }
@@ -95,7 +97,7 @@
     if (self.isOrder) {
         type = 2;
     }
-    [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuCount ratio:self.clearly type:type start_at:self.orderTime isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
+    [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuIds ratio:self.clearly type:type start_at:self.orderTime isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1) {
             if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *data = (NSDictionary *)baseModel.data;

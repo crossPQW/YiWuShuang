@@ -49,7 +49,7 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     NSMutableDictionary *params = @{}.mutableCopy;
     [params yk_setValue:classID forKey:@"unique_id"];
     [params yk_setValue:className forKey:@"name"];
-    [params yk_setValue:stuNumber forKey:@"number"];
+    [params yk_setValue:stuNumber forKey:@"user_ids"];
     [params yk_setValue:ratio forKey:@"ratio"];
     [params yk_setValue:@(type) forKey:@"type"];
     if (type == 2) {

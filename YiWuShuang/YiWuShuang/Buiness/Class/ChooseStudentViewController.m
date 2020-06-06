@@ -74,7 +74,8 @@
     self.bottomView = [ChooseBottomView bottomView];
     [self.view addSubview:self.bottomView];
     self.bottomView.block = ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"hasChooseStudent" object:nil userInfo:@{@"count":@(weakSelf.choosedFriends.count)}];
+        NSString *ids = [weakSelf chooseIds];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"hasChooseStudent" object:nil userInfo:@{@"count":@(weakSelf.choosedFriends.count),@"ids":ids}];
         [weakSelf dismissViewControllerAnimated:YES completion:nil];
     };
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -83,6 +84,14 @@
     }];
     
     [self requestFriend];
+}
+
+- (NSString *)chooseIds {
+    NSString *ids = @"";
+    for (PersonModel *model in self.choosedFriends) {
+        ids = [ids stringByAppendingFormat:@"%@", [NSString stringWithFormat:@"%@,",model.friendId]];
+    }
+    return ids;
 }
 
 - (void)requestFriend {
