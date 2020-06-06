@@ -12,7 +12,7 @@
 #import "ClassApiManager.h"
 #import "PersonModel.h"
 #import "PersonCellTableViewCell.h"
-
+#import "InvateContactViewController.h"
 @interface ContactViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) InvateView *invateView;
@@ -61,7 +61,9 @@
     self.invateView.icon.image = [UIImage imageNamed:@"contact_phone"];
     self.invateView.titleLabel.text = @"邀请新成员";
     self.invateView.block = ^{
-        
+        InvateContactViewController *vc = [[InvateContactViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     
     //tableview

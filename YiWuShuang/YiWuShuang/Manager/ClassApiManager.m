@@ -17,6 +17,7 @@ static NSString *createClassUrl = @"/api/course/create";
 static NSString *joinClassUrl = @"/api/course/addCourse";
 static NSString *uploadUrl = @"/api/common/upload";
 static NSString *getFriendsUrl = @"/api/contacts/index";
+static NSString *getContactListUrl = @"/api/contacts/list";
 
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
@@ -120,5 +121,10 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
 
 - (void)getFriendsSuccess:(void (^)(BaseModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
     [self requestWithApi:getFriendsUrl params:nil success:success failure:failure];
+}
+
+- (void)getContactListSuccess:(void (^)(BaseModel *baseModel))success
+                      failure:(void (^)(NSError *error))failure {
+    [self requestWithApi:getContactListUrl params:nil success:success failure:failure];
 }
 @end

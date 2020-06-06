@@ -60,7 +60,7 @@
                 <outlet property="icon" destination="Jzo-cA-y4p" id="QiE-NJ-mWo"/>
                 <outlet property="titleLabel" destination="Ual-h7-R9b" id="4E8-dB-0dp"/>
             </connections>
-            <point key="canvasLocation" x="5.7971014492753632" y="-75.334821428571431"/>
+            <point key="canvasLocation" x="114" y="-80"/>
         </view>
     </objects>
     <resources>

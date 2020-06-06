@@ -66,6 +66,10 @@
 		6381ECE024796C6E00B7AE5B /* ClassJoinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6381ECDF24796C6E00B7AE5B /* ClassJoinView.xib */; };
 		6381ECE324796C7A00B7AE5B /* ClassJoinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECE224796C7A00B7AE5B /* ClassJoinView.m */; };
 		6381ECE62479858300B7AE5B /* ClassApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECE52479858300B7AE5B /* ClassApiManager.m */; };
+		639F652B248BC04300275296 /* InvateContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F652A248BC04300275296 /* InvateContactViewController.m */; };
+		639F6530248BD64D00275296 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F652E248BD64D00275296 /* ContactCell.m */; };
+		639F6531248BD64D00275296 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639F652F248BD64D00275296 /* ContactCell.xib */; };
+		639F6535248BDAA600275296 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F6534248BDAA600275296 /* ContactModel.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
 		63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C4242BCB100066A316 /* Assets.xcassets */; };
@@ -221,6 +225,13 @@
 		6381ECE224796C7A00B7AE5B /* ClassJoinView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassJoinView.m; sourceTree = "<group>"; };
 		6381ECE42479858300B7AE5B /* ClassApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassApiManager.h; sourceTree = "<group>"; };
 		6381ECE52479858300B7AE5B /* ClassApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassApiManager.m; sourceTree = "<group>"; };
+		639F6529248BC04300275296 /* InvateContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvateContactViewController.h; sourceTree = "<group>"; };
+		639F652A248BC04300275296 /* InvateContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvateContactViewController.m; sourceTree = "<group>"; };
+		639F652D248BD64D00275296 /* ContactCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
+		639F652E248BD64D00275296 /* ContactCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
+		639F652F248BD64D00275296 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		639F6533248BDAA600275296 /* ContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
+		639F6534248BDAA600275296 /* ContactModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -403,8 +414,12 @@
 		6338D89B24839B250031F044 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				639F6532248BDA9500275296 /* Model */,
+				639F652C248BD63500275296 /* View */,
 				6338D89C24839B3B0031F044 /* ContactViewController.h */,
 				6338D89D24839B3B0031F044 /* ContactViewController.m */,
+				639F6529248BC04300275296 /* InvateContactViewController.h */,
+				639F652A248BC04300275296 /* InvateContactViewController.m */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -507,6 +522,25 @@
 				6338D8AF2483BCAE0031F044 /* ChooseBottomView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		639F652C248BD63500275296 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				639F652D248BD64D00275296 /* ContactCell.h */,
+				639F652E248BD64D00275296 /* ContactCell.m */,
+				639F652F248BD64D00275296 /* ContactCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		639F6532248BDA9500275296 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				639F6533248BDAA600275296 /* ContactModel.h */,
+				639F6534248BDAA600275296 /* ContactModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		63BE22AC242BCB0E0066A316 = {
@@ -839,6 +873,7 @@
 				63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */,
 				6367A18624618AE000F20404 /* MineCell.xib in Resources */,
 				6367A166245F173600F20404 /* ChoosePartHeader.xib in Resources */,
+				639F6531248BD64D00275296 /* ContactCell.xib in Resources */,
 				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
 				6381ECDE2479385100B7AE5B /* ClassNoticeView.xib in Resources */,
 				6338D8AE2483B38A0031F044 /* InvateView.xib in Resources */,
@@ -946,6 +981,7 @@
 				63CEB163243B7FB900FB2146 /* ChooseOrizViewController.m in Sources */,
 				63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */,
 				6381ECD324790F0700B7AE5B /* StartClassViewController.m in Sources */,
+				639F652B248BC04300275296 /* InvateContactViewController.m in Sources */,
 				6367A13824541F6900F20404 /* PersonHeaderView.m in Sources */,
 				6367A18524618AE000F20404 /* MineCell.m in Sources */,
 				6367A14724544FCE00F20404 /* TeamCell.m in Sources */,
@@ -997,6 +1033,7 @@
 				6367A161245F10C900F20404 /* ChoosePartViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
 				6338D89E24839B3B0031F044 /* ContactViewController.m in Sources */,
+				639F6535248BDAA600275296 /* ContactModel.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
 				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,
 				631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */,
@@ -1007,6 +1044,7 @@
 				63CEB1D024434DBF00FB2146 /* CommonCell.m in Sources */,
 				631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */,
 				63CEB1B724432D9000FB2146 /* NSDate+CalculateDay.m in Sources */,
+				639F6530248BD64D00275296 /* ContactCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
