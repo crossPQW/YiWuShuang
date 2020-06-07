@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ContactCell : UITableViewCell
 @property (nonatomic, strong) ContactModel *model;
+@property (nonatomic, copy) dispatch_block_t addFriendBlock;
 @end
 
 NS_ASSUME_NONNULL_END

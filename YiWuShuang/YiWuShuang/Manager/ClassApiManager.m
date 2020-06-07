@@ -11,6 +11,7 @@
 #import "NSObject+YYModel.h"
 #import "UserSession.h"
 #import "YKAddition.h"
+#import <Contacts/Contacts.h>
 
 static NSString *getCourseID = @"/api/course/getCourseId";
 static NSString *createClassUrl = @"/api/course/create";
@@ -18,7 +19,12 @@ static NSString *joinClassUrl = @"/api/course/addCourse";
 static NSString *uploadUrl = @"/api/common/upload";
 static NSString *getFriendsUrl = @"/api/contacts/index";
 static NSString *getContactListUrl = @"/api/contacts/list";
-
+static NSString *contactIsUpload = @"/api/contacts/isUp";
+static NSString *uploadContacts = @"/api/contacts/upload";
+static NSString *addFriend = @"/api/contacts/friend";
+static NSString *friendDetail = @"/api/contacts/detail";
+static NSString *deleteFriend = @"/api/contacts/delete";
+static NSString *setNote = @"/api/contacts/setNote";
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
 static NSString *releaseHost = @"https://www.yiwushuang.cn";
@@ -123,8 +129,148 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [self requestWithApi:getFriendsUrl params:nil success:success failure:failure];
 }
 
+- (void)checkContactStatusSuccess:(void (^)(BaseModel *baseModel))success
+                          failure:(void (^)(NSError *error))failure {
+    [self requestWithApi:contactIsUpload params:nil success:success failure:failure];
+}
 - (void)getContactListSuccess:(void (^)(BaseModel *baseModel))success
                       failure:(void (^)(NSError *error))failure {
     [self requestWithApi:getContactListUrl params:nil success:success failure:failure];
 }
+
+- (void)addFriendWithContactID:(NSString *)ID success:(void (^)(BaseModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:ID forKey:@"contacts_id"];
+    [self requestWithApi:addFriend params:params success:success failure:failure];
+}
+
+- (void)getFriendDetailWithID:(NSString *)ID
+                      success:(void (^)(BaseModel *baseModel))success
+                      failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:ID forKey:@"to_id"];
+    [self requestWithApi:friendDetail params:params success:success failure:failure];
+}
+
+- (void)deleteFriendWithID:(NSString *)ID
+                   success:(void (^)(BaseModel *baseModel))success
+                   failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:ID forKey:@"to_id"];
+    [self requestWithApi:deleteFriend params:params success:success failure:failure];
+}
+
+- (void)setNoteWithFriendID:(NSString *)ID
+                       note:(NSString *)note
+                    success:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:ID forKey:@"to_id"];
+    [params yk_setValue:note forKey:@"note"];
+    [self requestWithApi:setNote params:params success:success failure:failure];
+}
+//上传通讯录
+- (void)uploadContact {
+    [self checkContactStatusSuccess:^(BaseModel * _Nonnull baseModel) {
+        if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *data = baseModel.data;
+            NSInteger flag = [data integerForKey:@"isUp"];
+            if (flag == 0) {
+                [self handleUpload];
+            }
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+}
+
+- (void)handleUpload {
+    CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
+    if (status == CNAuthorizationStatusNotDetermined) {
+        CNContactStore *store = [[CNContactStore alloc] init];
+        [store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (error) {
+                
+            }else {
+                [self openContact];
+            }
+        }];
+    }else if (status == CNAuthorizationStatusRestricted) {
+        [self showContactAlert];
+    }else if (status == CNAuthorizationStatusDenied) {
+        [self showContactAlert];
+    }else if (status == CNAuthorizationStatusAuthorized){
+        [self openContact];
+    }
+}
+
+- (void)showContactAlert {
+    UIAlertController *alertController = [UIAlertController
+        alertControllerWithTitle:@"请授权通讯录权限"
+        message:@"请在iPhone的\"设置-隐私-通讯录\"选项中,允许花解解访问你的通讯录"
+        preferredStyle: UIAlertControllerStyleAlert];
+
+    UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:OKAction];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)openContact {
+    NSArray *keysToFetch = @[CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey];
+    CNContactFetchRequest *fetchRequest = [[CNContactFetchRequest alloc] initWithKeysToFetch:keysToFetch];
+    CNContactStore *contactStore = [[CNContactStore alloc] init];
+    
+    NSMutableArray *contacts = @[].mutableCopy;
+    [contactStore enumerateContactsWithFetchRequest:fetchRequest error:nil usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
+        //拼接姓名
+        NSString *nameStr = [NSString stringWithFormat:@"%@%@",contact.familyName,contact.givenName];
+        CNLabeledValue  * labelValue = contact.phoneNumbers[0];
+        
+        NSString * phoneNumber = [labelValue.value stringValue];
+        
+        NSMutableDictionary *dict = @{}.mutableCopy;
+        [dict yk_setValue:nameStr forKey:@"name"];
+        [dict yk_setValue:phoneNumber forKey:@"mobile"];
+        [contacts addObject:dict];
+    }];
+    
+    NSMutableArray *sortArray = @[].mutableCopy;
+    int eachCount = 500;
+    int count = (int)contacts.count / eachCount + 1;
+    if (count > 20) {
+        count = 20;
+    }
+    for (int i = 0; i<count; i++) {
+        int length = eachCount;
+        if (i == (count - 1)) {//最后一组
+            length = (int)contacts.count - (length * (count - 1));
+        }
+        if (length > 500) {
+            length = 500;
+        }
+        NSArray *tempArray = [contacts subarrayWithRange:NSMakeRange(i * eachCount, length)];
+        [sortArray addObject:tempArray];
+    }
+    
+    for (NSArray *contacts in sortArray) {
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:contacts options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *contactStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        [self uploadContactWithMobiles:contactStr success:^(BaseModel *baseModel) {
+            if (baseModel.code == 1) {
+                //上传成功
+            }
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+}
+
+
+- (void)uploadContactWithMobiles:(NSString *)mobiles success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure  {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:mobiles forKey:@"mobiles"];
+    [self requestWithApi:uploadContacts params:params success:success failure:failure];
+}
 @end
+

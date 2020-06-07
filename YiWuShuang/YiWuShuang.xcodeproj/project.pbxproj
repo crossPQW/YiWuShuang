@@ -23,8 +23,6 @@
 		6367A128245096C200F20404 /* TeamPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A127245096C200F20404 /* TeamPickView.m */; };
 		6367A12E2454112A00F20404 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A12D2454112A00F20404 /* EmptyView.m */; };
 		6367A1302454113A00F20404 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A12F2454113A00F20404 /* EmptyView.xib */; };
-		6367A13824541F6900F20404 /* PersonHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A13724541F6900F20404 /* PersonHeaderView.m */; };
-		6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A13924541F8400F20404 /* PersonHeaderView.xib */; };
 		6367A13E2454478F00F20404 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A13D2454478F00F20404 /* PersonModel.m */; };
 		6367A1412454493D00F20404 /* TeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A1402454493D00F20404 /* TeamModel.m */; };
 		6367A14724544FCE00F20404 /* TeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A14524544FCE00F20404 /* TeamCell.m */; };
@@ -70,6 +68,10 @@
 		639F6530248BD64D00275296 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F652E248BD64D00275296 /* ContactCell.m */; };
 		639F6531248BD64D00275296 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639F652F248BD64D00275296 /* ContactCell.xib */; };
 		639F6535248BDAA600275296 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F6534248BDAA600275296 /* ContactModel.m */; };
+		639F65BA248CD58A00275296 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65B9248CD58A00275296 /* PersonViewController.m */; };
+		639F65C2248CE14800275296 /* PersonHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65C1248CE14800275296 /* PersonHeaderView.m */; };
+		639F65C4248CE15700275296 /* PersonHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639F65C3248CE15700275296 /* PersonHeaderView.xib */; };
+		639F65C7248D0EE200275296 /* SetNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65C6248D0EE200275296 /* SetNoteViewController.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
 		63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C4242BCB100066A316 /* Assets.xcassets */; };
@@ -152,9 +154,6 @@
 		6367A12C2454112A00F20404 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		6367A12D2454112A00F20404 /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		6367A12F2454113A00F20404 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
-		6367A13624541F6900F20404 /* PersonHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonHeaderView.h; sourceTree = "<group>"; };
-		6367A13724541F6900F20404 /* PersonHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonHeaderView.m; sourceTree = "<group>"; };
-		6367A13924541F8400F20404 /* PersonHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonHeaderView.xib; sourceTree = "<group>"; };
 		6367A13C2454478F00F20404 /* PersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
 		6367A13D2454478F00F20404 /* PersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
 		6367A13F2454493D00F20404 /* TeamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamModel.h; sourceTree = "<group>"; };
@@ -232,6 +231,13 @@
 		639F652F248BD64D00275296 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		639F6533248BDAA600275296 /* ContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
 		639F6534248BDAA600275296 /* ContactModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
+		639F65B8248CD58A00275296 /* PersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		639F65B9248CD58A00275296 /* PersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		639F65C0248CE14800275296 /* PersonHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonHeaderView.h; sourceTree = "<group>"; };
+		639F65C1248CE14800275296 /* PersonHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonHeaderView.m; sourceTree = "<group>"; };
+		639F65C3248CE15700275296 /* PersonHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonHeaderView.xib; sourceTree = "<group>"; };
+		639F65C5248D0EE200275296 /* SetNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetNoteViewController.h; sourceTree = "<group>"; };
+		639F65C6248D0EE200275296 /* SetNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetNoteViewController.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -392,9 +398,6 @@
 				6367A14624544FCE00F20404 /* TeamCell.xib */,
 				631BCBE0244CA9F200D4ABAC /* PersonCellTableViewCell.h */,
 				631BCBE1244CA9F200D4ABAC /* PersonCellTableViewCell.m */,
-				6367A13624541F6900F20404 /* PersonHeaderView.h */,
-				6367A13724541F6900F20404 /* PersonHeaderView.m */,
-				6367A13924541F8400F20404 /* PersonHeaderView.xib */,
 				6367A12C2454112A00F20404 /* EmptyView.h */,
 				6367A12D2454112A00F20404 /* EmptyView.m */,
 				6367A12F2454113A00F20404 /* EmptyView.xib */,
@@ -420,6 +423,10 @@
 				6338D89D24839B3B0031F044 /* ContactViewController.m */,
 				639F6529248BC04300275296 /* InvateContactViewController.h */,
 				639F652A248BC04300275296 /* InvateContactViewController.m */,
+				639F65B8248CD58A00275296 /* PersonViewController.h */,
+				639F65B9248CD58A00275296 /* PersonViewController.m */,
+				639F65C5248D0EE200275296 /* SetNoteViewController.h */,
+				639F65C6248D0EE200275296 /* SetNoteViewController.m */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -530,6 +537,9 @@
 				639F652D248BD64D00275296 /* ContactCell.h */,
 				639F652E248BD64D00275296 /* ContactCell.m */,
 				639F652F248BD64D00275296 /* ContactCell.xib */,
+				639F65C0248CE14800275296 /* PersonHeaderView.h */,
+				639F65C1248CE14800275296 /* PersonHeaderView.m */,
+				639F65C3248CE15700275296 /* PersonHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -871,10 +881,10 @@
 				63CEB14F242D03C000FB2146 /* Login.storyboard in Resources */,
 				6381ECD524790F0700B7AE5B /* OrderClassCell.xib in Resources */,
 				63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */,
+				639F65C4248CE15700275296 /* PersonHeaderView.xib in Resources */,
 				6367A18624618AE000F20404 /* MineCell.xib in Resources */,
 				6367A166245F173600F20404 /* ChoosePartHeader.xib in Resources */,
 				639F6531248BD64D00275296 /* ContactCell.xib in Resources */,
-				6367A13A24541F8400F20404 /* PersonHeaderView.xib in Resources */,
 				6381ECDE2479385100B7AE5B /* ClassNoticeView.xib in Resources */,
 				6338D8AE2483B38A0031F044 /* InvateView.xib in Resources */,
 				636BDC47247AB786004C32A3 /* RealAuthView.xib in Resources */,
@@ -982,7 +992,6 @@
 				63CEB15C2438D37500FB2146 /* ApiManager.m in Sources */,
 				6381ECD324790F0700B7AE5B /* StartClassViewController.m in Sources */,
 				639F652B248BC04300275296 /* InvateContactViewController.m in Sources */,
-				6367A13824541F6900F20404 /* PersonHeaderView.m in Sources */,
 				6367A18524618AE000F20404 /* MineCell.m in Sources */,
 				6367A14724544FCE00F20404 /* TeamCell.m in Sources */,
 				6367A164245F172400F20404 /* ChoosePartHeader.m in Sources */,
@@ -1003,9 +1012,11 @@
 				6381ECE62479858300B7AE5B /* ClassApiManager.m in Sources */,
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
 				6367A17624603FBD00F20404 /* NavHeadTitleView.m in Sources */,
+				639F65C2248CE14800275296 /* PersonHeaderView.m in Sources */,
 				6381ECD624790F0700B7AE5B /* OrderClassCell.m in Sources */,
 				6381ECD724790F0700B7AE5B /* ClassTopView.m in Sources */,
 				6338D8A92483AAE20031F044 /* HomeViewController.m in Sources */,
+				639F65BA248CD58A00275296 /* PersonViewController.m in Sources */,
 				6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */,
 				63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */,
 				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
@@ -1033,6 +1044,7 @@
 				6367A161245F10C900F20404 /* ChoosePartViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
 				6338D89E24839B3B0031F044 /* ContactViewController.m in Sources */,
+				639F65C7248D0EE200275296 /* SetNoteViewController.m in Sources */,
 				639F6535248BDAA600275296 /* ContactModel.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
 				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,

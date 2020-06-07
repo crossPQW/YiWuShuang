@@ -80,14 +80,6 @@ isPhoneX;\
     self.NavView.frame = CGRectMake(0, 0, self.view.width, 44 + staturBar);
     [self.view addSubview:self.NavView];
 }
-//左按钮
--(void)NavHeadback{
-    NSLog(@"点击了左按钮");
-}
-//右按钮回调
--(void)NavHeadToRight{
-    NSLog(@"点击了右按钮");
-}
 
 #pragma mark ---- UITableViewDelegate ----
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

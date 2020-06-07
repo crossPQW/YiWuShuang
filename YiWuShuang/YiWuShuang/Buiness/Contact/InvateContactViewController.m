@@ -12,7 +12,7 @@
 #import "ClassApiManager.h"
 #import "ContactModel.h"
 #import "ContactCell.h"
-
+#import "PersonViewController.h"
 @interface InvateContactViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) UITableView *tableView;
@@ -44,7 +44,6 @@
     }];
     
     [self requestFriend];
-
 }
 
 - (void)requestFriend {
@@ -54,7 +53,7 @@
                 NSArray *data = baseModel.data;
                 NSArray *modes = [NSArray yy_modelArrayWithClass:[ContactModel class] json:data];
                 self.friends = modes;
-                [self mock];
+//                [self mock];
                 [self prepareIndex];
                 [self.tableView reloadData];
             }
@@ -123,14 +122,43 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ContactCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell"];
-
     ContactModel *model = [[self.sectionArr yk_objectAtIndex:indexPath.section] yk_objectAtIndex:indexPath.row];
+    __weak typeof(self) ws= self;
+    cell.addFriendBlock = ^{
+        [[ClassApiManager manager] addFriendWithContactID:model.contacts_id success:^(BaseModel * _Nonnull baseModel) {
+            if (baseModel.code == 1) {
+                [MBProgressHUD showText:@"发送邀请成功" inView:ws.view];
+            }else if (baseModel.code == 300){
+                [MBProgressHUD showText:@"好友未注册平台，请先邀请好友注册" inView:ws.view];
+            }
+        } failure:^(NSError * _Nonnull error) {
+            
+        }];
+    };
     cell.model = model;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return [_sectionArr[section] count] == 0 ? 0 : 30;
+}
+
+//index
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return collation.sectionTitles;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return collation.sectionTitles[section];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    return index;
 }
 
 #pragma mark - getter

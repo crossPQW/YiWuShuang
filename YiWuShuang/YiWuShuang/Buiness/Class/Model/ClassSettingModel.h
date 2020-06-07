@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, ClassSettingModelStyle) {
     ClassSettingModelButton,
     ClassSettingModelCopy,
     ClassSettingModelJoin,
+    ClassSettingModelSubtitle,
+    //个人主页
+    ClassSettingModelPersonHeader,
 };
 
 @interface ClassSettingModel : NSObject
@@ -30,6 +33,7 @@ typedef NS_ENUM(NSInteger, ClassSettingModelStyle) {
 @property (nonatomic, assign) int tag;
 @property (nonatomic, assign) NSString *btnImg;
 @property (nonatomic, assign) BOOL switchOn;
+@property (nonatomic, strong) UIColor *subtitleColor;
 @end
 
 NS_ASSUME_NONNULL_END

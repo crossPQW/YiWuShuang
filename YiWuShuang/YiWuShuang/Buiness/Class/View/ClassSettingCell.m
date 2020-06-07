@@ -11,9 +11,13 @@
 #import "ClassNoticeView.h"
 #import "ClassJoinView.h"
 #import "MBProgressHUD+helper.h"
+#import "PersonHeaderView.h"
+
 @interface ClassSettingCell()<UITextFieldDelegate>
 @property (nonatomic, strong) ClassNoticeView *noticeView;
 @property (nonatomic, strong) ClassJoinView *joinView;
+@property (nonatomic, strong) PersonHeaderView *headerView;
+
 @property (nonatomic, strong) UIView *lineview;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *subtitleLabel;
@@ -83,6 +87,11 @@
     self.contentView.backgroundColor = [UIColor whiteColor];
     self.titleLabel.text = self.model.title;
     self.subtitleLabel.text = self.model.subtitle;
+    if (self.model.subtitleColor) {
+        self.subtitleLabel.textColor = self.model.subtitleColor;
+    }else{
+        self.subtitleLabel.textColor = [UIColor colorWithHexRGB:@"#333333"];
+    }
     __weak typeof(self) weakSelf = self;
     switch (self.model.style) {
         case ClassSettingModelStyleNotice:
@@ -161,6 +170,18 @@
             [self.contentView addSubview:self.joinView];
         }
         break;
+        case ClassSettingModelSubtitle:{
+            [self.contentView addSubview:self.titleLabel];
+            [self.contentView addSubview:self.subtitleLabel];
+        }
+            break;
+        case ClassSettingModelPersonHeader:{
+            self.headerView = [PersonHeaderView headerView];
+            self.headerView.name = self.model.title;
+            self.headerView.avatar = self.model.subtitle;
+            [self.contentView addSubview:self.headerView];
+        }
+            break;
         default:
             break;
     }
@@ -195,6 +216,9 @@
             self.rightBtn.centerY = self.titleLabel.centerY;
             self.subtitleLabel.frame = CGRectMake(self.titleLabel.right + 5, 0, self.rightBtn.left - self.titleLabel.right - 5 - 5, 22);
             self.subtitleLabel.centerY = self.titleLabel.centerY;
+            break;
+        case ClassSettingModelPersonHeader:
+            self.headerView.frame = self.contentView.bounds;
             break;
         default:
             break;

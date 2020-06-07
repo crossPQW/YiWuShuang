@@ -229,26 +229,26 @@
     }else{
         __weak typeof(self) weakSelf = self;
         PersonHeaderView *headerView = [PersonHeaderView headerView];
-        if (section == 1) {
-            headerView.titleLabel.text = @"成员";
-            if (self.showFirstSection) {
-                headerView.imageView.image = [UIImage imageNamed:@"person_arrow_down"];
-            }else{
-                headerView.imageView.image = [UIImage imageNamed:@"person_arrow"];
-            }
-        }else if(section == 2){
-            headerView.titleLabel.text = @"学员";
-            if (self.showSecondSection) {
-                headerView.imageView.image = [UIImage imageNamed:@"person_arrow_down"];
-            }else{
-                headerView.imageView.image = [UIImage imageNamed:@"person_arrow"];
-            }
-        }
-        NSArray  *array = [self.data yk_objectAtIndex:section];
-        headerView.numberLabel.text = [NSString stringWithFormat:@"%ld人",array.count];
-        headerView.block = ^(BOOL isHidden) {
-            [weakSelf handleTapHeader:section isHidden:isHidden];
-        };
+//        if (section == 1) {
+//            headerView.titleLabel.text = @"成员";
+//            if (self.showFirstSection) {
+//                headerView.imageView.image = [UIImage imageNamed:@"person_arrow_down"];
+//            }else{
+//                headerView.imageView.image = [UIImage imageNamed:@"person_arrow"];
+//            }
+//        }else if(section == 2){
+//            headerView.titleLabel.text = @"学员";
+//            if (self.showSecondSection) {
+//                headerView.imageView.image = [UIImage imageNamed:@"person_arrow_down"];
+//            }else{
+//                headerView.imageView.image = [UIImage imageNamed:@"person_arrow"];
+//            }
+//        }
+//        NSArray  *array = [self.data yk_objectAtIndex:section];
+//        headerView.numberLabel.text = [NSString stringWithFormat:@"%ld人",array.count];
+//        headerView.block = ^(BOOL isHidden) {
+//            [weakSelf handleTapHeader:section isHidden:isHidden];
+//        };
         return headerView;
     }
 }

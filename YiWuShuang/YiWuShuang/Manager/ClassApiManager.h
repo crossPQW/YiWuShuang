@@ -48,9 +48,38 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getFriendsSuccess:(void (^)(BaseModel *baseModel))success
                   failure:(void (^)(NSError *error))failure;
 
+
+//是否上传通讯录
+- (void)checkContactStatusSuccess:(void (^)(BaseModel *baseModel))success
+                          failure:(void (^)(NSError *error))failure;
+
 //获取通讯录列表
 - (void)getContactListSuccess:(void (^)(BaseModel *baseModel))success
                       failure:(void (^)(NSError *error))failure;
+
+//添加好友
+- (void)addFriendWithContactID:(NSString *)ID
+                       success:(void (^)(BaseModel *baseModel))success
+                       failure:(void (^)(NSError *error))failure;
+
+//好友详情页
+- (void)getFriendDetailWithID:(NSString *)ID
+                       success:(void (^)(BaseModel *baseModel))success
+                       failure:(void (^)(NSError *error))failure;
+
+//删除好友
+- (void)deleteFriendWithID:(NSString *)ID
+                   success:(void (^)(BaseModel *baseModel))success
+                   failure:(void (^)(NSError *error))failure;
+
+//给好友设置备注
+- (void)setNoteWithFriendID:(NSString *)ID
+                       note:(NSString *)note
+                    success:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure;
+#pragma mark - 上传通讯录
+//上传通讯录
+- (void)uploadContact;
 @end
 
 NS_ASSUME_NONNULL_END

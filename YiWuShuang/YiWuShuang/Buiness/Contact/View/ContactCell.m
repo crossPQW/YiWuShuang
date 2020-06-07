@@ -47,7 +47,7 @@
 
 - (void)setModel:(ContactModel *)model {
     _model = model;
-    if (model.avatar) {
+    if (model.avatar.length > 0) {
         [self.avatar sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
         self.avatarBtn.hidden = YES;
     }else{
@@ -73,6 +73,9 @@
     }
 }
 - (IBAction)add:(id)sender {
+    if (self.addFriendBlock) {
+        self.addFriendBlock();
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

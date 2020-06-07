@@ -13,6 +13,8 @@
 #import "PersonModel.h"
 #import "PersonCellTableViewCell.h"
 #import "InvateContactViewController.h"
+#import "PersonViewController.h"
+
 @interface ContactViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) InvateView *invateView;
@@ -24,6 +26,11 @@
 
 @implementation ContactViewController{
     UILocalizedIndexedCollation *collation;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)viewDidLoad {
@@ -74,6 +81,9 @@
     }];
     
     [self requestFriend];
+    
+    //检查通讯录上传情况
+    [[ClassApiManager manager] uploadContact];
 }
 
 - (void)prepareIndex {
@@ -140,6 +150,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PersonModel *model = [[self.sectionArr yk_objectAtIndex:indexPath.section] yk_objectAtIndex:indexPath.row];
+    PersonViewController *vc = [[PersonViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.ID = model.friendId;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 //    return [_sectionArr[section] count] == 0 ? 0 : 30;
     return 0;
