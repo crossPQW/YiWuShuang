@@ -77,6 +77,16 @@ NS_ASSUME_NONNULL_BEGIN
                        note:(NSString *)note
                     success:(void (^)(BaseModel *baseModel))success
                     failure:(void (^)(NSError *error))failure;
+
+//搜索联系人
+- (void) searchContactWithMobile:(NSString *)mobile
+                         success:(void (^)(BaseModel *baseModel))success
+                         failure:(void (^)(NSError *error))failure;
+
+//搜索好友
+- (void) searchFriendsWithkeyword:(NSString *)keyword
+                         success:(void (^)(BaseModel *baseModel))success
+                         failure:(void (^)(NSError *error))failure;
 #pragma mark - 上传通讯录
 //上传通讯录
 - (void)uploadContact;

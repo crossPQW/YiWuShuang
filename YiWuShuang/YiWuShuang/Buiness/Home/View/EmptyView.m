@@ -10,6 +10,8 @@
 #import "YKAddition.h"
 @interface EmptyView()
 @property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 @implementation EmptyView
@@ -23,6 +25,14 @@
 }
 + (instancetype)emptyView {
     return [[[NSBundle mainBundle] loadNibNamed:@"EmptyView" owner:self options:nil] lastObject];
+}
+
+- (void)setImage:(NSString *)image {
+    self.imageView.image = [UIImage imageNamed:image];
+}
+
+- (void)setText:(NSString *)text {
+    self.titleLabel.text = text;
 }
 
 - (IBAction)tapBtn:(id)sender {

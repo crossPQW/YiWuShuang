@@ -72,6 +72,8 @@
 		639F65C2248CE14800275296 /* PersonHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65C1248CE14800275296 /* PersonHeaderView.m */; };
 		639F65C4248CE15700275296 /* PersonHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639F65C3248CE15700275296 /* PersonHeaderView.xib */; };
 		639F65C7248D0EE200275296 /* SetNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65C6248D0EE200275296 /* SetNoteViewController.m */; };
+		639F65CA2494C52000275296 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65C92494C52000275296 /* SearchResultViewController.m */; };
+		639F65CD2494F1B600275296 /* SearchContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65CC2494F1B600275296 /* SearchContactCell.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
 		63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C4242BCB100066A316 /* Assets.xcassets */; };
@@ -238,6 +240,10 @@
 		639F65C3248CE15700275296 /* PersonHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonHeaderView.xib; sourceTree = "<group>"; };
 		639F65C5248D0EE200275296 /* SetNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetNoteViewController.h; sourceTree = "<group>"; };
 		639F65C6248D0EE200275296 /* SetNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetNoteViewController.m; sourceTree = "<group>"; };
+		639F65C82494C52000275296 /* SearchResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		639F65C92494C52000275296 /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		639F65CB2494F1B600275296 /* SearchContactCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchContactCell.h; sourceTree = "<group>"; };
+		639F65CC2494F1B600275296 /* SearchContactCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchContactCell.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -427,6 +433,8 @@
 				639F65B9248CD58A00275296 /* PersonViewController.m */,
 				639F65C5248D0EE200275296 /* SetNoteViewController.h */,
 				639F65C6248D0EE200275296 /* SetNoteViewController.m */,
+				639F65C82494C52000275296 /* SearchResultViewController.h */,
+				639F65C92494C52000275296 /* SearchResultViewController.m */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -540,6 +548,8 @@
 				639F65C0248CE14800275296 /* PersonHeaderView.h */,
 				639F65C1248CE14800275296 /* PersonHeaderView.m */,
 				639F65C3248CE15700275296 /* PersonHeaderView.xib */,
+				639F65CB2494F1B600275296 /* SearchContactCell.h */,
+				639F65CC2494F1B600275296 /* SearchContactCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1013,6 +1023,7 @@
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
 				6367A17624603FBD00F20404 /* NavHeadTitleView.m in Sources */,
 				639F65C2248CE14800275296 /* PersonHeaderView.m in Sources */,
+				639F65CD2494F1B600275296 /* SearchContactCell.m in Sources */,
 				6381ECD624790F0700B7AE5B /* OrderClassCell.m in Sources */,
 				6381ECD724790F0700B7AE5B /* ClassTopView.m in Sources */,
 				6338D8A92483AAE20031F044 /* HomeViewController.m in Sources */,
@@ -1027,6 +1038,7 @@
 				636BDC4A247ABCEE004C32A3 /* RealAuthViewController.m in Sources */,
 				6367A1412454493D00F20404 /* TeamModel.m in Sources */,
 				63BE22F8242CFB2D0066A316 /* LoginViewController.m in Sources */,
+				639F65CA2494C52000275296 /* SearchResultViewController.m in Sources */,
 				63CEB1B824432D9000FB2146 /* UIAlertView+Addition.m in Sources */,
 				6367A128245096C200F20404 /* TeamPickView.m in Sources */,
 				6381ECD424790F0700B7AE5B /* ClassSettingModel.m in Sources */,

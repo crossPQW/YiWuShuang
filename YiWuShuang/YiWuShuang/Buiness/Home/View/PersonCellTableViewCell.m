@@ -8,10 +8,12 @@
 
 #import "PersonCellTableViewCell.h"
 #import "YKAddition.h"
+#import "GradientButton.h"
 @interface PersonCellTableViewCell()
 @property (strong, nonatomic) UIImageView *avatar;
 @property (strong, nonatomic) UILabel *name;
 
+@property (nonatomic, strong) GradientButton *invateBtn;
 @property (nonatomic, strong) UIButton *checkBtn;
 @end
 @implementation PersonCellTableViewCell
@@ -27,7 +29,10 @@
         self.name.font = [UIFont systemFontOfSize:18];
         [self.contentView addSubview:self.name];
         
+        [self.contentView addSubview:self.invateBtn];
+        
         [self.contentView addSubview:self.checkBtn];
+        self.checkBtn.hidden = YES;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
@@ -51,11 +56,16 @@
         make.right.equalTo(self.contentView.mas_right).offset(-15);
         make.centerY.equalTo(self.contentView.mas_centerY);
     }];
+    
+    [self.invateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(60, 28));
+    }];
 }
 
 - (void)setModel:(PersonModel *)model {
     _model = model;
     self.checkBtn.hidden = self.hiddenCheckMark;
+    self.invateBtn.hidden = !self.showInvateBtn;
     self.name.text = model.nickname;
     [self.avatar sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
     if (model.isChecked) {
@@ -86,5 +96,15 @@
         _checkBtn.userInteractionEnabled = NO;
     }
     return _checkBtn;
+}
+
+- (GradientButton *)invateBtn {
+    if (!_invateBtn) {
+        _invateBtn = [[GradientButton alloc] init];
+        [_invateBtn setTitle:@"邀请" forState:UIControlStateNormal];
+        [_invateBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _invateBtn.layer.cornerRadius = 14;
+    }
+    return _invateBtn;
 }
 @end

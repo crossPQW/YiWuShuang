@@ -1,8 +1,8 @@
 //
-//  EmptyView.h
+//  SearchContactCell.h
 //  YiWuShuang
 //
-//  Created by 黄 on 2020/4/25.
+//  Created by 黄 on 2020/6/13.
 //  Copyright © 2020 huang. All rights reserved.
 //
 
@@ -10,13 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EmptyView : UIView
-+ (instancetype)emptyView;
-
+@interface SearchContactCell : UITableViewCell
+@property (nonatomic, strong) NSDictionary *data;
 @property (nonatomic, copy) dispatch_block_t block;
-
-@property (nonatomic, strong) NSString *image;
-@property (nonatomic, strong) NSString *text;
 @end
 
 NS_ASSUME_NONNULL_END

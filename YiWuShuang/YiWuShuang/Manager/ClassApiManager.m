@@ -25,6 +25,8 @@ static NSString *addFriend = @"/api/contacts/friend";
 static NSString *friendDetail = @"/api/contacts/detail";
 static NSString *deleteFriend = @"/api/contacts/delete";
 static NSString *setNote = @"/api/contacts/setNote";
+static NSString *searchContact = @"/api/contacts/search";
+static NSString *searchFriend = @"/api/contacts/select";
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
 static NSString *releaseHost = @"https://www.yiwushuang.cn";
@@ -168,6 +170,22 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [params yk_setValue:ID forKey:@"to_id"];
     [params yk_setValue:note forKey:@"note"];
     [self requestWithApi:setNote params:params success:success failure:failure];
+}
+
+- (void) searchContactWithMobile:(NSString *)mobile
+                         success:(void (^)(BaseModel *baseModel))success
+                         failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:mobile forKey:@"keyword"];
+    [self requestWithApi:searchContact params:params success:success failure:failure];
+}
+
+- (void) searchFriendsWithkeyword:(NSString *)keyword
+                          success:(void (^)(BaseModel *baseModel))success
+                          failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:keyword forKey:@"keyword"];
+    [self requestWithApi:searchFriend params:params success:success failure:failure];
 }
 //上传通讯录
 - (void)uploadContact {

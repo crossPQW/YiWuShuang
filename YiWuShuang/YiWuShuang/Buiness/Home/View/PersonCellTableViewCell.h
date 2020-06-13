@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonCellTableViewCell : UITableViewCell
 @property (nonatomic, assign) BOOL hiddenCheckMark;
+@property (nonatomic, assign) BOOL showInvateBtn;
 @property (nonatomic, strong) PersonModel *model;
 @end
 

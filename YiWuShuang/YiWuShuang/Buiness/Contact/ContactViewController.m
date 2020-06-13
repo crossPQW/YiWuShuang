@@ -14,8 +14,12 @@
 #import "PersonCellTableViewCell.h"
 #import "InvateContactViewController.h"
 #import "PersonViewController.h"
+#import "SearchResultViewController.h"
 
-@interface ContactViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ContactViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) SearchResultViewController *resultVC;
+
 @property (nonatomic, strong) UISearchBar *serchBar;
 @property (nonatomic, strong) InvateView *invateView;
 @property (nonatomic, strong) UITableView *tableView;
@@ -175,7 +179,14 @@
     return index;
 }
 
-
+#pragma mark - UISearchBarDelegate
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [searchBar endEditing:YES];
+    SearchResultViewController *resultVC = [[SearchResultViewController alloc] init];
+    resultVC.type = 1;
+    resultVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:resultVC animated:NO];
+}
 - (void)mock {
 #ifdef DEBUG
     NSMutableArray *temp = @[].mutableCopy;
@@ -203,6 +214,7 @@
         _serchBar = [[UISearchBar alloc] init];
         _serchBar.placeholder = @"请输入手机号或昵称搜索";
         _serchBar.searchBarStyle = UISearchBarStyleMinimal;
+        _serchBar.delegate = self;
     }
     return _serchBar;
 }
