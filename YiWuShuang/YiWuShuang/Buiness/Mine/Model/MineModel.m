@@ -9,11 +9,10 @@
 #import "MineModel.h"
 
 @implementation MineModel
-- (MineModel *)initWithIcon:(NSString *)icon title:(NSString *)title subtitle:(NSString *)subtitle {
+- (MineModel *)initWithIcon:(NSString *)icon title:(NSString *)title {
     if (self = [super init]) {
         self.icon = icon;
         self.title = title;
-        self.subtitle = subtitle;
     }
     return self;
 }

@@ -74,6 +74,17 @@
 		639F65C7248D0EE200275296 /* SetNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65C6248D0EE200275296 /* SetNoteViewController.m */; };
 		639F65CA2494C52000275296 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65C92494C52000275296 /* SearchResultViewController.m */; };
 		639F65CD2494F1B600275296 /* SearchContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65CC2494F1B600275296 /* SearchContactCell.m */; };
+		639F65D02496066F00275296 /* NormalMineHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65CF2496066F00275296 /* NormalMineHeader.m */; };
+		639F65D22496067D00275296 /* NormalMineHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639F65D12496067D00275296 /* NormalMineHeader.xib */; };
+		639F65D52496526F00275296 /* PartnerMineHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65D42496526E00275296 /* PartnerMineHeader.m */; };
+		639F65D72496527A00275296 /* PartnerMineHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639F65D62496527A00275296 /* PartnerMineHeader.xib */; };
+		639F65DA24966E0000275296 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65D924966E0000275296 /* HistoryViewController.m */; };
+		639F65DD24966E7300275296 /* GetTrafficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65DC24966E7300275296 /* GetTrafficViewController.m */; };
+		639F65E024966E9C00275296 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65DF24966E9C00275296 /* HelpViewController.m */; };
+		639F65E324966F0300275296 /* CustomServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65E224966F0300275296 /* CustomServiceViewController.m */; };
+		639F65E624966F2700275296 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65E524966F2700275296 /* FeedbackViewController.m */; };
+		639F65E92496726300275296 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65E82496726300275296 /* SettingViewController.m */; };
+		639F65EC249676FB00275296 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639F65EB249676FB00275296 /* AboutViewController.m */; };
 		63BE22BA242BCB0E0066A316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BE22B9242BCB0E0066A316 /* AppDelegate.m */; };
 		63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C1242BCB0E0066A316 /* Main.storyboard */; };
 		63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE22C4242BCB100066A316 /* Assets.xcassets */; };
@@ -244,6 +255,26 @@
 		639F65C92494C52000275296 /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		639F65CB2494F1B600275296 /* SearchContactCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchContactCell.h; sourceTree = "<group>"; };
 		639F65CC2494F1B600275296 /* SearchContactCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchContactCell.m; sourceTree = "<group>"; };
+		639F65CE2496066F00275296 /* NormalMineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalMineHeader.h; sourceTree = "<group>"; };
+		639F65CF2496066F00275296 /* NormalMineHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalMineHeader.m; sourceTree = "<group>"; };
+		639F65D12496067D00275296 /* NormalMineHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalMineHeader.xib; sourceTree = "<group>"; };
+		639F65D32496526E00275296 /* PartnerMineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartnerMineHeader.h; sourceTree = "<group>"; };
+		639F65D42496526E00275296 /* PartnerMineHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PartnerMineHeader.m; sourceTree = "<group>"; };
+		639F65D62496527A00275296 /* PartnerMineHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerMineHeader.xib; sourceTree = "<group>"; };
+		639F65D824966E0000275296 /* HistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		639F65D924966E0000275296 /* HistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		639F65DB24966E7300275296 /* GetTrafficViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetTrafficViewController.h; sourceTree = "<group>"; };
+		639F65DC24966E7300275296 /* GetTrafficViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetTrafficViewController.m; sourceTree = "<group>"; };
+		639F65DE24966E9C00275296 /* HelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		639F65DF24966E9C00275296 /* HelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		639F65E124966F0300275296 /* CustomServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomServiceViewController.h; sourceTree = "<group>"; };
+		639F65E224966F0300275296 /* CustomServiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomServiceViewController.m; sourceTree = "<group>"; };
+		639F65E424966F2700275296 /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		639F65E524966F2700275296 /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		639F65E72496726300275296 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		639F65E82496726300275296 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		639F65EA249676FB00275296 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		639F65EB249676FB00275296 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		63BE22B5242BCB0E0066A316 /* YiWuShuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWuShuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE22B8242BCB0E0066A316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63BE22B9242BCB0E0066A316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -380,6 +411,20 @@
 				6367A16F24603F9800F20404 /* Views */,
 				631BCBD7244C8CD100D4ABAC /* MineViewController.h */,
 				631BCBD8244C8CD100D4ABAC /* MineViewController.m */,
+				639F65D824966E0000275296 /* HistoryViewController.h */,
+				639F65D924966E0000275296 /* HistoryViewController.m */,
+				639F65DB24966E7300275296 /* GetTrafficViewController.h */,
+				639F65DC24966E7300275296 /* GetTrafficViewController.m */,
+				639F65DE24966E9C00275296 /* HelpViewController.h */,
+				639F65DF24966E9C00275296 /* HelpViewController.m */,
+				639F65E124966F0300275296 /* CustomServiceViewController.h */,
+				639F65E224966F0300275296 /* CustomServiceViewController.m */,
+				639F65E424966F2700275296 /* FeedbackViewController.h */,
+				639F65E524966F2700275296 /* FeedbackViewController.m */,
+				639F65E72496726300275296 /* SettingViewController.h */,
+				639F65E82496726300275296 /* SettingViewController.m */,
+				639F65EA249676FB00275296 /* AboutViewController.h */,
+				639F65EB249676FB00275296 /* AboutViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -470,6 +515,12 @@
 				6367A18224618AE000F20404 /* MineCell.h */,
 				6367A18324618AE000F20404 /* MineCell.m */,
 				6367A18424618AE000F20404 /* MineCell.xib */,
+				639F65CE2496066F00275296 /* NormalMineHeader.h */,
+				639F65CF2496066F00275296 /* NormalMineHeader.m */,
+				639F65D12496067D00275296 /* NormalMineHeader.xib */,
+				639F65D32496526E00275296 /* PartnerMineHeader.h */,
+				639F65D42496526E00275296 /* PartnerMineHeader.m */,
+				639F65D62496527A00275296 /* PartnerMineHeader.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -891,12 +942,14 @@
 				63CEB14F242D03C000FB2146 /* Login.storyboard in Resources */,
 				6381ECD524790F0700B7AE5B /* OrderClassCell.xib in Resources */,
 				63BE22C8242BCB100066A316 /* LaunchScreen.storyboard in Resources */,
+				639F65D72496527A00275296 /* PartnerMineHeader.xib in Resources */,
 				639F65C4248CE15700275296 /* PersonHeaderView.xib in Resources */,
 				6367A18624618AE000F20404 /* MineCell.xib in Resources */,
 				6367A166245F173600F20404 /* ChoosePartHeader.xib in Resources */,
 				639F6531248BD64D00275296 /* ContactCell.xib in Resources */,
 				6381ECDE2479385100B7AE5B /* ClassNoticeView.xib in Resources */,
 				6338D8AE2483B38A0031F044 /* InvateView.xib in Resources */,
+				639F65D22496067D00275296 /* NormalMineHeader.xib in Resources */,
 				636BDC47247AB786004C32A3 /* RealAuthView.xib in Resources */,
 				6338D8B02483BCAE0031F044 /* ChooseBottomView.xib in Resources */,
 				6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */,
@@ -1003,9 +1056,12 @@
 				6381ECD324790F0700B7AE5B /* StartClassViewController.m in Sources */,
 				639F652B248BC04300275296 /* InvateContactViewController.m in Sources */,
 				6367A18524618AE000F20404 /* MineCell.m in Sources */,
+				639F65D52496526F00275296 /* PartnerMineHeader.m in Sources */,
 				6367A14724544FCE00F20404 /* TeamCell.m in Sources */,
 				6367A164245F172400F20404 /* ChoosePartHeader.m in Sources */,
+				639F65E324966F0300275296 /* CustomServiceViewController.m in Sources */,
 				63CEB1BC24432D9000FB2146 /* UITabBarItem+Addition.m in Sources */,
+				639F65E92496726300275296 /* SettingViewController.m in Sources */,
 				6367A159245DB5C100F20404 /* BaseViewController.m in Sources */,
 				63CEB1B224432D9000FB2146 /* NSNumber+Addition.m in Sources */,
 				6381ECD924790F0700B7AE5B /* ClassSettingCell.m in Sources */,
@@ -1019,6 +1075,7 @@
 				63BE22CB242BCB100066A316 /* main.m in Sources */,
 				636BDC4D247D6D92004C32A3 /* JoinClassViewController.m in Sources */,
 				6338D8B32483BCC00031F044 /* ChooseBottomView.m in Sources */,
+				639F65DA24966E0000275296 /* HistoryViewController.m in Sources */,
 				6381ECE62479858300B7AE5B /* ClassApiManager.m in Sources */,
 				63CEB1C52443343300FB2146 /* CreateOrizViewController.m in Sources */,
 				6367A17624603FBD00F20404 /* NavHeadTitleView.m in Sources */,
@@ -1026,10 +1083,12 @@
 				639F65CD2494F1B600275296 /* SearchContactCell.m in Sources */,
 				6381ECD624790F0700B7AE5B /* OrderClassCell.m in Sources */,
 				6381ECD724790F0700B7AE5B /* ClassTopView.m in Sources */,
+				639F65EC249676FB00275296 /* AboutViewController.m in Sources */,
 				6338D8A92483AAE20031F044 /* HomeViewController.m in Sources */,
 				639F65BA248CD58A00275296 /* PersonViewController.m in Sources */,
 				6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */,
 				63CEB1A424432D9000FB2146 /* NSDictionary+Addition.m in Sources */,
+				639F65D02496066F00275296 /* NormalMineHeader.m in Sources */,
 				63CEB1A524432D9000FB2146 /* NSArray+Addition.m in Sources */,
 				6367A16A245FDFE600F20404 /* ChooseTeamCell.m in Sources */,
 				6367A16E245FE96500F20404 /* ChooseTeamModel.m in Sources */,
@@ -1048,15 +1107,18 @@
 				63CEB169243B8B9B00FB2146 /* UserSession.m in Sources */,
 				6367A14B24546D8600F20404 /* TeamViewController.m in Sources */,
 				6367A156245DB12500F20404 /* AddTeamViewController.m in Sources */,
+				639F65E024966E9C00275296 /* HelpViewController.m in Sources */,
 				6367A151245DA5A800F20404 /* HomePopView.m in Sources */,
 				6381ECDC2479384800B7AE5B /* ClassNoticeView.m in Sources */,
 				636BDC45247AB779004C32A3 /* RealAuthView.m in Sources */,
 				6338D8AC2483B37D0031F044 /* InvateView.m in Sources */,
 				63CEB1C82443344500FB2146 /* JoinOrizViewController.m in Sources */,
+				639F65E624966F2700275296 /* FeedbackViewController.m in Sources */,
 				6367A161245F10C900F20404 /* ChoosePartViewController.m in Sources */,
 				63CEB1AF24432D9000FB2146 /* UIColor+Addition.m in Sources */,
 				6338D89E24839B3B0031F044 /* ContactViewController.m in Sources */,
 				639F65C7248D0EE200275296 /* SetNoteViewController.m in Sources */,
+				639F65DD24966E7300275296 /* GetTrafficViewController.m in Sources */,
 				639F6535248BDAA600275296 /* ContactModel.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
 				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,

@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSString *mobile;
 @property (nonatomic, strong)NSString *token;
 
+@property (nonatomic, assign)NSInteger level;//1.普通用户。大于 1 合伙人
 @property (nonatomic, assign) BOOL is_realauth;
 @property (nonatomic, assign)NSTimeInterval createtime;
 @property (nonatomic, assign)NSTimeInterval expiretime;

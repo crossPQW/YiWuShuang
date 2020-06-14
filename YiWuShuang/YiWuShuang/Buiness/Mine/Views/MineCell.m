@@ -21,6 +21,12 @@
     // Initialization code
 }
 
+- (void)setModel:(MineModel *)model {
+    _model = model;
+    self.icon.image = [UIImage imageNamed:model.icon];
+    self.titleLabel.text = model.title;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

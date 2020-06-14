@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,9 +24,8 @@
                             <constraint firstAttribute="width" constant="20" id="Pz0-pC-AFd"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的流量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8X-9H-Fai">
-                        <rect key="frame" x="50" y="12" width="74" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的流量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8X-9H-Fai">
+                        <rect key="frame" x="45" y="11" width="74" height="22"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -46,10 +46,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="S4l-EJ-9tb" firstAttribute="leading" secondItem="yaz-Ii-lUC" secondAttribute="trailing" constant="5" id="2Bk-yh-mnp"/>
+                    <constraint firstItem="w8X-9H-Fai" firstAttribute="centerY" secondItem="R50-98-kka" secondAttribute="centerY" id="3Z6-zE-w9V"/>
                     <constraint firstItem="R50-98-kka" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FMl-Pq-8OO"/>
                     <constraint firstItem="S4l-EJ-9tb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NFu-Hv-1KE"/>
                     <constraint firstItem="yaz-Ii-lUC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PdH-pN-FfY"/>
                     <constraint firstItem="R50-98-kka" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZSr-WZ-bVa"/>
+                    <constraint firstItem="w8X-9H-Fai" firstAttribute="leading" secondItem="R50-98-kka" secondAttribute="trailing" constant="10" id="uPD-Gk-Luu"/>
                     <constraint firstAttribute="trailing" secondItem="S4l-EJ-9tb" secondAttribute="trailing" constant="15" id="vho-NF-c3I"/>
                 </constraints>
             </tableViewCellContentView>
@@ -59,7 +61,7 @@
                 <outlet property="subtitle" destination="yaz-Ii-lUC" id="o6m-nK-5pk"/>
                 <outlet property="titleLabel" destination="w8X-9H-Fai" id="Dsp-Ot-Hzq"/>
             </connections>
-            <point key="canvasLocation" x="108.69565217391305" y="97.767857142857139"/>
+            <point key="canvasLocation" x="-70" y="23"/>
         </tableViewCell>
     </objects>
     <resources>

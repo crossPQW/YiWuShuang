@@ -190,7 +190,6 @@
 - (void)layout {
     CGFloat x = 18;
     self.lineview.frame = CGRectMake(x, 0, self.width - x * 2, self.height);
-//    self.titleLabel.frame = CGRectMake(x, 29, 120, 22);
     [self.titleLabel sizeToFit];
     self.titleLabel.left = x;
     self.titleLabel.top = 29;
@@ -219,6 +218,9 @@
             break;
         case ClassSettingModelPersonHeader:
             self.headerView.frame = self.contentView.bounds;
+            break;
+        case ClassSettingModelSubtitle:
+            self.subtitleLabel.right = self.width - 18;
             break;
         default:
             break;

@@ -15,10 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MineModel : NSObject
 @property (nonatomic, strong) NSString *icon;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *subtitle;
 @property (nonatomic, assign) int tag;
 
-- (MineModel *)initWithIcon:(NSString *)icon title:(NSString *)title subtitle:(NSString *)subtitle;
+- (MineModel *)initWithIcon:(NSString *)icon title:(NSString *)title;
 @end
 
 NS_ASSUME_NONNULL_END
