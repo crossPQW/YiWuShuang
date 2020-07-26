@@ -198,6 +198,7 @@
                         <outlet property="loginBtn" destination="ANw-w7-BXK" id="XPs-jD-pKd"/>
                         <outlet property="privacyLabel" destination="g7Z-uY-cW8" id="rNi-Mv-gDj"/>
                         <outlet property="pwdTextField" destination="5BJ-cT-onu" id="zgw-Vp-V3U"/>
+                        <outlet property="textLabel" destination="Sg0-Xm-rLa" id="RHe-Mp-F4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fms-5K-3vf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -437,13 +438,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从业证明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpP-2j-t5o">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从业证明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpP-2j-t5o">
                                 <rect key="frame" x="18" y="387" width="66" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYB-xe-tug">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYB-xe-tug">
                                 <rect key="frame" x="18" y="417" width="133" height="136"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -455,7 +456,7 @@
                                     <action selector="uploadImg:" destination="sLG-5a-Glx" eventType="touchUpInside" id="WZo-bq-bCH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从业证/教师证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxq-dG-Lxa">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从业证/教师证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxq-dG-Lxa">
                                 <rect key="frame" x="29" y="561" width="110" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="2Kd-38-kmQ"/>

@@ -56,6 +56,7 @@
     vc.tabBarItem.selectedImage = selectImage;
     vc.tabBarItem.image = image;
     
+    [[UITabBar appearance] setUnselectedItemTintColor:normalColor];
     [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: normalColor} forState:UIControlStateNormal];
     [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: seleceColor} forState:UIControlStateSelected];
 }

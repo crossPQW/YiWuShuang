@@ -97,7 +97,7 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params yk_setValue:name forKey:@"realname"];
     [params yk_setValue:ID forKey:@"cardno"];
-    [params yk_setValue:img forKey:@"img"];
+//    [params yk_setValue:img forKey:@"img"];
     [self requestWithApi:realAuthUrl params:params success:success failure:failure];
 }
 

@@ -15,12 +15,15 @@
 #import "TeamPickView.h"
 #import "ChooseStudentViewController.h"
 #import "BaseNavigationController.h"
-
+#import "UserSession.h"
+#import "RealAuthViewController.h"
+#import "RealAuthView.h"
 @interface StartClassViewController ()<UITableViewDelegate,UITableViewDataSource, TeamPickerViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (strong, nonatomic) GradientButton *startClassBtn;
 @property (nonatomic, strong) NSArray *dataSources;
 @property (nonatomic, strong) NSString *classID;
+@property (nonatomic, strong) NSString *classType;//1： 1 对 1， 2：1 对 16
 @property (nonatomic, strong) NSString *className;
 @property (nonatomic, strong) NSString *stuCount;
 @property (nonatomic, strong) NSString *stuIds;
@@ -35,17 +38,23 @@
 
 @property (nonatomic, strong) NSString *course_id;
 @property (nonatomic, strong) NSString *unique_id;
+
+@property (nonatomic, strong) RealAuthView *authView;
 @end
 
 @implementation StartClassViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"发起课程";
     if (self.isOrder) {
         self.title = @"预约课程";
     }
-    [self.navigationController setNavigationBarHidden:NO];
+    
     
     //default
     self.clearly = @"超清";
@@ -85,6 +94,12 @@
 }
 
 - (void)startClass {
+    User *user = [[UserSession session] currentUser];
+    if (!user.is_realauth) {
+        [self showAuth];
+        return;
+    }
+    
     if (!self.classID) {
         [MBProgressHUD showText:@"未找到课程ID" inView:self.view];
         return;
@@ -97,20 +112,45 @@
     if (self.isOrder) {
         type = 2;
     }
-    [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuIds ratio:self.clearly type:type start_at:self.orderTime isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
+    [[ClassApiManager manager] creatClassWithID:self.classID name:self.className number:self.stuIds ratio:self.clearly type:type playType:self.classType.intValue start_at:self.orderTime isCamera:self.isOpenCamera isMic:self.isOpenMic isSmartMic:self.isOpenSmartMic success:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1) {
             if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *data = (NSDictionary *)baseModel.data;
                 self.course_id = [data stringForKey:@"course_id"];
                 self.unique_id = [data stringForKey:@"unique_id"];
+                [MBProgressHUD showText:@"创建课程成功" inView:self.view];
             }
         }else{
             NSString *errstr = baseModel.msg;
             [MBProgressHUD showText:errstr inView:self.view];
         }
+
     } failure:^(NSError * _Nonnull error) {
         
     }];
+}
+
+- (void)showAuth {
+    UIView *bgView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    
+    self.authView = [RealAuthView authView];
+    self.authView.frame = CGRectMake(0, 0, 300, 366);
+    self.authView.center = CGPointMake(self.view.width/2, self.view.height/2);
+    self.authView.layer.cornerRadius = 8;
+    self.authView.layer.masksToBounds = YES;
+    __weak typeof(self) ws = self;
+    self.authView.block = ^{
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+        RealAuthViewController *authVc = [sb instantiateViewControllerWithIdentifier:@"RealAuthVc"];
+        authVc.hidesBottomBarWhenPushed = YES;
+        [ws.navigationController pushViewController:authVc animated:YES];
+        
+        [bgView removeFromSuperview];
+    };
+
+    [bgView addSubview:self.authView];
+    [[UIApplication sharedApplication].delegate.window addSubview:bgView];
 }
 
 - (void)initDataSource {
@@ -126,6 +166,21 @@
     title.style = ClassSettingModelTitle;
     title.title = @"课程名称";
     [dataSources addObject:title];
+    [dataSources addObject:[self lineModel]];
+    
+    ClassSettingModel *classType = [[ClassSettingModel alloc] init];
+    classType.height = 60;
+    classType.style = ClassSettingModelSelect;
+    classType.title = @"课程类型";
+    NSString *type;
+    if ([type isEqualToString:@"1"]) {
+        type = @"1对1";
+    }else if ([type isEqualToString:@"2"]){
+        type = @"1对16";
+    }
+    classType.subtitle = type ?: @"请选择";
+    classType.tag = 0;
+    [dataSources addObject:classType];
     [dataSources addObject:[self lineModel]];
     
     ClassSettingModel *stuCount = [[ClassSettingModel alloc] init];
@@ -171,7 +226,7 @@
     video.height = 60;
     video.style = ClassSettingModelSelect;
     video.title = @"视频分辨率";
-    video.subtitle = @"1080P";
+    video.subtitle = self.clearly ?: @"请选择";
     video.tag = 2;
     [dataSources addObject:video];
     [dataSources addObject:[self lineModel]];
@@ -255,6 +310,20 @@
     }
     
     switch (model.tag) {
+        case 0:{
+            TeamPickView *pickview = [[TeamPickView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 320, self.view.width, 320)];
+            pickview.tag = model.tag;
+            self.pickview = pickview;
+            pickview.delegate = self;
+            UIView *bgView = [[UIView alloc] init];
+            bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+            bgView.frame = [UIScreen mainScreen].bounds;
+            [bgView addSubview:pickview];
+            [[UIApplication sharedApplication].delegate.window addSubview:bgView];
+            [pickview setData:[self classTypeList]];
+
+        }
+            break;
         case 1:
         {
             ChooseStudentViewController *chooseVc = [[ChooseStudentViewController alloc] init];
@@ -300,7 +369,12 @@
         NSDictionary *dict = [[self clearlyList] yk_objectAtIndex:index];
         NSString *clearly = [dict stringForKey:@"data"];
         self.clearly = clearly;
+    }else if (self.pickview.tag == 0){
+        NSDictionary *dict = [[self classTypeList] yk_objectAtIndex:index];
+        NSString *classType = [dict stringForKey:@"data"];
+        self.classType = classType;
     }
+    [self initDataSource];
     [self.pickview.superview removeFromSuperview];
 }
 
@@ -385,6 +459,14 @@
                @"data":@"高清",},
              @{@"name":@"标清480P",
                @"data":@"标清",},
+    ];
+}
+
+- (NSArray *)classTypeList {
+    return @[@{@"name":@"1对1",
+               @"data":@"1",},
+             @{@"name":@"1对16",
+               @"data":@"2",},
     ];
 }
 @end

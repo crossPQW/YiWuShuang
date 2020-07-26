@@ -27,6 +27,8 @@ static NSString *deleteFriend = @"/api/contacts/delete";
 static NSString *setNote = @"/api/contacts/setNote";
 static NSString *searchContact = @"/api/contacts/search";
 static NSString *searchFriend = @"/api/contacts/select";
+static NSString *feedbackUrl = @"/api/ucenter/note";
+static NSString *textDetailUrl = @"/api/common/detail";
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
 static NSString *releaseHost = @"https://www.yiwushuang.cn";
@@ -54,13 +56,25 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [self requestWithApi:getCourseID params:nil success:success failure:failure];
 }
 
-- (void)creatClassWithID:(NSString *)classID name:(NSString *)className number:(NSString *)stuNumber ratio:(NSString *)ratio type:(int)type start_at:(NSString *)time isCamera:(BOOL)isCamera isMic:(BOOL)isMic isSmartMic:(BOOL)isSmartMic success:(void (^)(BaseModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+- (void)creatClassWithID:(NSString *)classID
+      name:(NSString *)className
+    number:(NSString *)stuNumber
+     ratio:(NSString *)ratio
+      type:(int) type
+  playType:(int) playType
+  start_at:(NSString *)time
+  isCamera:(BOOL)isCamera
+     isMic:(BOOL)isMic
+isSmartMic:(BOOL)isSmartMic
+   success:(void (^)(BaseModel *baseModel))success
+   failure:(void (^)(NSError *error))failure {
     NSMutableDictionary *params = @{}.mutableCopy;
     [params yk_setValue:classID forKey:@"unique_id"];
     [params yk_setValue:className forKey:@"name"];
     [params yk_setValue:stuNumber forKey:@"user_ids"];
     [params yk_setValue:ratio forKey:@"ratio"];
     [params yk_setValue:@(type) forKey:@"type"];
+    [params yk_setValue:@(playType) forKey:@"play_type"];
     if (type == 2) {
         [params yk_setValue:time forKey:@"start_at"];
     }
@@ -186,6 +200,22 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     NSMutableDictionary *params = @{}.mutableCopy;
     [params yk_setValue:keyword forKey:@"keyword"];
     [self requestWithApi:searchFriend params:params success:success failure:failure];
+}
+
+- (void) feedbackWithText:(NSString *)text
+                  success:(void (^)(BaseModel *baseModel))success
+                  failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:text forKey:@"note"];
+    [self requestWithApi:feedbackUrl params:params success:success failure:failure];
+}
+
+- (void)getTextWithType:(NSString *)type
+                success:(void (^)(BaseModel *baseModel))success
+                failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:type forKey:@"type"];
+    [self requestWithApi:textDetailUrl params:params success:success failure:failure];
 }
 //上传通讯录
 - (void)uploadContact {

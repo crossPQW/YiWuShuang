@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
                   number:(NSString *)stuNumber
                    ratio:(NSString *)ratio
                     type:(int) type
+                playType:(int) playType
                 start_at:(NSString *)time
                 isCamera:(BOOL)isCamera
                    isMic:(BOOL)isMic
@@ -87,6 +88,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) searchFriendsWithkeyword:(NSString *)keyword
                          success:(void (^)(BaseModel *baseModel))success
                          failure:(void (^)(NSError *error))failure;
+
+//意见反馈
+- (void) feedbackWithText:(NSString *)text
+                  success:(void (^)(BaseModel *baseModel))success
+                  failure:(void (^)(NSError *error))failure;
+
+//项目各种文案
+//1：登录页文案，2：充值说明，3：关于我们 ，4：常见问题，5：邀请规则，6：合伙人说明，7：提现规则
+- (void)getTextWithType:(NSString *)type
+                success:(void (^)(BaseModel *baseModel))success
+                failure:(void (^)(NSError *error))failure;
 #pragma mark - 上传通讯录
 //上传通讯录
 - (void)uploadContact;

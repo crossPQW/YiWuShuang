@@ -40,7 +40,7 @@
 - (IBAction)commitAuth:(id)sender {
     NSString *name = self.nameTextField.text;
     NSString *ID = self.IDTextField.text;
-    [[ApiManager manager] realAuthWithRealName:name ID:ID img:self.imageUrl success:^(BaseModel * _Nonnull baseModel) {
+    [[ApiManager manager] realAuthWithRealName:name ID:ID img:nil success:^(BaseModel * _Nonnull baseModel) {
         if (baseModel.code == 1) {
             [[UserSession session] updateRealAuthState];
             [self.navigationController popViewControllerAnimated:YES];

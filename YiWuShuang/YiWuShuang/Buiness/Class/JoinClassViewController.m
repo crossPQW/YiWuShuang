@@ -13,7 +13,9 @@
 #import "ClassApiManager.h"
 #import "GradientButton.h"
 #import "TeamPickView.h"
-
+#import "UserSession.h"
+#import "RealAuthViewController.h"
+#import "RealAuthView.h"
 @interface JoinClassViewController ()<UITableViewDelegate,UITableViewDataSource, TeamPickerViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSources;
@@ -22,6 +24,8 @@
 @property (nonatomic, assign) BOOL isOpenCamera;
 @property (nonatomic, assign) BOOL isOpenSmartMic;
 @property (nonatomic, strong) NSString *classID;
+
+@property (nonatomic, strong) RealAuthView *authView;
 @end
 
 @implementation JoinClassViewController
@@ -32,7 +36,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"发起课程";
+    self.title = @"加入课程";
     self.isOpenSmartMic = YES;
     
     [self.view addSubview:self.tableView];
@@ -139,6 +143,12 @@
 }
 
 - (void)joinClass {
+    User *user = [[UserSession session] currentUser];
+    if (!user.is_realauth) {
+        [self showAuth];
+        return;
+    }
+    
     if (!self.classID) {
         [MBProgressHUD showText:@"请输入课程ID" inView:self.view];
         return;
@@ -153,6 +163,29 @@
     } failure:^(NSError * _Nonnull error) {
         
     }];
+}
+
+- (void)showAuth {
+    UIView *bgView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    
+    self.authView = [RealAuthView authView];
+    self.authView.frame = CGRectMake(0, 0, 300, 366);
+    self.authView.center = CGPointMake(self.view.width/2, self.view.height/2);
+    self.authView.layer.cornerRadius = 8;
+    self.authView.layer.masksToBounds = YES;
+    __weak typeof(self) ws = self;
+    self.authView.block = ^{
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+        RealAuthViewController *authVc = [sb instantiateViewControllerWithIdentifier:@"RealAuthVc"];
+        authVc.hidesBottomBarWhenPushed = YES;
+        [ws.navigationController pushViewController:authVc animated:YES];
+        
+        [bgView removeFromSuperview];
+    };
+
+    [bgView addSubview:self.authView];
+    [[UIApplication sharedApplication].delegate.window addSubview:bgView];
 }
 #pragma mark - getter
 - (ClassSettingModel *)lineModel {

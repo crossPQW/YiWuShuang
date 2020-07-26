@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="234"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dom-BM-4iB">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person_header_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Dom-BM-4iB">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="234"/>
                     <color key="backgroundColor" red="0.47843137250000001" green="0.4823529412" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
@@ -53,4 +53,7 @@
             <point key="canvasLocation" x="100.00000000000001" y="-23.4375"/>
         </view>
     </objects>
+    <resources>
+        <image name="person_header_bg" width="414" height="234"/>
+    </resources>
 </document>

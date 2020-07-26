@@ -51,6 +51,8 @@
 		636BDC47247AB786004C32A3 /* RealAuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636BDC46247AB786004C32A3 /* RealAuthView.xib */; };
 		636BDC4A247ABCEE004C32A3 /* RealAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636BDC49247ABCEE004C32A3 /* RealAuthViewController.m */; };
 		636BDC4D247D6D92004C32A3 /* JoinClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636BDC4C247D6D92004C32A3 /* JoinClassViewController.m */; };
+		6375671F24CC906800F0BA7C /* IntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6375671E24CC906800F0BA7C /* IntroduceViewController.m */; };
+		6375672224CC907800F0BA7C /* ProvacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6375672124CC907800F0BA7C /* ProvacyViewController.m */; };
 		6381ECD224790F0700B7AE5B /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC224790F0700B7AE5B /* ClassViewController.m */; };
 		6381ECD324790F0700B7AE5B /* StartClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC324790F0700B7AE5B /* StartClassViewController.m */; };
 		6381ECD424790F0700B7AE5B /* ClassSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381ECC724790F0700B7AE5B /* ClassSettingModel.m */; };
@@ -215,6 +217,10 @@
 		636BDC49247ABCEE004C32A3 /* RealAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealAuthViewController.m; sourceTree = "<group>"; };
 		636BDC4B247D6D92004C32A3 /* JoinClassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoinClassViewController.h; sourceTree = "<group>"; };
 		636BDC4C247D6D92004C32A3 /* JoinClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoinClassViewController.m; sourceTree = "<group>"; };
+		6375671D24CC906800F0BA7C /* IntroduceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroduceViewController.h; sourceTree = "<group>"; };
+		6375671E24CC906800F0BA7C /* IntroduceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroduceViewController.m; sourceTree = "<group>"; };
+		6375672024CC907800F0BA7C /* ProvacyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvacyViewController.h; sourceTree = "<group>"; };
+		6375672124CC907800F0BA7C /* ProvacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvacyViewController.m; sourceTree = "<group>"; };
 		6381ECC224790F0700B7AE5B /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
 		6381ECC324790F0700B7AE5B /* StartClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartClassViewController.m; sourceTree = "<group>"; };
 		6381ECC424790F0700B7AE5B /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
@@ -425,6 +431,10 @@
 				639F65E82496726300275296 /* SettingViewController.m */,
 				639F65EA249676FB00275296 /* AboutViewController.h */,
 				639F65EB249676FB00275296 /* AboutViewController.m */,
+				6375671D24CC906800F0BA7C /* IntroduceViewController.h */,
+				6375671E24CC906800F0BA7C /* IntroduceViewController.m */,
+				6375672024CC907800F0BA7C /* ProvacyViewController.h */,
+				6375672124CC907800F0BA7C /* ProvacyViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1084,6 +1094,7 @@
 				6381ECD624790F0700B7AE5B /* OrderClassCell.m in Sources */,
 				6381ECD724790F0700B7AE5B /* ClassTopView.m in Sources */,
 				639F65EC249676FB00275296 /* AboutViewController.m in Sources */,
+				6375671F24CC906800F0BA7C /* IntroduceViewController.m in Sources */,
 				6338D8A92483AAE20031F044 /* HomeViewController.m in Sources */,
 				639F65BA248CD58A00275296 /* PersonViewController.m in Sources */,
 				6367A15C245E98C300F20404 /* HomeBottomView.m in Sources */,
@@ -1128,6 +1139,7 @@
 				6367A14E24547FDF00F20404 /* AddPersonViewController.m in Sources */,
 				63CEB1C224432D9C00FB2146 /* UIView+DYKIOS.m in Sources */,
 				63CEB1D024434DBF00FB2146 /* CommonCell.m in Sources */,
+				6375672224CC907800F0BA7C /* ProvacyViewController.m in Sources */,
 				631BCBE2244CA9F200D4ABAC /* PersonCellTableViewCell.m in Sources */,
 				63CEB1B724432D9000FB2146 /* NSDate+CalculateDay.m in Sources */,
 				639F6530248BD64D00275296 /* ContactCell.m in Sources */,
@@ -1302,7 +1314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HE3M4LJKL5;
+				DEVELOPMENT_TEAM = LY3338VS5T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiWuShuang/Thirdpart/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
@@ -1322,7 +1334,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiWuShuang/Thirdpart/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.yiwushuang.esmart;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.yiwushuang.esmart.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1336,7 +1348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HE3M4LJKL5;
+				DEVELOPMENT_TEAM = LY3338VS5T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiWuShuang/Thirdpart/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
@@ -1356,7 +1368,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiWuShuang/Thirdpart/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.yiwushuang.esmart;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.yiwushuang.esmart.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

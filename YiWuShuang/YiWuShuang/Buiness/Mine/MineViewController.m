@@ -72,11 +72,11 @@ isPhoneX;\
 //创建数据源
 -(void)loadData{
     MineModel *record = [[MineModel alloc] initWithIcon:@"setting_record" title:@"我的上课记录"];
-    MineModel *invate = [[MineModel alloc] initWithIcon:@"setting_invate" title:@"邀请好友赚佣金"];
-    MineModel *help = [[MineModel alloc] initWithIcon:@"setting_help" title:@"使用帮助"];
+    MineModel *invate = [[MineModel alloc] initWithIcon:@"setting_invate" title:@"邀请好友赚无双币"];
+//    MineModel *help = [[MineModel alloc] initWithIcon:@"setting_help" title:@"使用帮助"];
     MineModel *kefu = [[MineModel alloc] initWithIcon:@"setting_message" title:@"联系客服"];
     MineModel *feedback = [[MineModel alloc] initWithIcon:@"setting_feedback" title:@"意见反馈"];
-    NSArray *datas = @[record,invate,help,kefu,feedback];
+    NSArray *datas = @[record,invate,kefu,feedback];
     self.dataSources = datas.mutableCopy;
     [self.tableView reloadData];
 }
@@ -96,15 +96,15 @@ isPhoneX;\
 }
 
 - (void)createHeader {
-    if ([UserSession session].currentUser.level == 1) {//非合伙人
+//    if ([UserSession session].currentUser.level == 1) {//非合伙人
         NormalMineHeader *header = [NormalMineHeader headerView];
         header.frame = CGRectMake(0, 0, self.view.width, 230);
         self.tableView.tableHeaderView = header;
-    }else if ([UserSession session].currentUser.level > 1){
-        PartnerMineHeader *header = [PartnerMineHeader headerView];
-        header.frame = CGRectMake(0, 0, self.view.width, 230);
-        self.tableView.tableHeaderView = header;
-    }
+//    }else if ([UserSession session].currentUser.level > 1){
+//        PartnerMineHeader *header = [PartnerMineHeader headerView];
+//        header.frame = CGRectMake(0, 0, self.view.width, 230);
+//        self.tableView.tableHeaderView = header;
+//    }
 }
 
 
@@ -113,6 +113,7 @@ isPhoneX;\
     __weak typeof(self) ws = self;
     self.NavView.settingBlock = ^{
         SettingViewController *vc = [[SettingViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
         [ws.navigationController pushViewController:vc animated:YES];
     };
     CGFloat staturBar = 20;
@@ -172,10 +173,10 @@ isPhoneX;\
     if (!_targetVc) {
         HistoryViewController *historyVc = [[HistoryViewController alloc] init];
         GetTrafficViewController *tfVc = [[GetTrafficViewController alloc] init];
-        HelpViewController *helpVc = [[HelpViewController alloc] init];
+//        HelpViewController *helpVc = [[HelpViewController alloc] init];
         CustomServiceViewController *csVc = [[CustomServiceViewController alloc] init];
         FeedbackViewController *feedbackVc = [[FeedbackViewController alloc] init];
-        NSArray *array = @[historyVc,tfVc,helpVc,csVc,feedbackVc];
+        NSArray *array = @[historyVc,tfVc,csVc,feedbackVc];
         _targetVc = array.mutableCopy;
     }
     return _targetVc;

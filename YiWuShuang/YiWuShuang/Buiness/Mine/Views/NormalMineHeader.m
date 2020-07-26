@@ -35,7 +35,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     NSString *avatar = [UserSession session].currentUser.avatar;
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+//    [self.avatar sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:avatar]];
     self.nameLabel.text = [UserSession session].currentUser.nickname;
     [self.partnerBtn.layer insertSublayer:self.bgLayer below:self.partnerBtn.imageView.layer];
     self.bgLayer.frame = self.partnerBtn.bounds;

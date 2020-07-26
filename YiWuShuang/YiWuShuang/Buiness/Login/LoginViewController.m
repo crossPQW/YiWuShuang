@@ -17,7 +17,10 @@
 #import "BaseTabBarController.h"
 #import <ShareSDK/ShareSDK.h>
 #import <MOBFoundation/MobSDK+Privacy.h>
+#import "ClassApiManager.h"
+
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *accountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
@@ -49,6 +52,16 @@
     [self.checkBtn setBackgroundImage:[UIImage imageNamed:@"login_check"] forState:UIControlStateSelected];
     [self.checkBtn setSelected:NO];
     
+    //获取文案
+    [[ClassApiManager manager] getTextWithType:@"1" success:^(BaseModel * _Nonnull baseModel) {
+        if ([baseModel.data isKindOfClass:[NSString class]]) {
+            NSString *text = baseModel.data;
+            self.textLabel.text = text;
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+    
     [MobSDK uploadPrivacyPermissionStatus:YES onResult:^(BOOL success) {
         
     }];
@@ -64,7 +77,7 @@
 - (IBAction)clickLogin:(id)sender {
     BOOL hasAgress = self.checkBtn.isSelected;
     if (!hasAgress) {
-        [MBProgressHUD showText:@"您还没有勾选同意" inView:self.view];
+        [MBProgressHUD showText:@"请勾选同意用户协议及隐私政策" inView:self.view];
     }else{
         __weak typeof(self) ws = self;
         NSString *phoneNumber = self.accountTextField.text;

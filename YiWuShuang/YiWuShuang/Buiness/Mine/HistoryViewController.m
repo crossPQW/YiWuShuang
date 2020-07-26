@@ -7,6 +7,7 @@
 //
 
 #import "HistoryViewController.h"
+#import "EmptyView.h"
 
 @interface HistoryViewController ()
 
@@ -23,6 +24,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    EmptyView *emptyView = [EmptyView emptyView];
+    emptyView.text = @"暂无记录";
+    emptyView.center = self.view.center;
+    [self.view addSubview:emptyView];
 }
 
 /*

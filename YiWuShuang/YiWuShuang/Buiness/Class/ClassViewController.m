@@ -72,7 +72,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     //实名认证
-    [self checkAuth];
+//    [self checkAuth];
 }
 
 - (void)checkAuth {
@@ -103,8 +103,8 @@
 }
 #pragma mark - tableview
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.list.count;
-    return 10;
+    return self.list.count;
+//    return 10;
 }
 
 
@@ -113,7 +113,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSDictionary *data = [self.list yk_objectAtIndex:indexPath.row];
+    NSDictionary *data = [self.list yk_objectAtIndex:indexPath.row];
     OrderClassCell *cell = [tableView dequeueReusableCellWithIdentifier:@"orderClassCell" forIndexPath:indexPath];
     return cell;
 }

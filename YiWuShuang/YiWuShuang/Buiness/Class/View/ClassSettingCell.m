@@ -97,6 +97,7 @@
         case ClassSettingModelStyleNotice:
         {
             self.noticeView = [ClassNoticeView noticeView];
+            self.noticeView.frame = self.contentView.bounds;
             self.noticeView.block = ^{
                 if (weakSelf.clickBlock) {
                     weakSelf.clickBlock(weakSelf.model);
@@ -229,8 +230,10 @@
 
 - (void)copy:(id)sender {
     UIPasteboard *ps = [UIPasteboard generalPasteboard];
-    [ps setString:self.subtitleLabel.text];
-    [MBProgressHUD showText:@"已将课程ID复制到剪切板" inView:[UIApplication sharedApplication].delegate.window];
+    if (self.subtitleLabel.text) {
+        [ps setString:self.subtitleLabel.text];
+        [MBProgressHUD showText:@"已将课程ID复制到剪切板" inView:[UIApplication sharedApplication].delegate.window];
+    }
 }
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
