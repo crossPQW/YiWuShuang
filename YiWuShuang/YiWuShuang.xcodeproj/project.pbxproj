@@ -20,6 +20,15 @@
 		6338D8AE2483B38A0031F044 /* InvateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6338D8AD2483B38A0031F044 /* InvateView.xib */; };
 		6338D8B02483BCAE0031F044 /* ChooseBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6338D8AF2483BCAE0031F044 /* ChooseBottomView.xib */; };
 		6338D8B32483BCC00031F044 /* ChooseBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6338D8B22483BCC00031F044 /* ChooseBottomView.m */; };
+		634FC2D324D567DC00A9E42F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2D224D567B800A9E42F /* libc++.tbd */; };
+		634FC2D524D567F300A9E42F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2D424D567EC00A9E42F /* libicucore.tbd */; };
+		634FC2D724D5680900A9E42F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2D624D5680900A9E42F /* SystemConfiguration.framework */; };
+		634FC2D924D5681300A9E42F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2D824D5681300A9E42F /* CoreTelephony.framework */; };
+		634FC2DB24D5681900A9E42F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2DA24D5681900A9E42F /* AdSupport.framework */; };
+		634FC2DD24D568BB00A9E42F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2DC24D568BB00A9E42F /* libz.tbd */; };
+		634FC2DF24D568C500A9E42F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2DE24D568C500A9E42F /* libsqlite3.tbd */; };
+		634FC2E324D681F800A9E42F /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FC2E224D681F800A9E42F /* ShareView.m */; };
+		634FC2E524D6822B00A9E42F /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634FC2E424D6822B00A9E42F /* ShareView.xib */; };
 		6367A128245096C200F20404 /* TeamPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A127245096C200F20404 /* TeamPickView.m */; };
 		6367A12E2454112A00F20404 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A12D2454112A00F20404 /* EmptyView.m */; };
 		6367A1302454113A00F20404 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A12F2454113A00F20404 /* EmptyView.xib */; };
@@ -164,6 +173,17 @@
 		6338D8AF2483BCAE0031F044 /* ChooseBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBottomView.xib; sourceTree = "<group>"; };
 		6338D8B12483BCC00031F044 /* ChooseBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseBottomView.h; sourceTree = "<group>"; };
 		6338D8B22483BCC00031F044 /* ChooseBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseBottomView.m; sourceTree = "<group>"; };
+		634FC2D224D567B800A9E42F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		634FC2D424D567EC00A9E42F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		634FC2D624D5680900A9E42F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		634FC2D824D5681300A9E42F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		634FC2DA24D5681900A9E42F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		634FC2DC24D568BB00A9E42F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		634FC2DE24D568C500A9E42F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		634FC2E024D5779900A9E42F /* YiWuShuang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YiWuShuang.entitlements; sourceTree = "<group>"; };
+		634FC2E124D681F800A9E42F /* ShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
+		634FC2E224D681F800A9E42F /* ShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		634FC2E424D6822B00A9E42F /* ShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareView.xib; sourceTree = "<group>"; };
 		6367A126245096C200F20404 /* TeamPickView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamPickView.h; sourceTree = "<group>"; };
 		6367A127245096C200F20404 /* TeamPickView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamPickView.m; sourceTree = "<group>"; };
 		6367A12C2454112A00F20404 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
@@ -362,7 +382,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634FC2DF24D568C500A9E42F /* libsqlite3.tbd in Frameworks */,
+				634FC2DD24D568BB00A9E42F /* libz.tbd in Frameworks */,
+				634FC2D324D567DC00A9E42F /* libc++.tbd in Frameworks */,
+				634FC2D524D567F300A9E42F /* libicucore.tbd in Frameworks */,
+				634FC2D924D5681300A9E42F /* CoreTelephony.framework in Frameworks */,
+				634FC2D724D5680900A9E42F /* SystemConfiguration.framework in Frameworks */,
 				084906CDFC1F636C28D6635C /* Pods_YiWuShuang.framework in Frameworks */,
+				634FC2DB24D5681900A9E42F /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +413,13 @@
 		00BEC68B88E4BCABF2225667 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				634FC2DE24D568C500A9E42F /* libsqlite3.tbd */,
+				634FC2DC24D568BB00A9E42F /* libz.tbd */,
+				634FC2DA24D5681900A9E42F /* AdSupport.framework */,
+				634FC2D824D5681300A9E42F /* CoreTelephony.framework */,
+				634FC2D624D5680900A9E42F /* SystemConfiguration.framework */,
+				634FC2D424D567EC00A9E42F /* libicucore.tbd */,
+				634FC2D224D567B800A9E42F /* libc++.tbd */,
 				35C1F7CBFA98556F05A1B3D5 /* Pods_YiWuShuang.framework */,
 			);
 			name = Frameworks;
@@ -596,6 +630,9 @@
 				6338D8B12483BCC00031F044 /* ChooseBottomView.h */,
 				6338D8B22483BCC00031F044 /* ChooseBottomView.m */,
 				6338D8AF2483BCAE0031F044 /* ChooseBottomView.xib */,
+				634FC2E124D681F800A9E42F /* ShareView.h */,
+				634FC2E224D681F800A9E42F /* ShareView.m */,
+				634FC2E424D6822B00A9E42F /* ShareView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -649,6 +686,7 @@
 		63BE22B7242BCB0E0066A316 /* YiWuShuang */ = {
 			isa = PBXGroup;
 			children = (
+				634FC2E024D5779900A9E42F /* YiWuShuang.entitlements */,
 				631BCBCD244C813E00D4ABAC /* Thirdpart */,
 				63CEB15D2438DD4F00FB2146 /* Common */,
 				63CEB1592438D36200FB2146 /* Manager */,
@@ -968,6 +1006,7 @@
 				6367A16B245FDFE600F20404 /* ChooseTeamCell.xib in Resources */,
 				6381ECE024796C6E00B7AE5B /* ClassJoinView.xib in Resources */,
 				63BE22C5242BCB100066A316 /* Assets.xcassets in Resources */,
+				634FC2E524D6822B00A9E42F /* ShareView.xib in Resources */,
 				6367A14824544FCE00F20404 /* TeamCell.xib in Resources */,
 				63BE22C3242BCB0E0066A316 /* Main.storyboard in Resources */,
 				6367A1302454113A00F20404 /* EmptyView.xib in Resources */,
@@ -1136,6 +1175,7 @@
 				631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */,
 				6367A17E2461842B00F20404 /* MineModel.m in Sources */,
 				631BCBD3244C8C8500D4ABAC /* BaseTabBarController.m in Sources */,
+				634FC2E324D681F800A9E42F /* ShareView.m in Sources */,
 				6367A14E24547FDF00F20404 /* AddPersonViewController.m in Sources */,
 				63CEB1C224432D9C00FB2146 /* UIView+DYKIOS.m in Sources */,
 				63CEB1D024434DBF00FB2146 /* CommonCell.m in Sources */,
@@ -1312,6 +1352,7 @@
 			baseConfigurationReference = C9771E284689BA46DE20A8FB /* Pods-YiWuShuang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YiWuShuang/YiWuShuang.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LY3338VS5T;
@@ -1346,6 +1387,7 @@
 			baseConfigurationReference = 9A36C3F608AC21002832D28D /* Pods-YiWuShuang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YiWuShuang/YiWuShuang.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LY3338VS5T;

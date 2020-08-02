@@ -463,9 +463,9 @@
 }
 
 - (NSArray *)classTypeList {
-    return @[@{@"name":@"1对1",
+    return @[@{@"name":@"1对16人以内(互动直播)",
                @"data":@"1",},
-             @{@"name":@"1对16",
+             @{@"name":@"1对16人以上(普通直播)",
                @"data":@"2",},
     ];
 }

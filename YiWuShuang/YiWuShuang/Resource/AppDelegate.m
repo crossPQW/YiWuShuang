@@ -35,11 +35,6 @@
 #ifdef DEBUG
     [[YKWoodpeckerManager sharedInstance] show];
 #endif
-
-    [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
-        [platformsRegister setupWeChatWithAppId:@"wxea7ba9acc178cc95" appSecret:@"07c8294cbd4452a4729067183b361fef" universalLink:@"in0f5.share2dlink.com"];
-//        [platformsRegister setupDingTalkAuthWithAppId:dingAppKey appSecret:dingAppSecrect redirectUrl:@""];
-    }];
     
     BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
     [self.window setRootViewController:tabBar];
@@ -55,6 +50,13 @@
             [self.window setRootViewController:nav];
             [self.window makeKeyAndVisible];
         }
+    }];
+    
+    //分享 sdk
+    [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
+        [platformsRegister setupWeChatWithAppId:@"wxea7ba9acc178cc95" appSecret:@"07c8294cbd4452a4729067183b361fef" universalLink:@"in0f5.share2dlink.com"];
+        [platformsRegister setupQQWithAppId:@"101879792" appkey:@"0fad1de252e7ff7baaf01ce95e778fe1" enableUniversalLink:NO universalLink:nil];
+        [platformsRegister setupDingTalkWithAppId:@"dingoavdkwtbhmfcetfbwb"];
     }];
     
     return YES;

@@ -24,6 +24,9 @@ PODS:
   - mob_sharesdk/ShareSDKExtension (4.3.8):
     - mob_sharesdk/ShareSDK
     - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/DingTalk (4.3.8):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
   - mob_sharesdk/ShareSDKPlatforms/Messenger (4.3.8):
     - mob_sharesdk/ShareSDK
     - MOBFoundation (>= 3.2.9)
@@ -51,6 +54,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD (~> 1.2.0)
   - mob_sharesdk
+  - mob_sharesdk/ShareSDKPlatforms/DingTalk
   - mob_sharesdk/ShareSDKPlatforms/Messenger
   - mob_sharesdk/ShareSDKPlatforms/QQ
   - mob_sharesdk/ShareSDKPlatforms/WeChat
@@ -83,6 +87,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 0aa3346f26e52a9e40f85090ef7bfa84df0c0992
+PODFILE CHECKSUM: b681e11d892dbfaeedd0752d7df05c5defbf1b22
 
 COCOAPODS: 1.9.1

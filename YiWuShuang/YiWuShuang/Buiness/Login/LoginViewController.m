@@ -62,6 +62,7 @@
         
     }];
     
+    //隐私授权
     [MobSDK uploadPrivacyPermissionStatus:YES onResult:^(BOOL success) {
         
     }];

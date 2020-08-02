@@ -144,9 +144,24 @@ isPhoneX;\
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIViewController *vc = self.targetVc[indexPath.row];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+    if (indexPath.row == 2) {
+        UIAlertController *controller = [[UIAlertController alloc] init];
+        UIAlertAction *phone = [UIAlertAction actionWithTitle:@"+86 12345698" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication   sharedApplication] openURL:[NSURL URLWithString:@"tel://123456789"]];
+
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [controller addAction:phone];
+        [controller addAction:cancel];
+        [self presentViewController:controller animated:YES completion:nil];
+        
+    }else{
+        UIViewController *vc = self.targetVc[indexPath.row];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{

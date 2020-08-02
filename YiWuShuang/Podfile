@@ -17,6 +17,6 @@ target 'YiWuShuang' do
   pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'
   pod 'mob_sharesdk/ShareSDKRestoreScene'
   pod 'mob_sharesdk/ShareSDKPlatforms/Messenger'
-
+  pod 'mob_sharesdk/ShareSDKPlatforms/DingTalk'
 
 end

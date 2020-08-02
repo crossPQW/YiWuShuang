@@ -16,13 +16,17 @@
 #import "RealAuthView.h"
 #import "RealAuthViewController.h"
 #import "JoinClassViewController.h"
+#import "ShareView.h"
+#import <ShareSDK/ShareSDK.h>
+#import <MessageUI/MessageUI.h>
 
-@interface ClassViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ClassViewController ()<UITableViewDelegate,UITableViewDataSource,MFMessageComposeViewControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) ClassTopView *topView;
 
 @property (nonatomic, strong) NSArray *list;
 
+@property (nonatomic, strong) ShareView *shareView;
 @property (nonatomic, strong) RealAuthView *authView;
 @end
 
@@ -43,7 +47,7 @@
         
     };
     topView.tapAddPersonBlock = ^{
-        
+        [weakSelf openShareView];
     };
     topView.tapStartClassBlock = ^{
         StartClassViewController *startVc = [[StartClassViewController alloc] init];
@@ -68,6 +72,68 @@
     [self.view addSubview:self.tableView];
     
 }
+
+- (void)openShareView {
+    ShareView *shareView = [ShareView shareView];
+    self.shareView = shareView;
+    shareView.userInteractionEnabled = YES;
+    shareView.block = ^(int type) {
+        [self shareWithType:type];
+    };
+    shareView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 184, self.view.width, 184);
+    
+    UIView *bgView = [[UIView alloc] init];
+    bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    bgView.frame = [UIScreen mainScreen].bounds;
+    [bgView addSubview:shareView];
+    UITapGestureRecognizer *tapBg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapShareBg:)];
+    bgView.userInteractionEnabled = YES;
+    [bgView addGestureRecognizer:tapBg];
+    [[UIApplication sharedApplication].delegate.window addSubview:bgView];
+}
+
+- (void)tapShareBg:(UITapGestureRecognizer *)ges {
+    [ges.view removeFromSuperview];
+}
+
+- (void)shareWithType:(int)type {
+    
+    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    [params SSDKSetupShareParamsByText:@"test"
+                                images:@"http://download.sdk.mob.com/web/images/2019/07/30/14/1564468183056/750_750_65.12.png"
+                                   url:[NSURL URLWithString:@"http://www.mob.com/"]
+                                 title:@"title"
+                        type:SSDKContentTypeAuto];
+    SSDKPlatformType sharetype;
+    if (type == 0) {
+        sharetype = SSDKPlatformTypeWechat;
+    }else if (type == 1){
+        sharetype = SSDKPlatformTypeQQ;
+    }else if (type == 2){
+        sharetype = SSDKPlatformTypeDingTalk;
+    }else if (type == 3){
+        //短信
+        if ([MFMessageComposeViewController canSendText]) {
+            //  判断一下是否支持发送短信，比如模拟器
+            MFMessageComposeViewController *messageVC = [[MFMessageComposeViewController alloc] init];
+            messageVC.body = @"HI，给您推荐一款全景声音视频互动教育 APP， 再送您20分钟高清视频互动流量，双向 48Khz 的音效，无限接近面对面教学体验，赶快来领取吧！https://test.yiwushuang.cn/share/ZWOus2dqbItfXFtoZZmc";
+            messageVC.messageComposeDelegate = self;
+            [self presentViewController:messageVC animated:YES completion:nil];
+        }else{
+            [MBProgressHUD showText:@"您的设备不支持发送短信" inView:self.view];
+        }
+        return;
+    }
+    
+    [ShareSDK share:sharetype parameters:params onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+        [self.shareView.superview removeFromSuperview];
+    }];
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
