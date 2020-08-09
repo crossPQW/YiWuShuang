@@ -164,6 +164,7 @@
     ClassSettingModel *title = [[ClassSettingModel alloc] init];
     title.height = 100;
     title.style = ClassSettingModelTitle;
+    title.tag = -1;
     title.title = @"课程名称";
     [dataSources addObject:title];
     [dataSources addObject:[self lineModel]];
@@ -173,13 +174,13 @@
     classType.style = ClassSettingModelSelect;
     classType.title = @"课程类型";
     NSString *type;
-    if ([type isEqualToString:@"1"]) {
-        type = @"1对1";
-    }else if ([type isEqualToString:@"2"]){
-        type = @"1对16";
+    if ([self.classType isEqualToString:@"1"]) {
+        type = @"1对16人以内(互动直播)";
+    }else if ([self.classType isEqualToString:@"2"]){
+        type = @"1对16人以上(普通直播)";
     }
     classType.subtitle = type ?: @"请选择";
-    classType.tag = 0;
+    classType.tag = 66;
     [dataSources addObject:classType];
     [dataSources addObject:[self lineModel]];
     
@@ -286,6 +287,7 @@
 }
 
 - (void)handleCellClick:(ClassSettingModel *)model indexPath:(NSIndexPath *)indexPath {
+    [self.view endEditing:YES];
     switch (model.style) {
         case ClassSettingModelStyleNotice:
         {
@@ -310,7 +312,7 @@
     }
     
     switch (model.tag) {
-        case 0:{
+        case 66:{
             TeamPickView *pickview = [[TeamPickView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 320, self.view.width, 320)];
             pickview.tag = model.tag;
             self.pickview = pickview;
@@ -369,7 +371,7 @@
         NSDictionary *dict = [[self clearlyList] yk_objectAtIndex:index];
         NSString *clearly = [dict stringForKey:@"data"];
         self.clearly = clearly;
-    }else if (self.pickview.tag == 0){
+    }else if (self.pickview.tag == 66){
         NSDictionary *dict = [[self classTypeList] yk_objectAtIndex:index];
         NSString *classType = [dict stringForKey:@"data"];
         self.classType = classType;
@@ -380,6 +382,10 @@
 
 - (void)didDismiss {
     [self.pickview.superview removeFromSuperview];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
 }
 
 - (void)handleSelectTimeWithModel:(ClassSettingModel *)model {

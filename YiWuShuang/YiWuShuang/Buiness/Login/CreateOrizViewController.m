@@ -242,6 +242,7 @@
         [[UIApplication sharedApplication].delegate.window addSubview:bgView];
         [pickView setData:self.natureList];
     }
+    [self.view endEditing:YES];
 }
 
 - (void)didSelectedTeamWithIndex:(NSInteger)index {
@@ -259,6 +260,9 @@
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
+}
 - (void)didDismiss {
     [self.pickView.superview removeFromSuperview];
 }
