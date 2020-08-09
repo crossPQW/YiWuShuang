@@ -18,6 +18,8 @@
 #import <ShareSDK/ShareSDK.h>
 #import <MOBFoundation/MobSDK+Privacy.h>
 #import "ClassApiManager.h"
+#import "BindPhoneViewController.h"
+#import "WXApi.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
@@ -29,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *privacyLabel;
 @property (weak, nonatomic) IBOutlet UIButton *getCodeBtn;
 
+@property (nonatomic, strong) NSString *thirdID;
 @property (nonatomic, strong) NSTimer *timer;
 @end
 
@@ -47,10 +50,12 @@
     layer.frame = self.loginBtn.bounds;
     [self.loginBtn.layer addSublayer:layer];
     
-    
-    [self.checkBtn setBackgroundImage:[UIImage imageNamed:@"login_uncheck"] forState:UIControlStateNormal];
-    [self.checkBtn setBackgroundImage:[UIImage imageNamed:@"login_check"] forState:UIControlStateSelected];
-    [self.checkBtn setSelected:NO];
+    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:self.privacyLabel.text];
+    NSRange range = [self.privacyLabel.text rangeOfString:@"《用户协议与隐私政策》"];
+    [attr addAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithHexString:@"#15C3D6"]} range:range];
+    self.privacyLabel.attributedText = attr;
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wxDidLogin:) name:@"wxLogin" object:nil];
     
     //获取文案
     [[ClassApiManager manager] getTextWithType:@"1" success:^(BaseModel * _Nonnull baseModel) {
@@ -76,54 +81,68 @@
 #pragma mark - event
 
 - (IBAction)clickLogin:(id)sender {
-    BOOL hasAgress = self.checkBtn.isSelected;
-    if (!hasAgress) {
-        [MBProgressHUD showText:@"请勾选同意用户协议及隐私政策" inView:self.view];
-    }else{
-        __weak typeof(self) ws = self;
+//    BOOL hasAgress = self.checkBtn.isSelected;
+//    if (!hasAgress) {
+//        [MBProgressHUD showText:@"请勾选同意用户协议及隐私政策" inView:self.view];
+//    }else{
         NSString *phoneNumber = self.accountTextField.text;
         NSString *code = self.pwdTextField.text;
-        [[UserSession session] loginWithPhoneNumber:phoneNumber code:code success:^(User * _Nonnull user) {
+        [[UserSession session] loginWithPhoneNumber:phoneNumber code:code third_id:self.thirdID success:^(User * _Nonnull user) {
             if (user) {
-                [ws handleLoginSuccess];
+                BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
+                [[UIApplication sharedApplication].delegate.window setRootViewController:tabBar];
+                [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
             }
         } failure:^(NSError * _Nonnull error) {
             
         }];
-    }
+//    }
 }
+
 
 - (IBAction)clickCheck:(id)sender {
     self.checkBtn.selected = !self.checkBtn.isSelected;
 }
 - (IBAction)wechatLogin:(id)sender {
-    [ShareSDK authorize:SSDKPlatformTypeWechat
-               settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
-        if (state == SSDKResponseStateSuccess)
-           {
-                NSLog(@"%@",user.rawData);
-                NSLog(@"uid===%@",user.uid);
-                NSLog(@"%@",user.credential);
-           }
-        else if (state == SSDKResponseStateCancel)
-           {
-                NSLog(@"取消");
-           }
-        else if (state == SSDKResponseStateFail)
-           {
-                NSLog(@"%@",error);
-           }
-    }];
     
-//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    [params SSDKSetupShareParamsByText:@"test"
-//                                images:[UIImage imageNamed:@"shareImg.png"]
-//                                   url:[NSURL URLWithString:@"http://www.mob.com/"]
-//                                 title:@"title"
-//                              type:SSDKContentTypeAuto];
-//    [ShareSDK share:SSDKPlatformTypeWechat parameters:params onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
-//        
-//    }];
+    //构造SendAuthReq结构体
+    SendAuthReq* req =[[SendAuthReq alloc]init];
+    req.scope = @"snsapi_userinfo";
+    req.state = @"123";
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req completion:^(BOOL success) {
+        
+    }];
+}
+
+- (void)wxDidLogin:(NSNotification *)noti {
+    SendAuthResp *resp = noti.object;
+    NSString *code = resp.code;
+    [[UserSession session] wechatLoginWithCode:code success:^(BaseModel * _Nonnull baseModel) {
+        if (baseModel.code == 400) {
+            if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
+                NSString *thirdId = [baseModel.data stringForKey:@"third_id"];
+                self.thirdID = thirdId;
+            }
+            UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+            BindPhoneViewController *bindVc = [loginSb instantiateViewControllerWithIdentifier:@"BindVc"];
+            bindVc.thirdID = self.thirdID;
+            [self presentViewController:bindVc animated:YES completion:nil];
+        }else if (baseModel.code == 1){
+            BaseTabBarController *tabBar = [[BaseTabBarController alloc] init];
+            [[UIApplication sharedApplication].delegate.window setRootViewController:tabBar];
+            [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
+        }else{
+            [self showError];
+        }
+
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+}
+
+- (void)showError {
+    [MBProgressHUD showText:@"登录失败" inView:self.view];
 }
 
 
@@ -183,16 +202,6 @@
     User *user = [[UserSession session] currentUser];
     __weak typeof(self) ws = self;
     [self jumpToMainPage];
-//    [[ApiManager manager] getOrganization:user.token success:^(BaseModel * _Nonnull baseModel) {
-//        NSArray *list = baseModel.data;
-//        if ([list isKindOfClass:[NSArray class]] && list.count > 0) {
-//            [ws jumpToMainPage];
-//        }else{
-//            [ws jumpToChooseOri];
-//        }
-//    } failure:^(NSError * _Nonnull error) {
-//
-//    }];
 }
 
 - (void)jumpToMainPage{

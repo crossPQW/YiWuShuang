@@ -29,6 +29,11 @@
 		634FC2DF24D568C500A9E42F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2DE24D568C500A9E42F /* libsqlite3.tbd */; };
 		634FC2E324D681F800A9E42F /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FC2E224D681F800A9E42F /* ShareView.m */; };
 		634FC2E524D6822B00A9E42F /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634FC2E424D6822B00A9E42F /* ShareView.xib */; };
+		634FC2E924DEAD9300A9E42F /* BindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FC2E824DEAD9300A9E42F /* BindPhoneViewController.m */; };
+		634FC2F024DFE3C300A9E42F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 634FC2ED24DFE3C300A9E42F /* README.txt */; };
+		634FC2F124DFE3C300A9E42F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2EF24DFE3C300A9E42F /* libWeChatSDK.a */; };
+		634FC2F824DFE41D00A9E42F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 634FC2F524DFE41D00A9E42F /* README.txt */; };
+		634FC2F924DFE41D00A9E42F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 634FC2F724DFE41D00A9E42F /* libWeChatSDK.a */; };
 		6367A128245096C200F20404 /* TeamPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A127245096C200F20404 /* TeamPickView.m */; };
 		6367A12E2454112A00F20404 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367A12D2454112A00F20404 /* EmptyView.m */; };
 		6367A1302454113A00F20404 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6367A12F2454113A00F20404 /* EmptyView.xib */; };
@@ -184,6 +189,18 @@
 		634FC2E124D681F800A9E42F /* ShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
 		634FC2E224D681F800A9E42F /* ShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
 		634FC2E424D6822B00A9E42F /* ShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareView.xib; sourceTree = "<group>"; };
+		634FC2E724DEAD9300A9E42F /* BindPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindPhoneViewController.h; sourceTree = "<group>"; };
+		634FC2E824DEAD9300A9E42F /* BindPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindPhoneViewController.m; sourceTree = "<group>"; };
+		634FC2EB24DFE3C300A9E42F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		634FC2EC24DFE3C300A9E42F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		634FC2ED24DFE3C300A9E42F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		634FC2EE24DFE3C300A9E42F /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		634FC2EF24DFE3C300A9E42F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		634FC2F324DFE41D00A9E42F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		634FC2F424DFE41D00A9E42F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		634FC2F524DFE41D00A9E42F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		634FC2F624DFE41D00A9E42F /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		634FC2F724DFE41D00A9E42F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		6367A126245096C200F20404 /* TeamPickView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamPickView.h; sourceTree = "<group>"; };
 		6367A127245096C200F20404 /* TeamPickView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamPickView.m; sourceTree = "<group>"; };
 		6367A12C2454112A00F20404 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
@@ -384,7 +401,9 @@
 			files = (
 				634FC2DF24D568C500A9E42F /* libsqlite3.tbd in Frameworks */,
 				634FC2DD24D568BB00A9E42F /* libz.tbd in Frameworks */,
+				634FC2F124DFE3C300A9E42F /* libWeChatSDK.a in Frameworks */,
 				634FC2D324D567DC00A9E42F /* libc++.tbd in Frameworks */,
+				634FC2F924DFE41D00A9E42F /* libWeChatSDK.a in Frameworks */,
 				634FC2D524D567F300A9E42F /* libicucore.tbd in Frameworks */,
 				634FC2D924D5681300A9E42F /* CoreTelephony.framework in Frameworks */,
 				634FC2D724D5680900A9E42F /* SystemConfiguration.framework in Frameworks */,
@@ -476,6 +495,8 @@
 		631BCBCD244C813E00D4ABAC /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				634FC2F224DFE41D00A9E42F /* OpenSDK1.8.7.1_NoPay */,
+				634FC2EA24DFE3C300A9E42F /* OpenSDK1.8.7.1_NoPay */,
 			);
 			path = Thirdpart;
 			sourceTree = "<group>";
@@ -535,6 +556,30 @@
 				636BDC41247A7F58004C32A3 /* GradientButton.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		634FC2EA24DFE3C300A9E42F /* OpenSDK1.8.7.1_NoPay */ = {
+			isa = PBXGroup;
+			children = (
+				634FC2EB24DFE3C300A9E42F /* WXApi.h */,
+				634FC2EC24DFE3C300A9E42F /* WXApiObject.h */,
+				634FC2ED24DFE3C300A9E42F /* README.txt */,
+				634FC2EE24DFE3C300A9E42F /* WechatAuthSDK.h */,
+				634FC2EF24DFE3C300A9E42F /* libWeChatSDK.a */,
+			);
+			path = OpenSDK1.8.7.1_NoPay;
+			sourceTree = "<group>";
+		};
+		634FC2F224DFE41D00A9E42F /* OpenSDK1.8.7.1_NoPay */ = {
+			isa = PBXGroup;
+			children = (
+				634FC2F324DFE41D00A9E42F /* WXApi.h */,
+				634FC2F424DFE41D00A9E42F /* WXApiObject.h */,
+				634FC2F524DFE41D00A9E42F /* README.txt */,
+				634FC2F624DFE41D00A9E42F /* WechatAuthSDK.h */,
+				634FC2F724DFE41D00A9E42F /* libWeChatSDK.a */,
+			);
+			path = OpenSDK1.8.7.1_NoPay;
 			sourceTree = "<group>";
 		};
 		6367A13B2454477900F20404 /* Model */ = {
@@ -747,6 +792,8 @@
 				636BDC48247ABCEE004C32A3 /* RealAuthViewController.h */,
 				636BDC49247ABCEE004C32A3 /* RealAuthViewController.m */,
 				63CEB14E242D03C000FB2146 /* Login.storyboard */,
+				634FC2E724DEAD9300A9E42F /* BindPhoneViewController.h */,
+				634FC2E824DEAD9300A9E42F /* BindPhoneViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1000,7 +1047,9 @@
 				639F65D22496067D00275296 /* NormalMineHeader.xib in Resources */,
 				636BDC47247AB786004C32A3 /* RealAuthView.xib in Resources */,
 				6338D8B02483BCAE0031F044 /* ChooseBottomView.xib in Resources */,
+				634FC2F024DFE3C300A9E42F /* README.txt in Resources */,
 				6367A15E245E98D000F20404 /* HomeBottomView.xib in Resources */,
+				634FC2F824DFE41D00A9E42F /* README.txt in Resources */,
 				6367A17A2461738000F20404 /* NavHeadTitleView.xib in Resources */,
 				6367A153245DA5B500F20404 /* HomePopView.xib in Resources */,
 				6367A16B245FDFE600F20404 /* ChooseTeamCell.xib in Resources */,
@@ -1172,6 +1221,7 @@
 				639F6535248BDAA600275296 /* ContactModel.m in Sources */,
 				63CEB1AB24432D9000FB2146 /* NSObject+YKRuntime.m in Sources */,
 				63CEB1BB24432D9000FB2146 /* UIScreen+Addition.m in Sources */,
+				634FC2E924DEAD9300A9E42F /* BindPhoneViewController.m in Sources */,
 				631BCBD9244C8CD100D4ABAC /* MineViewController.m in Sources */,
 				6367A17E2461842B00F20404 /* MineModel.m in Sources */,
 				631BCBD3244C8C8500D4ABAC /* BaseTabBarController.m in Sources */,
@@ -1374,6 +1424,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiWuShuang/Thirdpart/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/YiWuShuang/Thirdpart/OpenSDK1.8.7.1_NoPay",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yiwushuang.esmart.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1409,6 +1460,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiWuShuang/Thirdpart/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/YiWuShuang/Thirdpart/OpenSDK1.8.7.1_NoPay",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yiwushuang.esmart.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";

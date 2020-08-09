@@ -33,14 +33,27 @@ NS_ASSUME_NONNULL_BEGIN
 //登录
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber
                         code:(NSString *)code
+                     thirdId:(NSString *)thirdId
                      success:(void (^)(BaseModel *baseModel))success
                      failure:(void (^)(NSError *error))failure;
+//退出
+- (void)logoutSuccess:(void (^)(BaseModel *baseModel))success
+              failure:(void (^)(NSError *error))failure;
+
+//微信登录
+- (void)wechatLoginWithCode:(NSString *)code
+                    success:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure;
 
 //实名认证
 - (void)realAuthWithRealName:(NSString *)name
                           ID:(NSString *)ID
                          img:(NSString *)img
                      success:(void (^)(BaseModel *baseModel))success
+                     failure:(void (^)(NSError *error))failure;
+
+//获取分享信息
+- (void)getShareInfoSuccess:(void (^)(BaseModel *baseModel))success
                      failure:(void (^)(NSError *error))failure;
 #pragma mark - 组织相关
 //获取组织列表

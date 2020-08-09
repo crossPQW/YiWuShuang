@@ -43,22 +43,54 @@ static NSString *userkey = @"kUserInfoKey";
     [[NSUserDefaults standardUserDefaults] setValue:temp forKey:userkey];
 }
 
-- (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code success:(void (^)(User * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+- (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code third_id:(NSString *)thirdID success:(void (^)(User *user))success failure:(void (^)(NSError *error))failure {
     __weak typeof(self) weakSelf = self;
-    [[ApiManager manager] loginWithPhoneNumber:phoneNumber code:code success:^(BaseModel * _Nonnull baseModel) {
-        NSDictionary *data = baseModel.data;
-        NSDictionary *userInfo = [data valueForKey:@"userinfo"];
-        [self saveUserInfo:userInfo];
-        User *user = [User yy_modelWithJSON:userInfo];
-        weakSelf.user = user;
-        if (success) {
-            success(user);
+    [[ApiManager manager] loginWithPhoneNumber:phoneNumber code:code thirdId:thirdID success:^(BaseModel * _Nonnull baseModel) {
+        if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *data = baseModel.data;
+            NSDictionary *userInfo = [data valueForKey:@"userinfo"];
+            [self saveUserInfo:userInfo];
+            User *user = [User yy_modelWithJSON:userInfo];
+            weakSelf.user = user;
+            if (success) {
+                success(user);
+            }
         }
-        
     } failure:^(NSError * _Nonnull error) {
         if (failure) {
             failure(error);
         }
+    }];
+}
+
+- (void)logoutSuccess:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure; {
+    [[ApiManager manager] logoutSuccess:^(BaseModel * _Nonnull baseModel) {
+        [self clearUserInfo];
+        if (success) {
+            success(baseModel);
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+}
+
+- (void)wechatLoginWithCode:(NSString *)code success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure; {
+    [[ApiManager manager] wechatLoginWithCode:code success:^(BaseModel * _Nonnull baseModel) {
+        if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *data = baseModel.data;
+            NSDictionary *userInfo = [data valueForKey:@"userinfo"];
+            [self saveUserInfo:userInfo];
+            User *user = [User yy_modelWithJSON:userInfo];
+            self.user = user;
+            if (success) {
+                success(baseModel);
+            }
+        }
+    } failure:^(NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+
     }];
 }
 
@@ -67,6 +99,11 @@ static NSString *userkey = @"kUserInfoKey";
         return;
     }
     [[NSUserDefaults standardUserDefaults] setValue:info forKey:userkey];
+}
+
+- (void)clearUserInfo {
+    self.user = nil;
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:userkey];
 }
 
 - (void)checkUserAvailable:(void (^)(BOOL availble))available {

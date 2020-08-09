@@ -11,10 +11,16 @@
 #import "ClassSettingModel.h"
 #import "YKAddition.h"
 #import "AboutViewController.h"
+#import "GradientButton.h"
+#import "UserSession.h"
+#import "LoginViewController.h"
+#import "BaseNavigationController.h"
+
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSources;
 
+@property (nonatomic, strong) GradientButton *logoutBtn;
 @end
 
 @implementation SettingViewController
@@ -25,7 +31,27 @@
     self.title = @"设置";
     [self.view addSubview:self.tableView];
     self.tableView.frame = self.view.bounds;
+    
+    GradientButton *bottomBtn = [[GradientButton alloc] init];
+    bottomBtn.frame = CGRectMake(18, self.view.height - 64 - 50, self.view.width - 18 * 2, 50);
+    [bottomBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+    [bottomBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bottomBtn];
+    self.logoutBtn = bottomBtn;
+    
     [self initDataSource];
+}
+
+- (void)logout {
+    [[UserSession session] logoutSuccess:^(BaseModel * _Nonnull baseModel) {
+        UIStoryboard *loginSb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+        LoginViewController *loginVc = [loginSb instantiateViewControllerWithIdentifier:@"loginVc"];
+        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVc];
+        [[UIApplication sharedApplication].delegate.window setRootViewController:nav];
+        [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
 }
 
 - (void)initDataSource {

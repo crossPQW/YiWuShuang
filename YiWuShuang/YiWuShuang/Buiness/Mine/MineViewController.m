@@ -147,7 +147,7 @@ isPhoneX;\
     if (indexPath.row == 2) {
         UIAlertController *controller = [[UIAlertController alloc] init];
         UIAlertAction *phone = [UIAlertAction actionWithTitle:@"+86 12345698" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication   sharedApplication] openURL:[NSURL URLWithString:@"tel://123456789"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://123456789"]];
 
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

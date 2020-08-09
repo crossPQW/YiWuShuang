@@ -41,6 +41,12 @@ static NSString *addMemberUrl = @"/api/team/user";
 static NSString *deleteMemberUrl = @"/api/team/delete";
 //移动成员、学员
 static NSString *moveMemberUrl = @"/api/team/move";
+//微信登录
+static NSString *wechatLoginUrl = @"/api/user/third";
+//获取分享数据
+static NSString *getShareInfo = @"/api/share/generate";
+//退出登录
+static NSString *logoutUrl = @"/api/user/logout";
 
 static NSString *debugHost = @"https://test.yiwushuang.cn";
 static NSString *releaseHost = @"https://www.yiwushuang.cn";
@@ -79,7 +85,11 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [self requestWithApi:refreshTokenUrl params:nil success:success failure:failure];
 }
 
-- (void)loginWithPhoneNumber:(NSString *)phoneNumber code:(NSString *)code success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {
+- (void)loginWithPhoneNumber:(NSString *)phoneNumber
+                        code:(NSString *)code
+                     thirdId:(NSString *)thirdId
+                     success:(void (^)(BaseModel *baseModel))success
+                     failure:(void (^)(NSError *error))failure; {
     if (!phoneNumber || !code) {
         if (failure) {
             failure(nil);
@@ -90,8 +100,21 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:phoneNumber forKey:@"mobile"];
     [params setValue:code forKey:@"captcha"];
+    [params yk_setValue:thirdId forKey:@"third_id"];
     [self requestWithApi:loginUrl params:params success:success failure:failure];
 }
+
+- (void)logoutSuccess:(void (^)(BaseModel *baseModel))success
+              failure:(void (^)(NSError *error))failure {
+    [self requestWithApi:logoutUrl params:nil success:success failure:failure];
+}
+
+- (void)wechatLoginWithCode:(NSString *)code success:(void (^)(BaseModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params yk_setValue:code forKey:@"code"];
+    [self requestWithApi:wechatLoginUrl params:params success:success failure:failure];
+}
+
 
 - (void)realAuthWithRealName:(NSString *)name ID:(NSString *)ID img:(NSString *)img success:(void (^)(BaseModel * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -101,6 +124,10 @@ static NSString *releaseHost = @"https://www.yiwushuang.cn";
     [self requestWithApi:realAuthUrl params:params success:success failure:failure];
 }
 
+- (void)getShareInfoSuccess:(void (^)(BaseModel *baseModel))success
+                    failure:(void (^)(NSError *error))failure {
+    [self requestWithApi:getShareInfo params:nil success:success failure:failure];
+}
 - (void) getOrganization:(NSString *)token success:(void (^)(BaseModel *baseModel))success failure:(void (^)(NSError *error))failure {
     if (token.length == 0) {
         if (failure) {

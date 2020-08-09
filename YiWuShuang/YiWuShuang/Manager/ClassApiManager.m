@@ -217,6 +217,7 @@ isSmartMic:(BOOL)isSmartMic
     [params yk_setValue:type forKey:@"type"];
     [self requestWithApi:textDetailUrl params:params success:success failure:failure];
 }
+
 //上传通讯录
 - (void)uploadContact {
     [self checkContactStatusSuccess:^(BaseModel * _Nonnull baseModel) {

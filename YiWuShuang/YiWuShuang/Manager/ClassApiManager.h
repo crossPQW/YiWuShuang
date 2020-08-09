@@ -99,6 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getTextWithType:(NSString *)type
                 success:(void (^)(BaseModel *baseModel))success
                 failure:(void (^)(NSError *error))failure;
+
 #pragma mark - 上传通讯录
 //上传通讯录
 - (void)uploadContact;

@@ -19,6 +19,8 @@
 #import "ShareView.h"
 #import <ShareSDK/ShareSDK.h>
 #import <MessageUI/MessageUI.h>
+#import "ApiManager.h"
+
 
 @interface ClassViewController ()<UITableViewDelegate,UITableViewDataSource,MFMessageComposeViewControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -28,6 +30,8 @@
 
 @property (nonatomic, strong) ShareView *shareView;
 @property (nonatomic, strong) RealAuthView *authView;
+
+@property (nonatomic, strong) NSDictionary *shareData;
 @end
 
 @implementation ClassViewController
@@ -74,6 +78,14 @@
 }
 
 - (void)openShareView {
+    [[ApiManager manager] getShareInfoSuccess:^(BaseModel * _Nonnull baseModel) {
+        if ([baseModel.data isKindOfClass:[NSDictionary class]]) {
+            self.shareData = [[NSDictionary dictionaryWithDictionary:baseModel.data] dictionaryForKey:@"h5_share"];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+    
     ShareView *shareView = [ShareView shareView];
     self.shareView = shareView;
     shareView.userInteractionEnabled = YES;
@@ -97,12 +109,15 @@
 }
 
 - (void)shareWithType:(int)type {
-    
+    NSString *title = [self.shareData stringForKey:@"title"];
+    NSString *text = [self.shareData stringForKey:@"content"];
+    NSString *img = [self.shareData stringForKey:@"img"];
+    NSString *url = [self.shareData stringForKey:@"url"];
     NSMutableDictionary * params = [NSMutableDictionary dictionary];
-    [params SSDKSetupShareParamsByText:@"test"
-                                images:@"http://download.sdk.mob.com/web/images/2019/07/30/14/1564468183056/750_750_65.12.png"
-                                   url:[NSURL URLWithString:@"http://www.mob.com/"]
-                                 title:@"title"
+    [params SSDKSetupShareParamsByText:text
+                                images:img
+                                   url:[NSURL URLWithString:url]
+                                 title:title
                         type:SSDKContentTypeAuto];
     SSDKPlatformType sharetype;
     if (type == 0) {
